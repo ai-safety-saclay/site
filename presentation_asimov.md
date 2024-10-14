@@ -15,7 +15,7 @@ Et pourtant les dangers du numérique existent, et on en parle pas assez. Des ri
 
 Les ingénieurs **veulent** et **doivent** avoir une vision des risques causés par le domaine dans lequel ils travaillent. Le techno-libéralisme aveugle n'est pas une solution viable pour le futur.
 
-Avec Effisciences et l'Institut Polytechnique de Paris, Télétalks vous propose un cycle de conférences tout au long de l'année 2024-2025.
+Avec Effisciences et l'Institut Polytechnique de Paris, nous vous proposons un cycle de conférences tout au long de l'année 2024-2025.
 
 Ce cycle de conférences est collaboratif.
 Les étudiants des autres écoles du plateau de Saclay peuvent proposer un thème, un intervenant et une date, en nous nous occupons de faire la communication. Pour contacter le responsable: [antonin.peronnet@telecom-paris.fr](mailto: antonin.peronnet@telecom-paris.fr)
