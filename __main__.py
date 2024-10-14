@@ -115,7 +115,9 @@ if __name__ == "__main__":
     doc, tag, text = builder.tagtext()
 
 
-    shutil.rmtree("build")
+    # if build folder exists, delete it
+    if os.path.exists("./build"):
+        shutil.rmtree("build")
     shutil.copytree("static", "build")
 
     generate_presentation()
