@@ -19,41 +19,35 @@ def miniature_videos(builder):
     doc, tag, text = builder.tagtext()
     with tag("div", klass="d-flex flex-wrap gap-2"):
         for id in asimov_video_ids:
-            with tag("iframe", width="330", height="180", klass="", src=f"https://youtube.com/embed/{id}&origin=https://piaf-saclay.org", loading="lazy"):
+            with tag("iframe", width="300", height="180", klass="", src=f"https://youtube.com/embed/{id}&origin=https://piaf-saclay.org", loading="lazy"):
                 pass
 
 
-def home(builder):
+def navbar(builder):
     doc, tag, text = builder.tagtext()
+    with tag("heder", klass="sticky-top"):
+        with tag("nav", klass="navbar d-flex justify-content-start"):
+            with tag("a", klass="navbar-brand mx-4", href="/"):
+                text("le PIAF")
+            with tag("ul", klass="navbar-nav d-flex flex-row"):
+                with tag("li", klass="nav-item mx-4"):
+                    with tag("a", klass="nav-link", href="/presentation.html"):
+                        text("Présentation")
+                with tag("li", klass="nav-item mx-4"):
+                    with tag("a", klass="nav-link", href="/asimov.html"):
+                        text("Asimov")
+                with tag("li", klass="nav-item mx-4"):
+                    with tag("a", klass="nav-link", href="/contact.html"):
+                        text("Contact")
 
-    with open("home.md") as f:
+def md_section(builder, path_to_md):
+    doc, tag, text = builder.tagtext()
+    with open(path_to_md) as f:
         content = md.convert(f.read())
 
-    with tag("section", klass="mx-4"):
-        doc.stag("img", src="piaf_gray_with_text.svg", alt="le PIAF", width="500em")
-        with tag("h1"):
-            text("le PIAF")
+    with tag("section", klass="container"):
         doc.asis(content)
 
-def presentation_asimov(builder):
-    doc, tag, text = builder.tagtext()
-    with open("presentation_asimov.md") as f:
-        content = md.convert(f.read())
-
-    with tag("section", klass="mx-4"):
-        with tag("h1"):
-            text("Présentation Asimov")
-        doc.asis(content)
-    miniature_videos(builder)
-
-def presentation_piaf(builder):
-    doc, tag, text = builder.tagtext()
-    with open("presentation_piaf.md") as f:
-        content = md.convert(f.read())
-    with tag("section", klass="mx-4"):
-        with tag("h1"):
-            text("Présentation PIAF")
-        doc.asis(content)
 
 def head(builder, title):
     doc, tag, text = builder.tagtext()
@@ -62,6 +56,8 @@ def head(builder, title):
             doc.stag('meta', charset="utf-8")
             doc.stag('meta', name="viewport", content="width=device-width, initial-scale=1.0")
             doc.stag('link', href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css", rel='stylesheet')
+            # favicon
+            doc.stag('link', rel="icon", type="image/svg", href="piaf.svg")
 
         with tag('title'):
             text(title)
@@ -75,7 +71,8 @@ def generate_home():
         head(builder, "le PIAF")
 
         with tag('body'):
-            home(builder)
+            navbar(builder)
+            md_section(builder, "home.md")
 
     with open("build/index.html", "w") as f:
         f.write(doc.getvalue())
@@ -88,7 +85,8 @@ def generate_presentation():
         head(builder, "à propos du PIAF")
 
         with tag('body'):
-            presentation_piaf(builder)
+            navbar(builder)
+            md_section(builder, "presentation_piaf.md")
 
     with open("build/presentation.html", "w") as f:
         f.write(doc.getvalue())
@@ -102,9 +100,26 @@ def generate_asimov():
         head(builder, "Asimov: les dangers du numérique")
 
         with tag('body'):
-            presentation_asimov(builder)
+            navbar(builder)
+            md_section(builder, "presentation_asimov.md")
+            miniature_videos(builder)
 
     with open("build/asimov.html", "w") as f:
+        f.write(doc.getvalue())
+
+
+def generate_contact():
+    builder = yattag.Doc()
+    doc, tag, text = builder.tagtext()
+
+    with tag('html'):
+        head(builder, "Contact")
+
+        with tag('body'):
+            navbar(builder)
+            md_section(builder, "contact.md")
+
+    with open("build/contact.html", "w") as f:
         f.write(doc.getvalue())
 
 if __name__ == "__main__":
@@ -123,3 +138,4 @@ if __name__ == "__main__":
     generate_presentation()
     generate_asimov()
     generate_home()
+    generate_contact()

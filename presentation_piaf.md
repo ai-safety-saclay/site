@@ -1,8 +1,3 @@
-Notre projet, c'est le P.I.A.F.
-
-P.I.A.F est un groupe de travail autour de la sécurité et la fiabilité des systèmes d'intelligence artificielle. Il est entièrement géré par des étudiants de [Paris-Saclay](https://fr.wikipedia.org/wiki/Paris-Saclay).
-
-P.I.A.F signifie « Pour une Intelligence Artificielle Fiable ».
 
 # Activités
 
@@ -11,7 +6,7 @@ Notre groupe a deux activités principales :
 
 ## Sensibiliser et changer le discours autour de la sûreté de l'IA
 
-- Participer à la création de conférences (voir https://teletalks.fr/projects#asimov)
+- Participer à la création de [conférences](/asimov.html)
 - Motiver les étudiants à intégrer la sûreté de l'IA dans leur carrière
 - Avoir autant que possible un impact médiatique
 
