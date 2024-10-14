@@ -33,3 +33,5 @@ Nous sommes véritablement passionnés par le sujet de la fiabilité des IA, mai
 Vous pouvez d'abord partager l'intiative, et en parler à tous les étudiants du plateau de Saclay susceptibles d'être intéressés.
 
 Vous pouvez venir discuter avec nous, pour approfondir le sujet et participer à nos groupes de lecture.
+
+Rendez-vous sur la page [contact](/contact.html).
