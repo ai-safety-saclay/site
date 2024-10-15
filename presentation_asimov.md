@@ -5,7 +5,16 @@
 <img src="logo_asimov.png" class="d-block mx-auto" height="240em"/>
 <img src="Logo-IP-Paris-carré-HD.png" class="d-block mx-auto" height="100em"/>
 
-> Les conférences qui parlent de l'impact de la Tech sur notre civilisation.
+> Les conférences qui parlent de l'impact du numérique sur notre civilisation.
+
+# Suivre les prochaines conférences
+
+Si vous êtes sur le plateau de Saclay, vous pouvez suivre dès maintenant les futures conférences sur le site <https://teletalks.fr>
+
+Vous pouvez également vous abonner sur notre chaine youtube pour ne rater aucune des rediffusions. Notre chaine est entièrement consacrée au cycle de conférence Asimov. <https://www.youtube.com/@GROUPE-PIAF>
+
+
+# Le projet
 
 Dans de nombreux domaines, les étudiants étudient l'impact de leur travail et de leurs innovations sur le monde, y compris à long terme. C'est le cas pour le domaine de l'énergie et du transport, pour le nucléaire, pour l'aéronautique et pour le médical. Dans tous ces sujets, les étudiants sont formés parce que leur innovation peut présenter une opportunité mais aussi des risques majeurs pour les humains et la planète.
 
