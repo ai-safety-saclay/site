@@ -17,7 +17,7 @@ asimov_video_ids = [
 
 def miniature_videos(builder):
     doc, tag, text = builder.tagtext()
-    with tag("div", klass="d-flex flex-wrap gap-2"):
+    with tag("div", klass="container d-flex flex-wrap gap-2"):
         for id in asimov_video_ids:
             with tag("iframe", width="300", height="180", klass="", src=f"https://youtube.com/embed/{id}&origin=https://piaf-saclay.org", loading="lazy"):
                 pass
