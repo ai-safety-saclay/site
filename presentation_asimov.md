@@ -16,12 +16,12 @@ Vous pouvez également vous abonner sur notre chaine youtube pour ne rater aucun
 
 # Le projet
 
-Le cycle Asimov est dirigée par une vision.
-Dans cette vision, ...
+Le cycle Asimov est dirigée par une vision, inspirée par l'auteur de Science Fiction Isaac Asimov.
+C'est une vision du monde dans laquelle les machines automatiques sont à la source d'une transformation irréversible de l'humanité. Une vision où les technologies numériques progressent jusqu'à atteindre les compétences humaines, et changent en profondeur le fonctionnement de l'humanité. Une vision où l'intelligence croissante des robots, différente de celle des humains, rend leur contrôle extrèmement difficile.
 
-Et dans cette vision, les ingénieurs et les scientifiques ont un rôle particulier à jouer. Ils doivent saisir les immenses opportunités qu'offrent ces technologies en ayant une vision claire des risques. Dans le domaine de l'énergie, du transport, pour l'aéronautique et pour le médical, les ingénieurs sont formés pour connaitre les enjeux et les risques de leurs innovations sur la société. Dans le numérique, ce n'est pas le cas. Jancovici l'a dit: "il faut encadrer la créativité par les contraintes planétaires", et c'est tout.
+Et dans cette vision, les ingénieurs et les scientifiques ont un rôle particulier à jouer. Ils doivent saisir les immenses opportunités qu'offrent ces technologies, tout en ayant une vision claire des risques. Dans le domaine de l'énergie, du transport, pour l'aéronautique et pour le médical, les ingénieurs sont formés pour connaitre les enjeux et les risques de leurs innovations sur la société. Dans le numérique, ce n'est pas le cas.
 
-Nous pensons qu'au contraire, de nombreux étudiants **veulent** avoir une vision des risques causés par le domaine dans lequel ils travaillent. Le paysage informationel sur ce sujet est occupé par les entreprises, avec souvent un discours très techno-solutionisme. Nous proposons une voix adversariale.
+Nous pensons qu'au contraire, de nombreux étudiants **veulent** avoir une vision des risques causés par le domaine dans lequel ils travaillent. Le discours sur ce sujet est occupé par les entreprises, avec souvent un discours très techno-solutioniste. Nous proposons une voix adversariale.
 
 
 Avec Effisciences et l'Institut Polytechnique de Paris, nous vous proposons un cycle de conférences tout au long de l'année 2024-2025.
