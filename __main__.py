@@ -37,6 +37,9 @@ def navbar(builder):
                     with tag("a", klass="nav-link", href="/asimov.html"):
                         text("Asimov")
                 with tag("li", klass="nav-item mx-4"):
+                    with tag("a", klass="nav-link", href="https://blog.piaf-saclay.org"):
+                        text("Blog")
+                with tag("li", klass="nav-item mx-4"):
                     with tag("a", klass="nav-link", href="/contact.html"):
                         text("Contact")
 

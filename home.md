@@ -11,4 +11,4 @@ P.I.A.F signifie « Pour une Intelligence Artificielle Fiable ».
 
 - [notre mission](/presentation.html)
 - [notre cycle de conférences](/asimov.html)
-- [notre blog](blog.piaf-saclay.org)
+- [notre blog](https://blog.piaf-saclay.org)
