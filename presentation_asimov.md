@@ -21,7 +21,7 @@ C'est une vision du monde dans laquelle les machines automatiques sont à la sou
 
 Et dans cette vision, les ingénieurs et les scientifiques ont un rôle particulier à jouer. Ils doivent saisir les immenses opportunités qu'offrent ces technologies, tout en ayant une vision claire des risques. Dans le domaine de l'énergie, du transport, pour l'aéronautique et pour le médical, les ingénieurs sont formés pour connaitre les enjeux et les risques de leurs innovations sur la société. Dans le numérique, ce n'est pas le cas.
 
-Nous pensons qu'au contraire, de nombreux étudiants **veulent** avoir une vision des risques causés par le domaine dans lequel ils travaillent. Le discours sur ce sujet est occupé par les entreprises, avec souvent un discours très techno-solutioniste. Nous proposons une voix adversariale.
+Nous pensons qu'au contraire, de nombreux étudiants **veulent** avoir une vision des risques causés par le domaine dans lequel ils travaillent. Le discours sur ce sujet est occupé par les entreprises, avec souvent un discours très techno-solutioniste. Aux vus des enjeux, il faut un discours plus impartial, et plus critique.
 
 
 Avec Effisciences et l'Institut Polytechnique de Paris, nous vous proposons un cycle de conférences tout au long de l'année 2024-2025.
