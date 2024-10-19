@@ -1,4 +1,4 @@
-# Asimov: les dangers du numérique
+# Asimov : les dangers du numérique
 
 <br>
 
@@ -23,8 +23,11 @@ Et dans cette vision, les ingénieurs et les scientifiques ont un rôle particul
 
 Nous pensons qu'au contraire, de nombreux étudiants **veulent** avoir une vision des risques causés par le domaine dans lequel ils travaillent. Le discours sur ce sujet est occupé par les entreprises, avec souvent une vision très techno-solutionniste. Nous portons une voix critique, adversariale.
 
+&nbsp;
 
 Avec Effisciences et l'Institut Polytechnique de Paris, nous vous proposons un cycle de conférences tout au long de l'année 2024-2025.
+
+## Organiser une prochaine conférence
 
 Ce cycle de conférences est collaboratif.
 Nous proposons de l'aide aux étudiants du plateau de Saclay pour mettre en place des conférences dans leurs écoles : le contact des intervenants, la communication et de l'aide pour la logistique le jour J.
