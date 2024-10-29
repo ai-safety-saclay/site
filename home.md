@@ -5,6 +5,8 @@
 
 <br>
 
+## Former les étudiants aux risques et aux défis de l'IA
+
 Nous sommes une association d'étudiants de [Paris-Saclay](https://fr.wikipedia.org/wiki/Paris-Saclay) qui travaillent sur le sujet de la sûreté de l'IA.
 
 P.I.A.F signifie « Pour une Intelligence Artificielle Fiable ».
