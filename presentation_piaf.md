@@ -1,18 +1,15 @@
-
-&nbsp;
-
-# Activités
+## Activités
 
 Notre groupe a deux activités principales :
 
 
-## Sensibiliser et changer le discours autour de la sûreté de l'IA
+### Sensibiliser et changer le discours autour de la sûreté de l'IA
 
 - Participer à la création de [conférences](/asimov.html)
 - Motiver les étudiants à intégrer la sûreté de l'IA dans leur carrière
 - Avoir autant que possible un impact médiatique
 
-## Démocratiser le domaine de recherche de la sûreté de l'IA
+### Démocratiser le domaine de recherche de la sûreté de l'IA
 
 - Proposer des groupes de lecture, des hackathons
 - Lancer des projets sur la sécurité de l'IA au sein des écoles
@@ -20,7 +17,7 @@ Notre groupe a deux activités principales :
 
 
 
-# Raison d'être
+## Raison d'être
 
 Jusqu'à il y a quelques années, l'IA était un outil qui nous assistait dans nos prises de décision. Ce n'est plus seulement le cas, et la tendance est très claire : dans le futur, les IA prendront énormément de décisions par elles-mêmes. Des IA feront toujours plus de recommandations sur les réseaux sociaux, guideront des juristes dans leurs décisions, participeront au processus de recrutement, organiseront nos agendas et enverront nos mails, seront responsables d'infrastructures de grande échelle, et seront prédominantes sur le web.
 
@@ -28,7 +25,7 @@ Notre mission n'est pas de vous dire si c'est une bonne ou une mauvaise chose. C
 
 Nous ne sommes pas militants pour une cause particulière. Notre but, c'est que les étudiants s'emparent de ces problèmes sociétaux et techniques, qu'ils participent au développement du domaine de la sûreté de l'IA et qu'ils puissent se faire leur propre idée des risques potentiels.
 
-# Nous aider
+## Nous aider
 
 Nous sommes véritablement passionnés par le sujet de la fiabilité des IA, mais nous avons besoin de vous pour avoir le plus d'impact possible.
 
