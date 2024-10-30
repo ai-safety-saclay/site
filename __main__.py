@@ -33,6 +33,10 @@ def read_md(path: str) -> str:
     with open(path, 'r') as f:
         return md.convert(f.read())
 
+def read_html(path: str) -> str:
+    with open(path, 'r') as f:
+        return f.read()
+
 def write_html(path: str, doc: Doc):
     with open(path, 'w') as f:
         f.write(doc.getvalue())
@@ -149,18 +153,20 @@ def footer(builder: Doc):
                     with tag('b', klass='piaf-icon-title'):
                         text('PIAF')
             with tag('div', klass='footer-copyright'):
-                doc.asis('&copy; 2024 <b>Pour une Intelligence Artificielle Fiable - PIAF</b>')
+                content = read_md('./home/copyright.md')
+                doc.asis(content)
 
-def card(builder: Doc, title: str, description: str, button_text: str, link: str):
+def card(builder: Doc, md_body_path: str, html_btn_path: str):
+    body_content = read_md(md_body_path)
+    btn_content = read_html(html_btn_path)
+    
     doc, tag, text, line = builder.ttl()
     with tag('div', klass='col'): #klass='col-12 col-md-4'
         with tag('div', klass='card'):
             with tag('div', klass='card-body'):
-                line('h2', title, klass='card-title')
-                with tag('p', klass='card-text'):
-                    doc.asis(description)
-                with tag('a', klass='btn', href=link):
-                    doc.asis(button_text)
+                doc.asis(body_content)
+                with tag('div', klass='btn'):
+                    doc.asis(btn_content)
 
 
 
@@ -185,75 +191,48 @@ def generate_home():
             with tag('div', klass='col'):
                 line('h3', 'Qui sommes-nous ?', klass='smallcaps-heading')
                 with tag('h2', klass='about-phrase'):
-                    # TODO: insert Markdown here
-                    doc.asis('Nous sommes une association<br>d\'étudiants de <a href="https://fr.wikipedia.org/wiki/Paris-Saclay">Paris-Saclay</a><br>qui travaillent sur le sujet de<br>la <b>sûreté de l\'IA</b>.')
+                    content = read_md('./home/about-phrase.md')
+                    doc.asis(content)
     
     def cards_about(builder: Doc):
         doc, tag, text = builder.tagtext()
         with tag('div', klass='card-container'):
             with tag('div', klass='row'):
-                card(
-                    builder,
-                    'Notre mission',
-                    'Nous voulons sensibiliser les étudiants aux enjeux de la sûreté de l\'IA afin de démocratiser ce domaine dans les écoles d\'ingénieurs.',
-                    'En savoir plus',
-                    '/presentation.html',
-                )
-                card(
-                    builder,
-                    'Notre cycle de conférences',
-                    'Nous organisons <b>Asimov</b>, un cycle de conférences dans les écoles du plateau de Saclay.',
-                    'En savoir plus',
-                    '/asimov.html',
-                )
-                card(
-                    builder,
-                    'Notre groupe de lecture',
-                    'Assistez et participez à nos exposés sur la sûreté de l\'IA.',
-                    'En savoir plus',
-                    '/groupe-de-lecture.html',
-                )
+                card(builder, './home/cards/mission.md','./home/cards/mission-btn.html')
+                card(builder, './home/cards/asimov.md', './home/cards/asimov-btn.html')
+                card(builder, './home/cards/groupe-de-lecture.md', './home/cards/groupe-de-lecture-btn.html')
     
     def cards_social(builder: Doc):
         doc, tag, text = builder.tagtext()
         with tag('div', klass='card-container'):
             with tag('div', klass='row'):
-                card(
-                    builder,
-                    'Discord',
-                    'Rejoignez la communauté, discutez avec les membres de l\'association et tenez-vous au courant des activités du PIAF.',
-                    '<i class="bi bi-discord me-2"></i> Rejoindre la discussion',
-                    DISCORD_SERVER,
-                )
-                card(
-                    builder,
-                    'Github',
-                    'Contribuez à notre projet sur la sécurité de l\'IA dans les écoles de Paris-Saclay.',
-                    '<i class="bi bi-github me-2"></i> Notre organisation',
-                    GITHUB_PAGE,
-                )
-                card(
-                    builder,
-                    'Nous contacter',
-                    'Nous sommes ravis de collaborez avec vous et de répondre à vos questions.',
-                    '<i class="bi bi-envelope-at me-2"></i> Contact',
-                    '/contact.html',
-                )
+                card(builder, './home/cards/discord.md', './home/cards/discord-btn.html')
+                card(builder, './home/cards/github.md', './home/cards/github-btn.html')
+                card(builder, './home/cards/contact.md', './home/cards/contact-btn.html')
 
     def news(builder: Doc):
         doc, tag, text, line = builder.ttl()
+
+        def card(title: str, text: str, link: str, img_url: str):
+            with tag('div', klass='card'):
+                doc.stag('img', klass='card-img-top', src=img_url, alt=title, loading='lazy')
+                with tag('div', klass='card-body'):
+                    line('h5', title, klass='card-title')
+                    line('p', text, klass='card-text')
+                    line('a', 'Consulter', href=link, klass='btn')
+        
         with tag('div', klass='container'):
             centered_heading(builder, 'À la une')
             # TODO: cards / carousel : Asimov #1
-            # TODO: card content inside Markdown
+            # TODO: fetch from blog
             with tag('div', klass='row justify-content-center'):
-                # TODO: larger width
-                with tag('div', klass='card'):
-                    doc.stag('img', klass='card-img-top', src='https://teletalks.fr/static/affiches/asimov%201.png', alt='Affiche de la conférence Asimov n° 1')
-                    with tag('div', klass='card-body'):
-                        line('h5', 'Asimov n° 1 : (dés)information à l\'ère de l\'intelligence artificielle', klass='card-title')
-                        line('p', 'La première conférence du cycle Asimov avec Arthur Grimonpont a eu lieu le 14 octobre 2024 à Télécom Paris.', klass='card-text')
-                        line('a', 'Voir l\'événement', href='https://lu.ma/5mbym8x1', klass='btn')
+                card(
+                    title='Conférence Asimov n° 1 : (dés)information à l\'ère de l\'intelligence artificielle',
+                    text='La première conférence du cycle Asimov avec Arthur Grimonpont a eu lieu le 14 octobre 2024 à Télécom Paris.',
+                    link='https://lu.ma/5mbym8x1',
+                    img_url='https://teletalks.fr/static/affiches/asimov%201.png',
+
+                )
 
     builder = yattag.Doc()
     doc, tag, text, line = builder.ttl()
@@ -276,7 +255,7 @@ def generate_home():
             
         footer(builder)
 
-    write_html('build/index.html', doc)
+    write_html('./build/index.html', doc)
 
 
 def generate_presentation():
@@ -290,7 +269,7 @@ def generate_presentation():
         with tag('body'):
             header(builder, page=PAGE, title=TITLE)
             with tag('main', klass='site-main', role='main'):
-                md_section(builder, 'presentation_piaf.md')
+                md_section(builder, './presentation_piaf.md')
         footer(builder)
 
     write_html(f'build/{PAGE}', doc)
@@ -307,7 +286,7 @@ def generate_asimov():
         with tag('body'):
             header(builder, page=PAGE, title=TITLE)
             with tag('main', klass='site-main', role='main'):
-                md_section(builder, 'presentation_asimov.md')
+                md_section(builder, './presentation_asimov.md')
                 miniature_videos(builder)
         footer(builder)
 
@@ -326,7 +305,7 @@ def generate_contact():
         with tag('body'):
             header(builder, page=PAGE, title=TITLE)
             with tag('main', klass='site-main', role='main'):
-                md_section(builder, 'contact.md')
+                md_section(builder, './contact.md')
         footer(builder)
 
     write_html(f'build/{PAGE}', doc)
@@ -337,10 +316,10 @@ if __name__ == '__main__':
 
     # if build folder exists, delete it
     if os.path.exists('./build'):
-        shutil.rmtree('build')
-    shutil.copytree('static', 'build')
+        shutil.rmtree('./build')
+    shutil.copytree('./static', './build')
 
-    shutil.copytree('./node_modules/bootstrap-icons/font/fonts', 'build/fonts')
+    shutil.copytree('./node_modules/bootstrap-icons/font/fonts', './build/fonts')
 
     generate_presentation()
     generate_asimov()
