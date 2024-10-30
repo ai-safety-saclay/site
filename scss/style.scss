@@ -39,7 +39,6 @@ $font-size-base: 17px;
 // FIXME: extending Bootstrap classes or regular tags could have unintended side effects
 // with conflicting properties
 
-// TODO: use this
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -113,6 +112,9 @@ $font-size-base: 17px;
 }
 
 .btn {
+    @extend .btn-lg;
+    @extend .btn-primary;
+
     transition-duration: 0.2s;
 
     &:hover {
@@ -160,26 +162,12 @@ $font-size-base: 17px;
             @extend .card-text;
             @extend .text-secondary;
         }
-    }
 
-    .btn {
-        @include button-variant($primary, $primary, white);
-        @extend .btn-lg;
-        @extend .btn-primary;
-        @extend .mx-auto;
-
-        margin-top: auto;
-
-        // FIXME: below shouldn't be necessary
         a {
-            @extend .text-decoration-none;
-            @extend .text-white;
-        }
+            @extend .btn;
+            @extend .mx-auto;
 
-        &:hover {
-            a {
-                @extend .link-primary;
-            }
+            margin-top: auto;
         }
     }
 }

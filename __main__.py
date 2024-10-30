@@ -136,7 +136,9 @@ def footer(builder: Doc):
                 item('Mention légales', '/mentions-legales.html')
                 # RAS
                 item('Confidentialité', '/confidentialite.html')
+                # TODO:
                 item('Nous soutenir', '/nous-soutenir.html')
+                # TODO:
                 item('Liste des pages', '/liste-pages.html')
         #doc.stag('hr', klass='my-4 border-dark-subtle')
         
@@ -165,8 +167,7 @@ def card(builder: Doc, md_body_path: str, html_btn_path: str):
         with tag('div', klass='card'):
             with tag('div', klass='card-body'):
                 doc.asis(body_content)
-                with tag('div', klass='btn'):
-                    doc.asis(btn_content)
+                doc.asis(btn_content)
 
 
 
@@ -224,14 +225,13 @@ def generate_home():
         with tag('div', klass='container'):
             centered_heading(builder, 'À la une')
             # TODO: cards / carousel : Asimov #1
-            # TODO: fetch from blog
+            # TODO: fetch RSS from https://blog.piaf-saclay.org/index.xml
             with tag('div', klass='row justify-content-center'):
                 card(
                     title='Conférence Asimov n° 1 : (dés)information à l\'ère de l\'intelligence artificielle',
                     text='La première conférence du cycle Asimov avec Arthur Grimonpont a eu lieu le 14 octobre 2024 à Télécom Paris.',
                     link='https://lu.ma/5mbym8x1',
                     img_url='https://teletalks.fr/static/affiches/asimov%201.png',
-
                 )
 
     builder = yattag.Doc()
