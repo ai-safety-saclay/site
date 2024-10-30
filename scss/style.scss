@@ -133,27 +133,42 @@ $font-size-base: 17px;
         @extend .d-flex;
         @extend .flex-column;
 
-        .card-title {
+        h2 {
+            @extend .card-title;
             @extend .mb-4;
         }
 
-        .card-text {
+        p {
+            @extend .card-text;
             @extend .text-secondary;
         }
     }
 
     .btn {
+        @include button-variant($primary, $primary, white);
         @extend .btn-lg;
         @extend .btn-primary;
         @extend .mx-auto;
 
         margin-top: auto;
+
+        // FIXME: below shouldn't be necessary
+        a {
+            @extend .text-decoration-none;
+            @extend .text-white;
+        }
+
+        &:hover {
+            a {
+                @extend .link-primary;
+            }
+        }
     }
 }
 
 .events {
     .card {
-        width: 18rem;
+        width: 24rem;
     }
 }
 
