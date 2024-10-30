@@ -317,8 +317,6 @@ footer {
 
         .footer-copyright {
             @extend .py-4;
-            // FIXME: doesn't work
-            @extend .text-sm-center;
             @extend .bg-body-secondary;
             @extend .text-body-secondary;
         }

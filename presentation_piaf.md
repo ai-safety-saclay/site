@@ -33,4 +33,8 @@ Vous pouvez d'abord partager l'intiative, et en parler à tous les étudiants du
 
 Vous pouvez venir discuter avec nous, pour approfondir le sujet et participer à nos groupes de lecture.
 
-Rendez-vous sur la page [contact](/contact.html).
+<div class="flex-container">
+    <a class="btn" href="/contact.html">
+        <i class="bi bi-envelope-at me-2"></i> Nous contacter
+    </a>
+</div>
