@@ -7,7 +7,14 @@
 
 Si vous êtes sur le plateau de Saclay, vous pouvez suivre dès maintenant les futures conférences sur le site <https://teletalks.fr>
 
-Vous pouvez également vous abonner sur notre chaine youtube pour ne rater aucune des rediffusions. Notre chaine est entièrement consacrée au cycle de conférence Asimov. <https://www.youtube.com/@GROUPE-PIAF>
+Vous pouvez également vous abonner sur notre chaîne YouTube pour ne rater aucune des rediffusions. Notre chaîne est entièrement consacrée au cycle de conférences Asimov.
+
+[TODO: subscribe button instead]: #
+<div class="flex-container">
+    <a class="btn" href="https://www.youtube.com/@GROUPE-PIAF">
+        <i class="bi bi-youtube me-2"></i> Chaîne YouTube
+    </a>
+</div>
 
 
 ## Le projet
@@ -31,7 +38,14 @@ Nous proposons de l'aide aux étudiants du plateau de Saclay pour mettre en plac
 
 Pour contacter le responsable : [antonin.peronnet@telecom-paris.fr](mailto: antonin.peronnet@telecom-paris.fr).
 
-Vous pouvez également [rejoindre l'association](/contact.html)
+Vous pouvez également rejoindre l'association :
 
+<div class="flex-container">
+    <a class="btn" href="/contact.html">
+        <i class="bi bi-envelope-at me-2"></i> Contact
+    </a>
+</div>
+
+<br>
 
 Et voici des extraits d'intervenants que nous pourrions inviter, dans notre ordre de préférence.

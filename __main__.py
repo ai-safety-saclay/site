@@ -30,6 +30,7 @@ def read_md(path: str) -> str:
     """
     Read a Markdown file and convert it to HTML.
     """
+    # TODO: add extension to parse HTML include directive (for buttons)
     with open(path, 'r') as f:
         return md.convert(f.read())
 
@@ -64,6 +65,7 @@ def navbar(builder: Doc):
         with tag('ul', klass='navbar-nav'):
             item('Présentation', '/presentation.html')
             item('Asimov', '/asimov.html')
+            item('Groupe de lecture', '/groupe-de-lecture.html')
             item('Blog', 'https://blog.piaf-saclay.org')
             item('Contact', '/contact.html')
 
@@ -132,9 +134,9 @@ def footer(builder: Doc):
     with tag('footer'):
         with tag('div', klass='footer-nav'):
             with tag('ul', 'list-inline'):
-                # information asso
+                # TODO: information asso
                 item('Mention légales', '/mentions-legales.html')
-                # RAS
+                # TODO: RAS
                 item('Confidentialité', '/confidentialite.html')
                 # TODO:
                 item('Nous soutenir', '/nous-soutenir.html')
@@ -292,6 +294,22 @@ def generate_asimov():
 
     write_html(f'build/{PAGE}', doc)
 
+def generate_groupe_lecture():
+    TITLE = 'Notre groupe de lecture'
+    PAGE = 'groupe-de-lecture.html'
+    builder = yattag.Doc()
+    doc, tag, text = builder.tagtext()
+
+    with tag('html'):
+        head(builder, page=PAGE, title=TITLE)
+        with tag('body'):
+            header(builder, page=PAGE, title=TITLE)
+            with tag('main', klass='site-main', role='main'):
+                md_section(builder, './groupe_de_lecture.md')
+                miniature_videos(builder)
+        footer(builder)
+
+    write_html(f'build/{PAGE}', doc)
 
 def generate_contact():
     TITLE = 'Contact'
@@ -324,4 +342,5 @@ if __name__ == '__main__':
     generate_presentation()
     generate_asimov()
     generate_home()
+    generate_groupe_lecture()
     generate_contact()
