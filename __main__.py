@@ -46,7 +46,7 @@ def miniature_videos(builder: Doc):
     doc, tag, text = builder.tagtext()
     with tag('div', klass='video-container'):
         for id in ASIMOV_VIDEO_IDS:
-            with tag('iframe', width='300', height='180', src=f'https://youtube.com/embed/{id}&origin={MAIN_SITE_URL}', loading='lazy'):
+            with tag('iframe', width='300', height='180', src=f'https://www.youtube-nocookie.com/embed/{id}&origin={MAIN_SITE_URL}', loading='lazy'):
                 pass
 
 def navbar(builder: Doc):
@@ -64,9 +64,12 @@ def navbar(builder: Doc):
                 text('PIAF')
         with tag('ul', klass='navbar-nav'):
             item('Présentation', '/presentation.html')
+            # TODO: dropdown 'Projets'
             item('Asimov', '/asimov.html')
             item('Groupe de lecture', '/groupe-de-lecture.html')
+            item('Hackathons', '/hackathons.html')
             item('Blog', 'https://blog.piaf-saclay.org')
+            item('Nous rejoindre', '/contact.html#nous-rejoindre')
             item('Contact', '/contact.html')
 
 def header(builder: Doc, page: str, title: str):
@@ -110,11 +113,8 @@ def head(
         doc.stag('meta', property='og:image', content=f'{MAIN_SITE_URL}/static/piaf_gray.png')
         doc.stag('meta', property='og:description', content=description)
         doc.stag('meta', property='og:type', content='website')
-        # TODO: robots
         doc.stag('link', rel='canonical', href=url)
-        # FIXME: /style.css
-        doc.stag('link', rel='stylesheet', href='./style.css')
-        # favicon
+        doc.stag('link', rel='stylesheet', href='/style.css')
         doc.stag('link', rel='icon', type='image/svg', href='piaf.svg')
 
 
@@ -134,15 +134,11 @@ def footer(builder: Doc):
     with tag('footer'):
         with tag('div', klass='footer-nav'):
             with tag('ul', 'list-inline'):
-                # TODO: information asso
                 item('Mention légales', '/mentions-legales.html')
-                # TODO: RAS
                 item('Confidentialité', '/confidentialite.html')
+                item('Nous aider', '/nous-aider.html')
                 # TODO:
-                item('Nous soutenir', '/nous-soutenir.html')
-                # TODO:
-                item('Liste des pages', '/liste-pages.html')
-        #doc.stag('hr', klass='my-4 border-dark-subtle')
+                #item('Liste des pages', '/liste-pages.html')
         
         with tag('div', klass='footer-social'):
             social_icon('bi bi-github h4', GITHUB_PAGE)
@@ -226,8 +222,6 @@ def generate_home():
         
         with tag('div', klass='container'):
             centered_heading(builder, 'À la une')
-            # TODO: cards / carousel : Asimov #1
-            # TODO: fetch RSS from https://blog.piaf-saclay.org/index.xml
             with tag('div', klass='row justify-content-center'):
                 card(
                     title='Conférence Asimov n° 1 : (dés)information à l\'ère de l\'intelligence artificielle',
@@ -242,8 +236,7 @@ def generate_home():
     with tag('html', lang='fr'):
         head(builder, page='', title='PIAF')            
         with tag('body'):
-            # TODO: subtitle='Pour une Intelligence Artificielle Fiable' ?
-            header(builder, 'PIAF', 'Former les étudiants aux risques et aux défis de l\'IA')
+            header(builder, 'PIAF', 'Pour une Intelligence Artificielle Fiable')
             with tag('main', klass='site-main', role='main'):
                 with tag('section'):
                     whoarewe(builder)
@@ -294,39 +287,65 @@ def generate_asimov():
 
     write_html(f'build/{PAGE}', doc)
 
-def generate_groupe_lecture():
-    TITLE = 'Notre groupe de lecture'
-    PAGE = 'groupe-de-lecture.html'
+def generate_md_page(page: str, title: str, md_path: str):
+    """
+    Generate a simple Markdown page.
+    """
     builder = yattag.Doc()
     doc, tag, text = builder.tagtext()
 
     with tag('html'):
-        head(builder, page=PAGE, title=TITLE)
+        head(builder, page=page, title=title)
         with tag('body'):
-            header(builder, page=PAGE, title=TITLE)
+            header(builder, page=page, title=title)
             with tag('main', klass='site-main', role='main'):
-                md_section(builder, './groupe_de_lecture.md')
-                miniature_videos(builder)
+                md_section(builder, md_path)
         footer(builder)
 
-    write_html(f'build/{PAGE}', doc)
+    write_html(f'build/{page}', doc)
+
+def generate_groupe_lecture():
+    generate_md_page(
+        page='groupe-de-lecture.html',
+        title='Notre groupe de lecture',
+        md_path='./groupe_de_lecture.md',
+    )
+
+def generate_hackathons():
+    generate_md_page(
+        page='hackathons.html',
+        title='Hackathons',
+        md_path='./hackathons.md',
+    )
 
 def generate_contact():
-    TITLE = 'Contact'
-    PAGE = 'contact.html'
-    builder = yattag.Doc()
-    doc, tag, text = builder.tagtext()
+    generate_md_page(
+        page='contact.html',
+        title='Contact',
+        md_path='./contact.md',
+    )
 
-    with tag('html'):
-        head(builder, page=PAGE, title=TITLE)
+def generate_mentions_legales():
+    generate_md_page(
+        page='mentions-legales.html',
+        title='Mentions légales',
+        md_path='./mentions_legales.md',
+    )
 
-        with tag('body'):
-            header(builder, page=PAGE, title=TITLE)
-            with tag('main', klass='site-main', role='main'):
-                md_section(builder, './contact.md')
-        footer(builder)
+def generate_confidentialite():
+    generate_md_page(
+        page='confidentialite.html',
+        title='Politique de confidentialité',
+        md_path='./confidentialite.md',
+    )
 
-    write_html(f'build/{PAGE}', doc)
+def generate_nous_aider():
+    generate_md_page(
+        page='nous-aider.html',
+        title='Nous aider',
+        md_path='./nous_aider.md',
+    )
+
 
 if __name__ == '__main__':
     # if 'build' folder does not exist, create it, copy content of 'static' folder to it
@@ -343,4 +362,8 @@ if __name__ == '__main__':
     generate_asimov()
     generate_home()
     generate_groupe_lecture()
+    generate_hackathons()
     generate_contact()
+    generate_mentions_legales()
+    generate_confidentialite()
+    generate_nous_aider()
