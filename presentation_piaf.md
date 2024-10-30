@@ -6,12 +6,12 @@ Notre groupe a deux activités principales :
 ### Sensibiliser et changer le discours autour de la sûreté de l'IA
 
 - Participer à la création de [conférences](/asimov.html)
-- Motiver les étudiants à intégrer la sûreté de l'IA dans leur carrière
+- Motiver les étudiants à [intégrer la sûreté de l'IA dans leur carrière](/nous_aider.html#se-lancer)
 - Avoir autant que possible un impact médiatique
 
 ### Démocratiser le domaine de recherche de la sûreté de l'IA
 
-- Proposer des groupes de lecture, des hackathons
+- Proposer des [groupes de lecture](/groupe-de-lecture.html), des [hackathons](/hackathons.html)
 - Lancer des projets sur la sécurité de l'IA au sein des écoles
 - Aider autant que possible dans la création et le développement de startups d'audit des systèmes d'IA
 
@@ -27,14 +27,10 @@ Nous ne sommes pas militants pour une cause particulière. Notre but, c'est que 
 
 ## Nous aider
 
-Nous sommes véritablement passionnés par le sujet de la fiabilité des IA, mais nous avons besoin de vous pour avoir le plus d'impact possible.
-
-Vous pouvez d'abord partager l'intiative, et en parler à tous les étudiants du plateau de Saclay susceptibles d'être intéressés.
-
-Vous pouvez venir discuter avec nous, pour approfondir le sujet et participer à nos groupes de lecture.
+Nous sommes véritablement passionnés par le sujet de la fiabilité de l'IA, mais nous avons besoin de vous pour avoir le plus d'impact possible.
 
 <div class="flex-container">
-    <a class="btn" href="/contact.html">
-        <i class="bi bi-envelope-at me-2"></i> Nous contacter
+    <a class="btn" href="/nous-aider.html">
+        Nous aider
     </a>
 </div>
