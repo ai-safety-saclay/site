@@ -4,6 +4,7 @@ import markdown
 import bs4
 import os
 import shutil
+import sass
 
 md = markdown.Markdown()
 
@@ -355,8 +356,9 @@ if __name__ == '__main__':
     if os.path.exists('./build'):
         shutil.rmtree('./build')
     shutil.copytree('./static', './build')
+    sass.compile(dirname=("scss", "build"))
 
-    shutil.copytree('./node_modules/bootstrap-icons/font/fonts', './build/fonts')
+    shutil.copytree('./bootstrap-icons/font/fonts', './build/fonts')
 
     generate_presentation()
     generate_asimov()
