@@ -251,7 +251,7 @@ def generate_home():
             
         footer(builder)
 
-    write_html('./build/index.html', doc)
+    write_html('./build/index.html', builder)
 
 
 def generate_presentation():
@@ -268,7 +268,7 @@ def generate_presentation():
                 md_section(builder, './presentation_piaf.md')
         footer(builder)
 
-    write_html(f'build/{PAGE}', doc)
+    write_html(f'build/{PAGE}', builder)
 
 
 def generate_asimov():
@@ -286,7 +286,7 @@ def generate_asimov():
                 miniature_videos(builder)
         footer(builder)
 
-    write_html(f'build/{PAGE}', doc)
+    write_html(f'build/{PAGE}', builder)
 
 def generate_md_page(page: str, title: str, md_path: str):
     """
@@ -303,7 +303,7 @@ def generate_md_page(page: str, title: str, md_path: str):
                 md_section(builder, md_path)
         footer(builder)
 
-    write_html(f'build/{page}', doc)
+    write_html(f'build/{page}', builder)
 
 def generate_groupe_lecture():
     generate_md_page(
