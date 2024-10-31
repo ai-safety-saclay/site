@@ -1,7 +1,6 @@
 import yattag
 from yattag import Doc
 import markdown
-import bs4
 import os
 import shutil
 import sass
@@ -349,7 +348,7 @@ if __name__ == '__main__':
     if os.path.exists('./build'):
         shutil.rmtree('./build')
     shutil.copytree('./static', './build')
-    sass.compile(dirname=("scss", "build"))
+    sass.compile(dirname=('scss', 'build'))
 
     shutil.copytree('./bootstrap-icons/font/fonts', './build/fonts')
 
