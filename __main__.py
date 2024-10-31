@@ -6,7 +6,7 @@ import os
 import shutil
 import sass
 
-md = markdown.Markdown()
+md = markdown.Markdown(extensions=['bs4md', 'md_in_html'])
 
 MAIN_SITE_URL = 'https://piaf-saclay.org'
 BLOG_URL = 'https://blog.piaf-saclay.org'
@@ -185,15 +185,6 @@ def generate_home():
                 line('h1', title, klass='page-title')
                 line('p', subtitle, klass='motto')
 
-    def whoarewe(builder: Doc):
-        doc, tag, text, line = builder.ttl()
-        with tag('div', klass='whoarewe'):
-            with tag('div', klass='col'):
-                line('h3', 'Qui sommes-nous ?', klass='smallcaps-heading')
-                with tag('h2', klass='about-phrase'):
-                    content = read_md('./home/about-phrase.md')
-                    doc.asis(content)
-    
     def cards_about(builder: Doc):
         doc, tag, text = builder.tagtext()
         with tag('div', klass='card-container'):
@@ -240,7 +231,9 @@ def generate_home():
             header(builder, 'PIAF', 'Pour une Intelligence Artificielle Fiable')
             with tag('main', klass='site-main', role='main'):
                 with tag('section'):
-                    whoarewe(builder)
+                    content = read_md('./home/about-phrase.md')
+                    doc.asis(content)
+
                     cards_about(builder)
                 with tag('section'):
                     centered_heading(builder, 'Rejoindre la communauté')
