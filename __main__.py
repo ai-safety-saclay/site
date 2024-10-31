@@ -17,13 +17,14 @@ KEYWORDS = 'IA, intelligence artificielle, fiable, association, école, étudian
 DESCRIPTION = 'Le PIAF est une association qui réunit des étudiants du plateau de Saclay autour de l\'intelligence artificielle fiable. Groupe de lecture, conférences, hackathons, et bien d\'autres projets.'
 
 ASIMOV_VIDEO_IDS = [
-    'sPyu_dTSma0?si=RGOFL9CJ8enPYmSX&t=509',
-    'd9tjp4-xJG4?si=uj-flIbCPtmV5pkS&t=2461',
-    'FhFxlZzptys?si=I-j6X3vFHZIwuKIi&amp;start=1318',
-    'SYgsji_o3EE?si=8oUxvcOA1kUoL22d&amp;start=104',
-    'g_smhWSbXFw?si=S067OMLP8v1VC0yP&t=398',
-    'ofs-9_yzcvY?si=SFXXa6DMYhM52VWR&t=449s',
-    'LZWr5OZyBWE?si=m-pkGXnDR_4pio73&t=849',
+    'd9tjp4-xJG4?start=2461', # Alexei Grinbaum
+    'dp5Yga_WKng?start=337', # Asma Mhalla
+    'c-MQPOoM6-E?start=2493', # Fabrice Epelboin
+    'FhFxlZzptys?start=1318', # David Chavalarias
+    'SYgsji_o3EE?start=104', # Mark Fadoul
+    'ofs-9_yzcvY?start=449', # Alain Damasio
+    'LZWr5OZyBWE?start=849', # Raja Chatila
+    'sPyu_dTSma0?start=509', # Caroline Jeanmaire
 ]
 
 def read_md(path: str) -> str:
