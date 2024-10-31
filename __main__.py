@@ -6,14 +6,15 @@ import shutil
 md = markdown.Markdown()
 
 asimov_video_ids = [
-        "sPyu_dTSma0?si=RGOFL9CJ8enPYmSX&t=509",
-        "d9tjp4-xJG4?si=uj-flIbCPtmV5pkS&t=2461",
-        "FhFxlZzptys?si=I-j6X3vFHZIwuKIi&amp;start=1318",
-        "SYgsji_o3EE?si=8oUxvcOA1kUoL22d&amp;start=104",
-        "g_smhWSbXFw?si=S067OMLP8v1VC0yP&t=398",
-        "ofs-9_yzcvY?si=SFXXa6DMYhM52VWR&t=449s",
-        "LZWr5OZyBWE?si=m-pkGXnDR_4pio73&t=849",
-        ]
+    "d9tjp4-xJG4?si=uj-flIbCPtmV5pkS&amp;start=2461", # Alexei Grinbaum
+    "dp5Yga_WKng?si=zkKzazpGLZWAdvC&amp;start=337", # Asma Mhalla
+    "c-MQPOoM6-E?si=9PoD9RPKSDCJHqQU&amp;start=2493", # Fabrice Epelboin
+    "FhFxlZzptys?si=I-j6X3vFHZIwuKIi&amp;start=1318", # David Chavalarias
+    "SYgsji_o3EE?si=8oUxvcOA1kUoL22d&amp;start=104", # Mark Fadoul
+    "ofs-9_yzcvY?si=SFXXa6DMYhM52VWR&amp;start=449s", # Alain Damasio
+    "LZWr5OZyBWE?si=m-pkGXnDR_4pio73&amp;start=849", # Raja Chatila
+    "sPyu_dTSma0?si=RGOFL9CJ8enPYmSX&amp;start=509", # Caroline Jeanmaire
+]
 
 def miniature_videos(builder):
     doc, tag, text = builder.tagtext()
