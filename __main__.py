@@ -176,15 +176,24 @@ def centered_heading(builder: Doc, title: str):
 
 def generate_home():
 
-    def header(builder: Doc, title: str, subtitle: str):
+    def letters(builder: Doc):
+        doc, tag, text = builder.tagtext()
+        with tag("div", klass="d-flex justify-content-center"):
+            with tag("div", klass="custom-word-container"):
+                for word in ["Pour une", "Intelligence", "Artificielle", "Fiable"]:
+                    letter = word[0]
+                    remaining=word[1:]
+                    with tag("span"):
+                        line("span", letter, klass="custom-letter")
+                        line("span", remaining, klass="custom-word-reveal")
+
+
+    def header(builder: Doc):
         doc, tag, text, line = builder.ttl()
         with tag('header', klass='site-header'):
             navbar(builder)
             with tag('div', klass='piaf-banner'):
                 doc.stag('img', klass='piaf-logo-large', src='piaf_gray_with_text.svg', width='500em')
-                line('h1', title, klass='page-title')
-                line('p', subtitle, klass='motto')
-
     def cards_about(builder: Doc):
         doc, tag, text = builder.tagtext()
         with tag('div', klass='card-container'):
@@ -228,12 +237,12 @@ def generate_home():
     with tag('html', lang='fr'):
         head(builder, page='', title='PIAF')            
         with tag('body'):
-            header(builder, 'PIAF', 'Pour une Intelligence Artificielle Fiable')
+            header(builder)
             with tag('main', klass='site-main', role='main'):
+                letters(builder)
                 with tag('section'):
                     content = read_md('./home/about-phrase.md')
                     doc.asis(content)
-
                     cards_about(builder)
                 with tag('section'):
                     centered_heading(builder, 'Rejoindre la communauté')
