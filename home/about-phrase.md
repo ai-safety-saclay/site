@@ -14,7 +14,6 @@ qui travaillent sur le sujet de<br>
 la **sûreté de l'IA**.
 
 </h2>
-test
 </div>
 </div>
 
