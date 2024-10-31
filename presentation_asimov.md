@@ -1,4 +1,4 @@
-# Asimov : les dangers du numérique
+<h1 style="text-align:center">Asimov : les dangers du numérique</h1>
 
 <br>
 
@@ -32,7 +32,10 @@ Avec Effisciences et l'Institut Polytechnique de Paris, nous vous proposons un c
 Ce cycle de conférences est collaboratif.
 
 Nous proposons de l'aide aux étudiants du plateau de Saclay pour mettre en place des conférences dans leurs écoles : le contact des intervenants, la communication et de l'aide pour la logistique le jour J. Nous pouvons également vous fournir un budget pour l'évènement.
-Pour contacter le responsable : [antonin.peronnet@telecom-paris.fr](mailto: antonin.peronnet@telecom-paris.fr). Vous pouvez également [rejoindre l'association](/contact.html)
+
+Pour contacter le responsable : [antonin.peronnet@telecom-paris.fr](mailto: antonin.peronnet@telecom-paris.fr).
+
+Vous pouvez également [rejoindre l'association](/contact.html)
 
 
 Et voici des extraits d'intervenants que nous pourrions inviter, dans notre ordre de préférence.

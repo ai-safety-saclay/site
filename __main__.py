@@ -26,10 +26,12 @@ def miniature_videos(builder):
 
 def navbar(builder):
     doc, tag, text = builder.tagtext()
-    with tag("heder", klass="sticky-top"):
-        with tag("nav", klass="navbar d-flex justify-content-start"):
-            with tag("a", klass="navbar-brand mx-4", href="/"):
-                text("le PIAF")
+    with tag("header", klass="sticky-top"):
+        with tag("nav", klass="navbar d-flex justify-content-start navbar-expand-lg bg-light", data_bs_theme="light"):
+            with tag("a", klass="navbar-brand mx-5", href="/"):
+                doc.stag("img", klass="piaf-icon", src="./piaf_gray.svg", width="60em", height="40em")
+                with tag("b", klass="piaf-icon-title"):
+                    text("Le PIAF")
             with tag("ul", klass="navbar-nav d-flex flex-row"):
                 with tag("li", klass="nav-item mx-4"):
                     with tag("a", klass="nav-link", href="/presentation.html"):
@@ -59,7 +61,8 @@ def head(builder, title):
         with tag("meta"):
             doc.stag('meta', charset="utf-8")
             doc.stag('meta', name="viewport", content="width=device-width, initial-scale=1.0")
-            doc.stag('link', href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css", rel='stylesheet')
+            doc.stag('link', href="https://bootswatch.com/5/flatly/bootstrap.min.css", rel='stylesheet')
+            doc.stag('link', href="./style.css", rel='stylesheet')
             # favicon
             doc.stag('link', rel="icon", type="image/svg", href="piaf.svg")
 
@@ -72,7 +75,7 @@ def generate_home():
     doc, tag, text = builder.tagtext()
 
     with tag('html'):
-        head(builder, "le PIAF")
+        head(builder, "Le PIAF")
 
         with tag('body'):
             navbar(builder)

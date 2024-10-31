@@ -1,4 +1,6 @@
 
+&nbsp;
+
 # Activités
 
 Notre groupe a deux activités principales :
