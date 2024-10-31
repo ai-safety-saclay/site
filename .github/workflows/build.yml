@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
       
       - name: Install Bootstrap
-        run:
+        run: |
           git clone --depth 1 --branch v5.3.3 https://github.com/twbs/bootstrap
           git clone --depth 1 --branch v1.11.3 https://github.com/twbs/icons bootstrap-icons
         
