@@ -184,9 +184,8 @@ def generate_home():
                 for word in ["Pour une", "Intelligence", "Artificielle", "Fiable"]:
                     letter = word[0]
                     remaining=word[1:]
-                    with tag("span"):
-                        line("span", letter, klass="custom-letter")
-                        line("span", remaining, klass="custom-word-reveal")
+                    line("span", letter, klass="custom-letter")
+                    line("span", remaining, klass="custom-word-reveal")
 
 
     def header(builder: Doc):

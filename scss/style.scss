@@ -40,23 +40,23 @@ $font-size-base: 17px;
 @import "../bootstrap-icons/font/bootstrap-icons.scss";
 
 .custom-word-container {
-  cursor: pointer;
-  font-size: 2.5em;
-  font-weight: bold;
-  display: ruby;
-  padding: 10px 10vw;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    padding: 15px 20vw;
 }
 
 .custom-letter {
-  color: $primary;
-  display: inline-block;
+    color: $primary;
+    display: inline-block;
 }
 
 .custom-word-container .custom-word-reveal {
     opacity: 0;
     max-width: 10px;
+    text-wrap: nowrap;
     transition: all 1s ease;
-    display: inline-block;
 }
 
 .custom-word-container:hover .custom-word-reveal {
@@ -64,7 +64,6 @@ $font-size-base: 17px;
     max-width: 200px;
     margin-right: 1em;
 }
-
 
 // FIXME: extending Bootstrap classes or regular tags could have unintended side effects
 // with conflicting properties
@@ -259,7 +258,7 @@ header {
         @extend .flex-column;
         //@extend .justify-content-center;
         @extend .align-items-center;
-        
+
         //background: linear-gradient(to bottom, rgba(21, 72, 192, 0.5), rgba(194,233,251,0.5));
 
         .page-title {
@@ -287,7 +286,7 @@ main {
         .md-content {
             @extend .col-xxl-8;
             text-align: justify !important;
-    
+
             // TODO: colored heading
             // FIXME: h1 h2 h3 ... doesn't work
             // TODO: change global font size and weight: https://getbootstrap.com/docs/5.0/content/typography/#sass
@@ -352,5 +351,3 @@ footer {
         }
     }
 }
-
-
