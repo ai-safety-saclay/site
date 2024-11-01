@@ -12,7 +12,7 @@ MAIN_SITE_URL = 'https://piaf-saclay.org'
 BLOG_URL = 'https://blog.piaf-saclay.org'
 YOUTUBE_CHANNEL = 'https://www.youtube.com/channel/UC3edW_hy2Ri_yilIiM3LTDA'
 GITHUB_PAGE = 'https://github.com/ai-safety-saclay'
-DISCORD_SERVER = 'https://discord.gg/zCyg7UWW2tZ'
+DISCORD_SERVER = 'https://discord.gg/pWRjGuP4nE'
 
 KEYWORDS = 'IA, intelligence artificielle, fiable, association, école, étudiant, ingénieur, Saclay, conférence, Asimov, hackathon, recherche, numérique, dangers, sécurité, fiabilité, robustesse, sûreté, confiance, alignement, contrôle'
 DESCRIPTION = 'Le PIAF est une association qui réunit des étudiants du plateau de Saclay autour de l\'intelligence artificielle fiable. Groupe de lecture, conférences, hackathons, et bien d\'autres projets.'
@@ -48,7 +48,8 @@ def miniature_videos(builder: Doc):
     doc, tag, text = builder.tagtext()
     with tag('div', klass='video-container'):
         for id in ASIMOV_VIDEO_IDS:
-            with tag('iframe', width='300', height='180', src=f'https://www.youtube-nocookie.com/embed/{id}&origin={MAIN_SITE_URL}', loading='lazy'):
+            src = f'https://www.youtube-nocookie.com/embed/{id}&origin={MAIN_SITE_URL}'
+            with tag('iframe', width='300', height='180', src=src, loading='lazy'):
                 pass
 
 def navbar(builder: Doc):
@@ -179,13 +180,13 @@ def generate_home():
 
     def letters(builder: Doc):
         doc, tag, text = builder.tagtext()
-        with tag("div", klass="d-flex justify-content-center"):
-            with tag("div", klass="custom-word-container"):
-                for word in ["Pour une", "Intelligence", "Artificielle", "Fiable"]:
+        with tag('div', klass='d-flex justify-content-center'):
+            with tag('div', klass='custom-word-container'):
+                for word in ['Pour une', 'Intelligence', 'Artificielle', 'Fiable']:
                     letter = word[0]
-                    remaining=word[1:]
-                    line("span", letter, klass="custom-letter")
-                    line("span", remaining, klass="custom-word-reveal")
+                    remaining = word[1:]
+                    line('span', letter, klass='custom-letter')
+                    line('span', remaining, klass='custom-word-reveal')
 
 
     def header(builder: Doc):
@@ -359,8 +360,16 @@ if __name__ == '__main__':
         shutil.rmtree('./build')
 
     if not os.path.exists('./bootstrap'):
-        Repo.clone_from("https://github.com/twbs/bootstrap", "bootstrap", multi_options=["--depth=1", "--branch=v5.3.3"])
-        Repo.clone_from("https://github.com/twbs/icons", "bootstrap-icons", multi_options=["--depth=1", "--branch=v1.11.3"])
+        Repo.clone_from(
+            'https://github.com/twbs/bootstrap',
+            'bootstrap',
+            multi_options=['--depth=1', '--branch=v5.3.3'],
+        )
+        Repo.clone_from(
+            'https://github.com/twbs/icons',
+            'bootstrap-icons',
+            multi_options=['--depth=1', '--branch=v1.11.3'],
+        )
 
     shutil.copytree('./static', './build')
     sass.compile(dirname=('scss', 'build'))

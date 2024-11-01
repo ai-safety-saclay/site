@@ -9,7 +9,7 @@ Lors d'une séance, un membre du groupe présente un exposé sur un article de r
 
 Les séances du groupe de lecture sont ouvertes à tous et ont lieu en présentiel chaque dimanche. Pour vous tenir au courant des prochains rendez-vous, rejoignez notre serveur Discord.
 
-<a class="btn" href="https://discord.gg/zCyg7UWW2tZ">
+<a class="btn" href="https://discord.gg/pWRjGuP4nE">
     <i class="bi bi-discord me-2"></i> Rejoindre la discussion
 </a>
 
