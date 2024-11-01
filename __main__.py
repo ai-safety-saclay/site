@@ -4,6 +4,7 @@ import markdown
 import os
 import shutil
 import sass
+from git import Repo
 
 md = markdown.Markdown(extensions=['bs4md', 'md_in_html'])
 
@@ -126,12 +127,12 @@ def footer(builder: Doc):
     def item(name: str, link: str):
         with tag('li', klass='list-inline-item'):
             line('a', name, klass='nav-link', href=link)
-    
+
     def social_icon(class_name: str, link: str):
         with tag('a', klass='icon-link', href=link):
             with tag('i', klass=class_name):
                 pass
-    
+
     with tag('footer'):
         with tag('div', klass='footer-nav'):
             with tag('ul', 'list-inline'):
@@ -140,13 +141,13 @@ def footer(builder: Doc):
                 item('Nous aider', '/nous-aider.html')
                 # TODO:
                 #item('Liste des pages', '/liste-pages.html')
-        
+
         with tag('div', klass='footer-social'):
             social_icon('bi bi-github h4', GITHUB_PAGE)
             social_icon('bi bi-youtube h4', YOUTUBE_CHANNEL)
             social_icon('bi bi-discord h4', DISCORD_SERVER)
-        
-        
+
+
         with tag('div', klass='footer-org'):
             with tag('div', klass='footer-piaf'):
                 with tag('a', klass='navbar-brand', href='/'):
@@ -160,7 +161,7 @@ def footer(builder: Doc):
 def card(builder: Doc, md_body_path: str, html_btn_path: str):
     body_content = read_md(md_body_path)
     btn_content = read_html(html_btn_path)
-    
+
     doc, tag, text, line = builder.ttl()
     with tag('div', klass='col'): #klass='col-12 col-md-4'
         with tag('div', klass='card'):
@@ -201,7 +202,7 @@ def generate_home():
                 card(builder, './home/cards/mission.md','./home/cards/mission-btn.html')
                 card(builder, './home/cards/asimov.md', './home/cards/asimov-btn.html')
                 card(builder, './home/cards/groupe-de-lecture.md', './home/cards/groupe-de-lecture-btn.html')
-    
+
     def cards_social(builder: Doc):
         doc, tag, text = builder.tagtext()
         with tag('div', klass='card-container'):
@@ -220,7 +221,7 @@ def generate_home():
                     line('h5', title, klass='card-title')
                     line('p', text, klass='card-text')
                     line('a', 'Consulter', href=link, klass='btn')
-        
+
         with tag('div', klass='container'):
             centered_heading(builder, 'À la une')
             with tag('div', klass='row justify-content-center'):
@@ -235,7 +236,7 @@ def generate_home():
     doc, tag, text, line = builder.ttl()
 
     with tag('html', lang='fr'):
-        head(builder, page='', title='PIAF')            
+        head(builder, page='', title='PIAF')
         with tag('body'):
             header(builder)
             with tag('main', klass='site-main', role='main'):
@@ -250,7 +251,7 @@ def generate_home():
 
                 with tag('section', klass='events'):
                     news(builder)
-            
+
         footer(builder)
 
     write_html('./build/index.html', builder)
@@ -357,6 +358,11 @@ if __name__ == '__main__':
     # if build folder exists, delete it
     if os.path.exists('./build'):
         shutil.rmtree('./build')
+
+    if not os.path.exists('./bootstrap'):
+        Repo.clone_from("https://github.com/twbs/bootstrap", "bootstrap", multi_options=["--depth=1", "--branch=v5.3.3"])
+        Repo.clone_from("https://github.com/twbs/icons", "bootstrap-icons", multi_options=["--depth=1", "--branch=v1.11.3"])
+
     shutil.copytree('./static', './build')
     sass.compile(dirname=('scss', 'build'))
 
