@@ -1,12 +1,12 @@
 import yattag
 from yattag import Doc
-import markdown
 import os
 import shutil
 import sass
 from git import Repo
+#from utils import *
+from utils import *
 
-md = markdown.Markdown(extensions=['bs4md', 'md_in_html'])
 
 MAIN_SITE_URL = 'https://piaf-saclay.org'
 BLOG_URL = 'https://blog.piaf-saclay.org'
@@ -17,39 +17,9 @@ DISCORD_SERVER = 'https://discord.gg/zCyg7UWW2tZ'
 KEYWORDS = 'IA, intelligence artificielle, fiable, association, école, étudiant, ingénieur, Saclay, conférence, Asimov, hackathon, recherche, numérique, dangers, sécurité, fiabilité, robustesse, sûreté, confiance, alignement, contrôle'
 DESCRIPTION = 'Le PIAF est une association qui réunit des étudiants du plateau de Saclay autour de l\'intelligence artificielle fiable. Groupe de lecture, conférences, hackathons, et bien d\'autres projets.'
 
-ASIMOV_VIDEO_IDS = [
-    'd9tjp4-xJG4?start=2461', # Alexei Grinbaum
-    'dp5Yga_WKng?start=337', # Asma Mhalla
-    'c-MQPOoM6-E?start=2493', # Fabrice Epelboin
-    'FhFxlZzptys?start=1318', # David Chavalarias
-    'CoX5OZIbGl4?start=187', # Maxime Fournes
-    'ofs-9_yzcvY?start=449', # Alain Damasio
-    'LZWr5OZyBWE?start=849', # Raja Chatila
-    'sPyu_dTSma0?start=509', # Caroline Jeanmaire
-]
 
-def read_md(path: str) -> str:
-    """
-    Read a Markdown file and convert it to HTML.
-    """
-    # TODO: add extension to parse HTML include directive (for buttons)
-    with open(path, 'r') as f:
-        return md.convert(f.read())
 
-def read_html(path: str) -> str:
-    with open(path, 'r') as f:
-        return f.read()
-
-def write_html(path: str, doc: Doc):
-    with open(path, 'w') as f:
-        f.write(doc.getvalue())
-
-def miniature_videos(builder: Doc):
-    doc, tag, text = builder.tagtext()
-    with tag('div', klass='video-container'):
-        for id in ASIMOV_VIDEO_IDS:
-            with tag('iframe', width='300', height='180', src=f'https://www.youtube-nocookie.com/embed/{id}&origin={MAIN_SITE_URL}', loading='lazy'):
-                pass
+# ON EVERY PAGE
 
 def navbar(builder: Doc):
     doc, tag, text = builder.tagtext()
@@ -73,23 +43,6 @@ def navbar(builder: Doc):
             item('Blog', 'https://blog.piaf-saclay.org')
             item('Nous rejoindre', '/contact.html#nous-rejoindre')
             item('Contact', '/contact.html')
-
-def header(builder: Doc, page: str, title: str):
-    doc, tag, text, line = builder.ttl()
-    with tag('header', klass='site-header'):
-        navbar(builder)
-        with tag('div', klass='container'):
-            with tag('h1', klass='page-title'):
-                line('b', title)
-
-def md_section(builder: Doc, path_to_md: str):
-    content = read_md(path_to_md)
-
-    doc, tag, text, line = builder.ttl()
-    with tag('section', klass='container'):
-        with tag('div', klass='md-row'):
-            with tag('div', klass='md-content'):
-                doc.asis(content)
 
 
 def head(
@@ -171,9 +124,20 @@ def card(builder: Doc, md_body_path: str, html_btn_path: str):
 
 
 
-def centered_heading(builder: Doc, title: str):
+
+def header(builder: Doc, page: str, title: str):
     doc, tag, text, line = builder.ttl()
-    line('h2', title, klass='centered-heading')
+    with tag('header', klass='site-header'):
+        navbar(builder)
+        with tag('div', klass='container'):
+            with tag('h1', klass='page-title'):
+                line('b', title)
+
+
+
+
+
+# PAGE GENERATION
 
 def generate_home():
 
@@ -272,6 +236,24 @@ def generate_presentation():
 
     write_html(f'build/{PAGE}', builder)
 
+
+ASIMOV_VIDEO_IDS = [
+    'd9tjp4-xJG4?start=2461', # Alexei Grinbaum
+    'dp5Yga_WKng?start=337', # Asma Mhalla
+    'c-MQPOoM6-E?start=2493', # Fabrice Epelboin
+    'FhFxlZzptys?start=1318', # David Chavalarias
+    'CoX5OZIbGl4?start=187', # Maxime Fournes
+    'ofs-9_yzcvY?start=449', # Alain Damasio
+    'LZWr5OZyBWE?start=849', # Raja Chatila
+    'sPyu_dTSma0?start=509', # Caroline Jeanmaire
+]
+
+def miniature_videos(builder: Doc):
+    doc, tag, text = builder.tagtext()
+    with tag('div', klass='video-container'):
+        for id in ASIMOV_VIDEO_IDS:
+            with tag('iframe', width='300', height='180', src=f'https://www.youtube-nocookie.com/embed/{id}&origin={MAIN_SITE_URL}', loading='lazy'):
+                pass
 
 def generate_asimov():
     TITLE = 'Asimov : les dangers du numérique'
