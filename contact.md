@@ -10,7 +10,7 @@ Vous pouvez venir discuter avec nous, pour approfondir la sûreté de l'IA et pa
 Nous communiquons principalement sur Discord :
 
 <div class="flex-container">
-    <a class="btn" href="https://discord.gg/zCyg7UWW2tZ">
+    <a class="btn" href="https://discord.gg/pWRjGuP4nE">
         <i class="bi bi-discord me-2"></i> Rejoindre la discussion
     </a>
 </div>
