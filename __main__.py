@@ -117,7 +117,7 @@ def card(builder: Doc, md_body_path: str, html_btn_path: str):
 
     doc, tag, text, line = builder.ttl()
     with tag('div', klass='col'): #klass='col-12 col-md-4'
-        with tag('div', klass='card'):
+        with tag('div', klass='card-custom'):
             with tag('div', klass='card-body'):
                 doc.asis(body_content)
                 doc.asis(btn_content)
@@ -273,6 +273,49 @@ def generate_asimov():
     write_html(f'build/{PAGE}', builder)
 
 
+def generate_lecture(lecture, builder):
+    doc, tag, text = builder.tagtext()
+    with tag("div", klass="card my-2 p-3"):
+        with tag('p', klass='text-muted small'):
+            text(lecture["date"])
+        
+        with tag('h2', klass='card-title fs-3'):
+            text(lecture["title"])
+            
+        with tag('h3', klass='card-subtitle mb-2 text-muted fs-5'):
+            text(lecture["subtitle"])
+            
+        with tag('p', klass='card-text'):
+            text('Papier:')
+            with tag('a', href=lecture["paper_link"], klass='fs-6'):
+                text(lecture["paper_title"])
+
+
+def generate_groupe_lecture():
+    PAGE='groupe-de-lecture.html'
+    TITLE='Notre groupe de lecture'
+    builder = yattag.Doc()
+    doc, tag, text = builder.tagtext()
+
+    lectures = read_yml('lectures.yml')
+    
+    with tag('html'):
+        head(builder, page=PAGE, title=TITLE)
+        with tag('body'):
+            header(builder, page=PAGE, title=TITLE)
+            with tag('main', klass='site-main', role='main'):
+                md_section(builder, './groupe_de_lecture.md')
+                with tag("section", klass="container"):
+                    with tag("h2", klass="display-6 text-center"):
+                        text("Nos exposés passés")
+                    for l in lectures:
+                        generate_lecture(l, builder)
+    footer(builder)
+        
+    write_html(f'build/{PAGE}', builder)
+    
+    
+
 def generate_md_page(page: str, title: str, md_path: str):
     """
     Generate a simple Markdown page.
@@ -311,11 +354,7 @@ if __name__ == '__main__':
     generate_presentation()
     generate_asimov()
     generate_home()
-    generate_md_page(
-        page='groupe-de-lecture.html',
-        title='Notre groupe de lecture',
-        md_path='./groupe_de_lecture.md',
-    )
+    generate_groupe_lecture()
     generate_md_page(
         page='hackathons.html',
         title='Hackathons',

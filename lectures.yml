@@ -1,0 +1,43 @@
+- title: "Introduction au RLHF"
+  subtitle: "comment chatGPT est éduqué"
+  date: "01/09/24"
+  paper_link: "https://arxiv.org/abs/1706.03741"
+  paper_title: "Deep reinforcement learning from human preferences"
+  blog_link: ~
+
+- title: "Inference Time intervention using semantic vectors"
+  subtitle: "Modifier les comportements des modèles de manière chiurgicale"
+  date: "08/09/24"
+  paper_link: "https://www.lesswrong.com/posts/jGuXSZgv6qfdhMCuJ/refusal-in-llms-is-mediated-by-a-single-direction"
+  paper_title: "Refusal in LLMs is mediated by a single direction"
+  blog_link: "inference-time-intervention"
+
+- title: "Limits of Machine Unlearning"
+  subtitle: "Pourquoi on ne peut jamais vraiment faire oublier des IA"
+  date: "15/09/24"
+  paper_link: ""
+  paper_title: ""
+
+- title: "Watermarking LLMs"
+  subtitle: "Comment introduire une signature invisible dans les textes générés par IA"
+  date: "22/09/24"
+  paper_link: "https://arxiv.org/pdf/2301.10226"
+  paper_title: "A Watermark for Large Language Models"
+  
+- title: "Fundamentals limits of alignment in LLMs"
+  subtitle: "Un résultat fondamental sur l'imperfection des IA"
+  date: "6/10/24"
+  paper_link: "https://arxiv.org/abs/2304.11082"
+  paper_title: "Fundamentals limits of alignment in LLMs"
+
+- title: "Privacy backdoors & MIA"
+  subtitle: "Récupérer des données confidentielles qui ont servi à entrainer le modèle"
+  date: "13/10/24"
+  paper_link: "https://arxiv.org/abs/2404.01231"
+  paper_title: "Privacy Backdoors: Enhancing Membership Inference through Poisoning Pre-trained Models"
+
+- title: "Représentants algorithmiques"
+  subtitle: "L'opportunité de donner nos droits de vote à des algorithmes"
+  date: "20/10/24"
+  paper_link: "https://dl.acm.org/doi/10.1145/3359283"
+  paper_title: "WeBuildAI: Participatory Framework for Algorithmic Governance"

@@ -1,6 +1,6 @@
-
 from yattag import Doc
 import markdown
+import yaml
 md = markdown.Markdown(extensions=['bs4md', 'md_in_html'])
 
 def read_md(path: str) -> str:
@@ -14,6 +14,10 @@ def read_md(path: str) -> str:
 def read_html(path: str) -> str:
     with open(path, 'r') as f:
         return f.read()
+    
+def read_yml(path: str) -> dict:
+    with open(path, 'r') as f:
+        return yaml.safe_load(f)
 
 def write_html(path: str, doc: Doc):
     with open(path, 'w') as f:

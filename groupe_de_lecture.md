@@ -12,7 +12,3 @@ Les séances du groupe de lecture sont ouvertes à tous et ont lieu en présenti
 <a class="btn" href="https://discord.gg/zCyg7UWW2tZ">
     <i class="bi bi-discord me-2"></i> Rejoindre la discussion
 </a>
-
-## Nos exposés passés
-
-Consultez la liste sur [notre blog](https://blog.piaf-saclay.org).
