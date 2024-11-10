@@ -272,6 +272,7 @@ def generate_asimov():
 
     write_html(f'build/{PAGE}', builder)
 
+
 def generate_md_page(page: str, title: str, md_path: str):
     """
     Generate a simple Markdown page.
@@ -288,48 +289,6 @@ def generate_md_page(page: str, title: str, md_path: str):
         footer(builder)
 
     write_html(f'build/{page}', builder)
-
-def generate_groupe_lecture():
-    generate_md_page(
-        page='groupe-de-lecture.html',
-        title='Notre groupe de lecture',
-        md_path='./groupe_de_lecture.md',
-    )
-
-def generate_hackathons():
-    generate_md_page(
-        page='hackathons.html',
-        title='Hackathons',
-        md_path='./hackathons.md',
-    )
-
-def generate_contact():
-    generate_md_page(
-        page='contact.html',
-        title='Contact',
-        md_path='./contact.md',
-    )
-
-def generate_mentions_legales():
-    generate_md_page(
-        page='mentions-legales.html',
-        title='Mentions légales',
-        md_path='./mentions_legales.md',
-    )
-
-def generate_confidentialite():
-    generate_md_page(
-        page='confidentialite.html',
-        title='Politique de confidentialité',
-        md_path='./confidentialite.md',
-    )
-
-def generate_nous_aider():
-    generate_md_page(
-        page='nous-aider.html',
-        title='Nous aider',
-        md_path='./nous_aider.md',
-    )
 
 
 if __name__ == '__main__':
@@ -352,9 +311,33 @@ if __name__ == '__main__':
     generate_presentation()
     generate_asimov()
     generate_home()
-    generate_groupe_lecture()
-    generate_hackathons()
-    generate_contact()
-    generate_mentions_legales()
-    generate_confidentialite()
-    generate_nous_aider()
+    generate_md_page(
+        page='groupe-de-lecture.html',
+        title='Notre groupe de lecture',
+        md_path='./groupe_de_lecture.md',
+    )
+    generate_md_page(
+        page='hackathons.html',
+        title='Hackathons',
+        md_path='./hackathons.md',
+    )
+    generate_md_page(
+        page='contact.html',
+        title='Contact',
+        md_path='./contact.md',
+    )
+    generate_md_page(
+        page='mentions-legales.html',
+        title='Mentions légales',
+        md_path='./mentions_legales.md',
+    )
+    generate_md_page(
+        page='confidentialite.html',
+        title='Politique de confidentialité',
+        md_path='./confidentialite.md',
+    )
+    generate_md_page(
+        page='nous-aider.html',
+        title='Nous aider',
+        md_path='./nous_aider.md',
+    )
