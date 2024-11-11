@@ -15,8 +15,8 @@
 - title: "Limits of Machine Unlearning"
   subtitle: "Pourquoi on ne peut jamais vraiment faire oublier des IA"
   date: "15/09/24"
-  paper_link: ""
-  paper_title: ""
+  paper_link: "https://arxiv.org/abs/2406.17216"
+  paper_title: "Machine Unlearning Fails to Remove Data Poisoning Attacks"
 
 - title: "Watermarking LLMs"
   subtitle: "Comment introduire une signature invisible dans les textes générés par IA"
