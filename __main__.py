@@ -287,9 +287,15 @@ def generate_lecture(lecture, builder):
             text(lecture["subtitle"])
             
         with tag('p', klass='card-text'):
-            text('Papier:')
+            text('Papier: ')
             with tag('a', href=lecture["paper_link"], klass='fs-6'):
                 text(lecture["paper_title"])
+            if "blog_link" in lecture:
+                doc.stag("br")
+                text('Article récapitulatif: ')
+                url = lecture["blog_link"]
+                with tag('a', href=f"https://blog.piaf-saclay.org/{url}", klass='fs-6'):
+                    text("ici")
 
 
 def generate_groupe_lecture():

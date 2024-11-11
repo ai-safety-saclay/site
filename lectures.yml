@@ -3,7 +3,6 @@
   date: "01/09/24"
   paper_link: "https://arxiv.org/abs/1706.03741"
   paper_title: "Deep reinforcement learning from human preferences"
-  blog_link: ~
 
 - title: "Inference Time intervention using semantic vectors"
   subtitle: "Modifier les comportements des modèles de manière chiurgicale"
