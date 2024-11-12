@@ -177,7 +177,7 @@ def generate_home():
         doc, tag, text, line = builder.ttl()
 
         def card(title: str, text: str, link: str, img_url: str):
-            with tag('div', klass='card'):
+            with tag('div', klass='card-custom'):
                 doc.stag('img', klass='card-img-top', src=img_url, alt=title, loading='lazy')
                 with tag('div', klass='card-body'):
                     line('h5', title, klass='card-title')
