@@ -116,7 +116,7 @@ def card(builder: Doc, md_body_path: str, html_btn_path: str):
 
     doc, tag, text, line = builder.ttl()
     with tag('div', klass='col'): #klass='col-12 col-md-4'
-        with tag('div', klass='card-custom'):
+        with tag('div', klass='custom-card'):
             with tag('div', klass='card-body'):
                 doc.asis(body_content)
                 doc.asis(btn_content)
@@ -177,7 +177,7 @@ def generate_home():
         doc, tag, text, line = builder.ttl()
 
         def card(title: str, text: str, link: str, img_url: str):
-            with tag('div', klass='card-custom'):
+            with tag('div', klass='custom-card'):
                 doc.stag('img', klass='card-img-top', src=img_url, alt=title, loading='lazy')
                 with tag('div', klass='card-body'):
                     line('h5', title, klass='card-title')
