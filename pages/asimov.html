@@ -1,13 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+
+<section class="container d-flex flex-column align-items-center">
+
+<div class="md-content">
+
 <img src="logo_asimov.png" class="d-block mx-auto" height="240em"/>
 <img src="Logo-IP-Paris-carré-HD.png" class="d-block mx-auto" height="100em"/>
 
 <blockquote class="lead text-center">Les conférences sur l'impact du numérique sur notre civilisation.</blockquote>
 
+{% markdown %}
 ## Suivre les prochaines conférences
 
 Si vous êtes sur le plateau de Saclay, vous pouvez suivre dès maintenant les futures conférences sur le site <https://teletalks.fr>
 
 Vous pouvez également vous abonner sur notre chaîne YouTube pour ne rater aucune des rediffusions. Notre chaîne est entièrement consacrée au cycle de conférences Asimov.
+
+{% endmarkdown %}
 
 <div class="flex-container">
     <a class="btn" href="https://www.youtube.com/@GROUPE-PIAF">
@@ -15,6 +27,7 @@ Vous pouvez également vous abonner sur notre chaîne YouTube pour ne rater aucu
     </a>
 </div>
 
+{% markdown %}
 
 ## Le projet
 
@@ -39,6 +52,8 @@ Pour contacter le responsable : [antonin.peronnet@piaf-saclay.org](mailto: anton
 
 Vous pouvez également rejoindre l'association :
 
+{% endmarkdown %}
+
 <div class="flex-container">
     <a class="btn" href="/contact.html#nous-rejoindre">
         Nous rejoindre
@@ -46,5 +61,18 @@ Vous pouvez également rejoindre l'association :
 </div>
 
 <br>
-
+<p>
 Et voici des extraits d'intervenants que nous pourrions inviter, dans notre ordre de préférence.
+</p>
+</div>
+
+<div class="video-container">
+    {% for id in video_ids %}
+        <iframe width="300" height="180" src="https://www.youtube-nocookie.com/embed/{{id}}&origin={{MAIN_SITE_URL}}" loading="lazy">
+        </iframe>
+    {% endfor %}
+</div>
+
+</section>
+
+{% endblock main %}

@@ -1,3 +1,7 @@
+{% extends "md_page.html" %}
+{% block md_content %}
+{% markdown %}
+
 ## Activités
 
 Notre groupe a deux activités principales :
@@ -34,3 +38,6 @@ Nous sommes véritablement passionnés par le sujet de la fiabilité de l'IA, ma
         Nous aider
     </a>
 </div>
+
+{% endmarkdown %}
+{% endblock %}

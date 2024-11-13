@@ -1,4 +1,12 @@
 
+{% extends "base.html" %}
+
+{% block main %}
+<section class="container d-flex flex-column align-items-center">
+
+<div class="md-content">
+
+{% markdown %}
 Le PIAF propose un groupe de lecture hebdomadaire sur la sûreté de l'IA.
 
 ## Principe
@@ -9,6 +17,19 @@ Lors d'une séance, un membre du groupe présente un exposé sur un article de r
 
 Les séances du groupe de lecture sont ouvertes à tous et ont lieu en présentiel chaque dimanche. Pour vous tenir au courant des prochains rendez-vous, rejoignez notre serveur Discord.
 
+{% endmarkdown %}
+</div>
+
 <a class="btn" href="https://discord.gg/pWRjGuP4nE">
     <i class="bi bi-discord me-2"></i> Rejoindre la discussion
 </a>
+
+</section>
+
+<section class="container">
+    {% for lecture in lectures %}
+    {% include "lecture.html" %}
+    {% endfor %}
+</section>
+
+{% endblock %}

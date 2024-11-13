@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block header_image %}
+    <div class="piaf-banner"><img class="piaf-logo-large" src="piaf_gray_with_text.svg" width="500em"></div>
+{% endblock %}
+
+{% block page_title %}
+    {% include "letters.html" %}
+{% endblock %}
+
+{% block main %}
+
+
+    <section class="d-flex flex-column align-items-center">
+        {% include "about-phrase.html" %}
+        <div class="row card-container">
+            {% set title="Notre mission" %}
+            {% set link="/presentation.html" %}
+            {% set content %}{% markdown %}
+            Nous organisons **Asimov**, un cycle de conférences dans les écoles du plateau de Saclay.
+            {% endmarkdown %}{% endset %}
+            {% include "home_card.html" %}
+
+
+            {% set title="Notre cycle de conférences" %}
+            {% set link="/asimov.html" %}
+            {% set content %}{% markdown %}
+            Nous organisons **Asimov**, un cycle de conférences dans les écoles du plateau de Saclay.
+            {% endmarkdown %}{% endset %}
+            {% include "home_card.html" %}
+
+
+            {% set title="Notre groupe de lecture" %}
+            {% set link="/groupe-de-lecture.html" %}
+            {% set content %}{% markdown %}
+            Assistez et participez à nos exposés \ sur la sûreté de l'IA.
+            {% endmarkdown %}{% endset %}
+            {% include "home_card.html" %}
+        </div>
+    </section>
+
+    <section class="d-flex flex-column align-items-center">
+        <h2 class="display-4 m-3"> Rejoindre la communauté</h2>
+        <div class="row card-container">
+            {% set title="Discord" %}
+            {% set link="https://discord.gg/pWRjGuP4nE" %}
+            {% set content="Rejoignez la communauté, discutez avec les membres de l'association et tenez-vous au courant des activités du PIAF." %}
+            {% include "home_card.html" %}
+
+
+            {% set title="Github" %}
+            {% set link="https://github.com/ai-safety-saclay" %}
+            {% set content="Contribuez à notre projet sur la sécurité de l'IA dans les écoles de Paris-Saclay." %}
+            {% include "home_card.html" %}
+
+
+            {% set title="Nous contacter" %}
+            {% set link="/contact.html" %}
+            {% set content="Nous sommes ravis de collaborez avec vous et de répondre à vos questions." %}
+            {% include "home_card.html" %}
+        </div>
+    </section>
+
+    <section class="events">
+        <h2 class="centered-heading">À la une</h2>
+        <div class="row justify-content-center">
+            {% set title="Conférence Asimov n° 1 : (dés)information à l'ère de l'intelligence artificielle" %}
+            {% set description="La première conférence du cycle Asimov avec Arthur Grimonpont a eu lieu le 14 octobre 2024 à Télécom Paris." %}
+            {% set link="https://lu.ma/5mbym8x1" %}
+            {% set image="https://teletalks.fr/static/affiches/asimov%201.png" %}
+            {% include "home_card_news.html" %}
+        </div>
+    </section>
+
+{% endblock %}

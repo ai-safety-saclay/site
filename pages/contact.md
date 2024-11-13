@@ -1,3 +1,6 @@
+{% extends "md_page.html" %}
+{% block md_content %}
+{% markdown %}
 
 <h2 id="mail">Par mail</h2>
 
@@ -20,3 +23,6 @@ Nous communiquons principalement sur Discord :
 Pour faire partie de l'association, envoyez-nous un [mail](/contact.html#mail) ou rejoignez le serveur Discord.
 
 Consultez aussi [cette page](/nous-aider.html) pour d'autres manières de nous aider.
+
+{% endmarkdown %}
+{% endblock %}

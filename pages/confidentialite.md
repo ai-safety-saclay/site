@@ -1,3 +1,7 @@
+{% extends "md_page.html" %}
+{% block md_content %}
+{% markdown %}
+
 
 ## À propos de ce site
 
@@ -22,3 +26,8 @@ Si vous avez des questions sur cette politique de confidentialité, vous pouvez 
 <br>
 
 [Mise à jour le ...]: #
+
+
+
+{% endmarkdown %}
+{% endblock %}

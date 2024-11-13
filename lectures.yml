@@ -41,7 +41,7 @@
   paper_link: "https://dl.acm.org/doi/10.1145/3359283"
   paper_title: "WeBuildAI: Participatory Framework for Algorithmic Governance"
 
-- title: "Language models can learn about themselves by introspection"
+- title: "Introspection in LLMs"
   subtitle: "En un sens, on peut finetune les LLMs actuels pour qu'ils soient capables d'introspection"
   date: "11/11/24"
   paper_link: "https://arxiv.org/pdf/2410.13787"

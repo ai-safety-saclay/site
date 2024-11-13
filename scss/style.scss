@@ -224,6 +224,13 @@ $theme-colors: map-merge($theme-colors, (
     }
 }
 
+.page-title {
+    font-size: calc(2rem + 1vw);
+    font-weight: 500;
+    line-height: 1.2;
+    @extend .m-4;
+}
+
 header {
     @extend .text-center;
 
@@ -250,10 +257,6 @@ header {
         }
     }
 
-    .page-title {
-        @extend .display-4;
-        @extend .my-4;
-    }
 
     // TODO: colored title and gradient header with cool background effect
     .piaf-banner {
@@ -277,33 +280,28 @@ main {
         @extend .py-5;
     }
 
-    .md-row {
-        @include make-row();
-        @extend .justify-content-center;
+    .md-content {
+        @extend .col-xxl-8;
+        text-align: justify !important;
 
-        .md-content {
-            @extend .col-xxl-8;
-            text-align: justify !important;
-
-            // TODO: colored heading
-            // FIXME: h1 h2 h3 ... doesn't work
-            // TODO: change global font size and weight: https://getbootstrap.com/docs/5.0/content/typography/#sass
-            h2 {
-                @extend .display-6;
-                @extend .my-4;
-            }
-            h3 {
-                @extend .display-7;
-                @extend .my-4;
-            }
-            h4 {
-                @extend .display-8;
-                @extend .my-4;
-            }
-            h5 {
-                @extend .display-9;
-                @extend .my-4;
-            }
+        // TODO: colored heading
+        // FIXME: h1 h2 h3 ... doesn't work
+        // TODO: change global font size and weight: https://getbootstrap.com/docs/5.0/content/typography/#sass
+        h2 {
+            @extend .display-6;
+            @extend .my-4;
+        }
+        h3 {
+            @extend .display-7;
+            @extend .my-4;
+        }
+        h4 {
+            @extend .display-8;
+            @extend .my-4;
+        }
+        h5 {
+            @extend .display-9;
+            @extend .my-4;
         }
     }
 }

@@ -1,3 +1,6 @@
+{% extends "md_page.html" %}
+{% block md_content %}
+{% markdown %}
 
 ## Éditeur du site
 
@@ -22,3 +25,6 @@ Rendez-vous sur la page dédiée.
         <i class="bi bi-envelope-at me-2"></i> Contact
     </a>
 </div>
+
+{% endmarkdown %}
+{% endblock %}
