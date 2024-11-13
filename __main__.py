@@ -100,7 +100,7 @@ if __name__ == '__main__':
     generate_home()
     generate_page("Asimov", "asimov.html", video_ids=ASIMOV_VIDEO_IDS)
     
-    lectures = reverse(read_yml('lectures.yml'))
+    lectures = reversed(read_yml('lectures.yml'))
     generate_page("Notre groupe de lecture", "groupe-de-lecture.html", lectures=lectures)
 
     generate_page("Politique de confidentialité", "confidentialite.md")
