@@ -7,9 +7,8 @@ TODO:
   - récupérer le RSS depuis https://blog.piaf-saclay.org/index.xml
   - créer un carousel
 - écrire la liste des exposés sur le blog
-- créer une classe pour `d-flex flex-column align-items-center`
 - boutons :
-  - faut-il utiliser les boutons officiels de YouTube et de Discord ? 
+  - faut-il utiliser les boutons officiels de YouTube et de Discord ?
 - régler les bugs de `style.scss`
 - définir le thème du site
   - fixer une gamme de couleurs, une police d'écriture
