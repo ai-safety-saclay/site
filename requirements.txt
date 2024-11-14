@@ -2,3 +2,8 @@ libsass==0.23.0
 GitPython==3.1.43
 jinja-markdown==1.210911
 Jinja2==3.1.4
+python-markdown-math==0.8 
+Markdown==3.7
+markdown-full-yaml-metadata==2.2.1 
+mdx-wikilink-plus==1.4.1
+markdown-gfm-admonition==0.1.1 

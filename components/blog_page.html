@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+<h1 class="page_title">Blog</h1>
+<h2 class="color-gray">{{title}}</h2>
+{% endblock %}
+
+{% block main %}
+<section class="content d-flex flex-column align-items-center">
+    <div class="md-content">
+        {{content|safe}}
+    </div>
+</section>
+{% endblock %}

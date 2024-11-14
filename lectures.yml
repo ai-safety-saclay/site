@@ -22,6 +22,7 @@
   date: "22/09/24"
   paper_link: "https://arxiv.org/pdf/2301.10226"
   paper_title: "A Watermark for Large Language Models"
+  blog_link: "watermarking-llm"
   
 - title: "Fundamentals limits of alignment in LLMs"
   subtitle: "Un résultat fondamental sur l'imperfection des IA"

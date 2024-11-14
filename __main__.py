@@ -4,6 +4,10 @@ import sass
 from git import Repo
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import yaml
+from markdown import Markdown
+# from markupsafe import Markup
+from mdx_math import MathExtension
+from distutils.dir_util import copy_tree
 
 
 MAIN_SITE_URL = 'https://piaf-saclay.org'
@@ -14,6 +18,16 @@ DISCORD_SERVER = 'https://discord.gg/pWRjGuP4nE'
 
 KEYWORDS = 'IA, intelligence artificielle, fiable, association, école, étudiant, ingénieur, Saclay, conférence, Asimov, hackathon, recherche, numérique, dangers, sécurité, fiabilité, robustesse, sûreté, confiance, alignement, contrôle'
 DESCRIPTION = 'Le PIAF est une association qui réunit des étudiants du plateau de Saclay autour de l\'intelligence artificielle fiable. Groupe de lecture, conférences, hackathons, et bien d\'autres projets.'
+
+GLOBALS = {
+    "MAIN_SITE_URL": MAIN_SITE_URL,
+    "BLOG_URL": BLOG_URL,
+    "YOUTUBE_CHANNEL" : YOUTUBE_CHANNEL,
+    "GITHUB_PAGE" : GITHUB_PAGE,
+    "DISCORD_SERVER" : DISCORD_SERVER,
+    "KEYWORDS": KEYWORDS,
+    "DESCRIPTION": DESCRIPTION,
+}
 
 env = Environment(
     loader= FileSystemLoader(["pages", "components"]),
@@ -41,17 +55,7 @@ def generate_home():
 def generate_page(title, template_path, **globals):
     page = template_path.split(".")[0] + ".html"
 
-    globals = dict({
-        "MAIN_SITE_URL": MAIN_SITE_URL,
-        "BLOG_URL": BLOG_URL,
-        "YOUTUBE_CHANNEL" : YOUTUBE_CHANNEL,
-        "GITHUB_PAGE" : GITHUB_PAGE,
-        "DISCORD_SERVER" : DISCORD_SERVER,
-        "KEYWORDS": KEYWORDS,
-        "DESCRIPTION": DESCRIPTION,
-        "title": title,
-        "page": page,
-    }, **globals)
+    globals = dict(GLOBALS, title=title, page=page, **globals)
 
     template = env.get_template(template_path, globals=globals)
 
@@ -68,6 +72,34 @@ ASIMOV_VIDEO_IDS = [
     'LZWr5OZyBWE?start=849', # Raja Chatila
     'sPyu_dTSma0?start=509', # Caroline Jeanmaire
 ]
+
+md_configs = {
+                'mdx_wikilink_plus': {
+                    "url_whitespace": "%20",
+                },
+                "mdx_math": {
+                    "enable_dollar_delimiter": True
+                }
+             }
+
+md = Markdown(extensions=['mdx_math', 'fenced_code', 'tables', 'full_yaml_metadata', 'mdx_wikilink_plus', 'markdown_gfm_admonition', 'nl2br'], extension_configs=md_configs)
+
+def generate_blog():
+    for filename in os.listdir("blog"):
+        if filename.endswith(".md"):
+            with open("blog/"+filename, 'r') as f:
+                text_content = f.read()
+                #content = Markup(md.convert(text_content))
+                content = md.convert(text_content)
+
+                title = md.Meta["title"]
+                article_id = filename.split(".")[0]
+                page = f"blog/{article_id}.html"
+
+                arguments = dict(GLOBALS, title=title, page=page, content=content)
+
+                template = env.get_template("blog_page.html", globals=arguments)
+                write_html(page, template)
 
 
 
@@ -92,15 +124,24 @@ if __name__ == '__main__':
             multi_options=['--depth=1', '--branch=v1.11.3'],
         )
 
-    shutil.copytree('./static', './build')
+    copy_tree('./static', './build')
+    # os.mkdir("build/blog")
+    # for file in os.listdir("blog/documents"):
+    #     extension = file.split(".")[-1]
+    #     base_path = file[:-len(extension)-1].replace(" ", "-")
+    #     dest = f"build/blog/{base_path}.{extension}"
+    #     print(base_path)
+    #     shutil.copy("blog/documents/"+file, dest)
+    copy_tree("blog/documents", "build/blog")
+
     sass.compile(dirname=('scss', 'build'))
 
-    shutil.copytree('./bootstrap-icons/font/fonts', './build/fonts')
+    copy_tree('./bootstrap-icons/font/fonts', './build/fonts')
 
     generate_home()
-    generate_page("Asimov", "asimov.html", video_ids=ASIMOV_VIDEO_IDS)
+    generate_page("Asimov: les dangers du numérique", "asimov.html", video_ids=ASIMOV_VIDEO_IDS)
     
-    lectures = reverse(read_yml('lectures.yml'))
+    lectures = reversed(read_yml('lectures.yml'))
     generate_page("Notre groupe de lecture", "groupe-de-lecture.html", lectures=lectures)
 
     generate_page("Politique de confidentialité", "confidentialite.md")
@@ -109,3 +150,8 @@ if __name__ == '__main__':
     generate_page("À propos du piaf", "presentation.md")
     generate_page("Hackathons", "hackathons.md")
     generate_page("Contact", "contact.md")
+
+    generate_blog()
+
+
+    # Blog
