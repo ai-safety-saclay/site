@@ -33,11 +33,9 @@ Nous ne sommes pas militants pour une cause particulière. Notre but, c'est que 
 
 Nous sommes véritablement passionnés par le sujet de la fiabilité de l'IA, mais nous avons besoin de vous pour avoir le plus d'impact possible.
 
-<div class="flex-container">
-    <a class="btn" href="/nous-aider.html">
-        Nous aider
-    </a>
-</div>
+{% set link="/nous-aider.html" %}
+{% set btn_text="Nous aider" %}
+{% include "button.html" %}
 
 {% endmarkdown %}
 {% endblock %}

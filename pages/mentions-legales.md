@@ -20,11 +20,10 @@ Prins Bernhardplein 200, Amsterdam 1097JB, Pays-Bas
 
 Rendez-vous sur la page dédiée.
 
-<div class="flex-container">
-    <a class="btn" href="/contact.html">
-        <i class="bi bi-envelope-at me-2"></i> Contact
-    </a>
-</div>
+{% set link="/contact.html" %}
+{% set link_icon_class="bi-envelope-at" %}
+{% set btn_text="Contact" %}
+{% include "button.html" %}
 
 {% endmarkdown %}
 {% endblock %}

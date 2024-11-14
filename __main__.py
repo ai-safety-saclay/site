@@ -12,7 +12,7 @@ dir_util = setuptools.distutils.dir_util
 
 MAIN_SITE_URL = 'https://piaf-saclay.org'
 BLOG_URL = 'https://blog.piaf-saclay.org'
-YOUTUBE_CHANNEL = 'https://www.youtube.com/channel/UC3edW_hy2Ri_yilIiM3LTDA'
+YOUTUBE_CHANNEL = 'https://www.youtube.com/@GROUPE-PIAF'
 GITHUB_PAGE = 'https://github.com/ai-safety-saclay'
 DISCORD_SERVER = 'https://discord.gg/pWRjGuP4nE'
 
@@ -74,13 +74,13 @@ ASIMOV_VIDEO_IDS = [
 ]
 
 md_configs = {
-                'mdx_wikilink_plus': {
-                    "url_whitespace": "%20",
-                },
-                "mdx_math": {
-                    "enable_dollar_delimiter": True
-                }
-             }
+    'mdx_wikilink_plus': {
+        "url_whitespace": "%20",
+    },
+    "mdx_math": {
+        "enable_dollar_delimiter": True
+    }
+}
 
 md = Markdown(extensions=['mdx_math', 'fenced_code', 'tables', 'full_yaml_metadata', 'mdx_wikilink_plus', 'markdown_gfm_admonition', 'nl2br'], extension_configs=md_configs)
 
@@ -132,7 +132,7 @@ if __name__ == '__main__':
     dir_util.copy_tree('./bootstrap-icons/font/fonts', './build/fonts')
 
     generate_home()
-    generate_page("Asimov: les dangers du numérique", "asimov.html", video_ids=ASIMOV_VIDEO_IDS)
+    generate_page("Asimov : les dangers du numérique", "asimov.html", video_ids=ASIMOV_VIDEO_IDS)
     
     lectures = reversed(read_yml('lectures.yml'))
     generate_page("Notre groupe de lecture", "groupe-de-lecture.html", lectures=lectures)
@@ -140,7 +140,7 @@ if __name__ == '__main__':
     generate_page("Politique de confidentialité", "confidentialite.md")
     generate_page("Mentions légales", "mentions-legales.md")
     generate_page("Nous aider", "nous-aider.md")
-    generate_page("À propos du piaf", "presentation.md")
+    generate_page("À propos du PIAF", "presentation.md")
     generate_page("Hackathons", "hackathons.md")
     generate_page("Contact", "contact.md")
 
