@@ -152,6 +152,3 @@ if __name__ == '__main__':
     generate_page("Contact", "contact.md")
 
     generate_blog()
-
-
-    # Blog
