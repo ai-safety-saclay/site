@@ -1,13 +1,13 @@
 import os
-import shutil
 import sass
 from git import Repo
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2 import Environment, FileSystemLoader
 import yaml
 from markdown import Markdown
-# from markupsafe import Markup
+from markupsafe import Markup
 from mdx_math import MathExtension
-from distutils.dir_util import copy_tree
+import setuptools
+dir_util = setuptools.distutils.dir_util
 
 
 MAIN_SITE_URL = 'https://piaf-saclay.org'
@@ -110,7 +110,7 @@ if __name__ == '__main__':
 
     # if build folder exists, delete it
     if os.path.exists('./build'):
-        shutil.rmtree('./build')
+        dir_util.remove_tree('./build')
 
     if not os.path.exists('./bootstrap'):
         Repo.clone_from(
@@ -124,19 +124,12 @@ if __name__ == '__main__':
             multi_options=['--depth=1', '--branch=v1.11.3'],
         )
 
-    copy_tree('./static', './build')
-    # os.mkdir("build/blog")
-    # for file in os.listdir("blog/documents"):
-    #     extension = file.split(".")[-1]
-    #     base_path = file[:-len(extension)-1].replace(" ", "-")
-    #     dest = f"build/blog/{base_path}.{extension}"
-    #     print(base_path)
-    #     shutil.copy("blog/documents/"+file, dest)
-    copy_tree("blog/documents", "build/blog")
+    dir_util.copy_tree('./static', './build')
+    dir_util.copy_tree("blog/documents", "build/blog")
 
     sass.compile(dirname=('scss', 'build'))
 
-    copy_tree('./bootstrap-icons/font/fonts', './build/fonts')
+    dir_util.copy_tree('./bootstrap-icons/font/fonts', './build/fonts')
 
     generate_home()
     generate_page("Asimov: les dangers du numérique", "asimov.html", video_ids=ASIMOV_VIDEO_IDS)
