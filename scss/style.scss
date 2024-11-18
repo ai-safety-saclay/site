@@ -42,6 +42,9 @@ $theme-colors: map-merge($theme-colors, (
 
 @import "../bootstrap-icons/font/bootstrap-icons.scss";
 
+.square-for-card {
+    height: 22rem;
+}
 
 @mixin admon-color($color) {
   color: darken($color, 15%);
