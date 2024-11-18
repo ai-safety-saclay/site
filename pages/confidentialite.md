@@ -5,7 +5,7 @@
 
 ## À propos de ce site
 
-Cette politique de confidentialité s'applique au site principal du PIAF, [piaf-saclay.org](https://piaf-saclay.org), ainsi qu'au blog [blog.piaf-saclay.org](https://blog.piaf-saclay.org).
+Cette politique de confidentialité s'applique au site principal du PIAF, [piaf-saclay.org]({{MAIN_SITE_URL}}), ainsi qu'au blog [blog.piaf-saclay.org]({{BLOG_URL}}).
 
 ### Données personnelles
 

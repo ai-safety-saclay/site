@@ -1,0 +1,8 @@
+<div class="flex-container">
+    <a class="btn" href="{{link}}">
+        {% if link_icon_class %}
+            <i class="bi {{link_icon_class}} me-2"></i>
+        {% endif %}
+        {{ btn_text|default('En savoir plus') }}
+    </a>
+</div>

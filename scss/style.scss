@@ -126,6 +126,12 @@ blockquote p {
     justify-content: center;
 }
 
+.centered-section {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .align-items-center;
+}
+
 .display-7 {
     font-size: calc(1rem + 1vw);
     font-weight: 300;

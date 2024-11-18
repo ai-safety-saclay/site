@@ -8,8 +8,7 @@ TODO:
   - créer un carousel
 - écrire la liste des exposés sur le blog
 - boutons :
-  - pour éviter de se répéter : inclure du HTML ou du Markdown dans du Markdown, potentiellement via Pandoc
-  - faut-il utiliser les boutons officiels de YouTube et de Discord ? 
+  - faut-il utiliser les boutons officiels de YouTube et de Discord ?
 - régler les bugs de `style.scss`
 - définir le thème du site
   - fixer une gamme de couleurs, une police d'écriture

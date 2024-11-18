@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 
 {% block main %}
-<section class="container d-flex flex-column align-items-center">
+<section class="container centered-section">
 
 <div class="md-content">
 
@@ -20,9 +20,10 @@ Les séances du groupe de lecture sont ouvertes à tous et ont lieu en présenti
 {% endmarkdown %}
 </div>
 
-<a class="btn" href="https://discord.gg/pWRjGuP4nE">
-    <i class="bi bi-discord me-2"></i> Rejoindre la discussion
-</a>
+{% set link="{{DISCORD_SERVER}}" %}
+{% set link_icon_class="bi-discord" %}
+{% set btn_text="Rejoindre la discussion" %}
+{% include "button.html" %}
 
 </section>
 

@@ -11,7 +11,7 @@
 {% block main %}
 
 
-    <section class="d-flex flex-column align-items-center">
+    <section class="centered-section">
         {% include "about-phrase.html" %}
         <div class="row card-container">
             {% set title="Notre mission" %}
@@ -39,24 +39,30 @@
         </div>
     </section>
 
-    <section class="d-flex flex-column align-items-center">
+    <section class="centered-section">
         <h2 class="display-4 m-3"> Rejoindre la communauté</h2>
         <div class="row card-container">
             {% set title="Discord" %}
-            {% set link="https://discord.gg/pWRjGuP4nE" %}
+            {% set link="{{DISCORD_SERVER}}" %}
             {% set content="Rejoignez la communauté, discutez avec les membres de l'association et tenez-vous au courant des activités du PIAF." %}
+            {% set link_icon_class="bi-discord" %}
+            {% set btn_text="Rejoindre la discussion "%}
             {% include "home_card.html" %}
 
 
             {% set title="Github" %}
-            {% set link="https://github.com/ai-safety-saclay" %}
+            {% set link="{{GITHUB_PAGE}}" %}
             {% set content="Contribuez à notre projet sur la sécurité de l'IA dans les écoles de Paris-Saclay." %}
+            {% set link_icon_class="bi-github" %}
+            {% set btn_text="Notre organisation"%}
             {% include "home_card.html" %}
 
 
             {% set title="Nous contacter" %}
             {% set link="/contact.html" %}
             {% set content="Nous sommes ravis de collaborez avec vous et de répondre à vos questions." %}
+            {% set link_icon_class="bi-envelope-at" %}
+            {% set btn_text="Contact"%}
             {% include "home_card.html" %}
         </div>
     </section>
