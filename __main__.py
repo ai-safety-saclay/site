@@ -134,8 +134,10 @@ if __name__ == '__main__':
     generate_home()
     generate_page("Asimov: les dangers du numérique", "asimov.html", video_ids=ASIMOV_VIDEO_IDS)
     
-    lectures = reversed(read_yml('lectures.yml'))
-    generate_page("Notre groupe de lecture", "groupe-de-lecture.html", lectures=lectures)
+    lectures = read_yml("lectures.yml")
+    past_lectures = reversed([l for l in lectures if l["past"]])
+    future_lectures = [l for l in lectures if not l["past"]]
+    generate_page("Notre groupe de lecture", "groupe-de-lecture.html", past_lectures=past_lectures, future_lectures=future_lectures)
 
     generate_page("Politique de confidentialité", "confidentialite.md")
     generate_page("Mentions légales", "mentions-legales.md")

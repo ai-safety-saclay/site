@@ -27,7 +27,15 @@ Les séances du groupe de lecture sont ouvertes à tous et ont lieu en présenti
 </section>
 
 <section class="container">
-    {% for lecture in lectures %}
+    <h2 class="display-4 text-center">Les conférences à venir</h2>
+    {% for lecture in future_lectures %}
+    {% include "lecture.html" %}
+    {% endfor %}
+</section>
+
+<section class="container">
+    <h2 class="display-4 text-center">Nos conférences passées</h2>
+    {% for lecture in past_lectures %}
     {% include "lecture.html" %}
     {% endfor %}
 </section>

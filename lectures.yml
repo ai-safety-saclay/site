@@ -3,6 +3,7 @@
   date: "01/09/24"
   paper_link: "https://arxiv.org/abs/1706.03741"
   paper_title: "Deep reinforcement learning from human preferences"
+  past: true
 
 - title: "Inference Time intervention using semantic vectors"
   subtitle: "Modifier les comportements des modèles de manière chiurgicale"
@@ -10,12 +11,14 @@
   paper_link: "https://www.lesswrong.com/posts/jGuXSZgv6qfdhMCuJ/refusal-in-llms-is-mediated-by-a-single-direction"
   paper_title: "Refusal in LLMs is mediated by a single direction"
   blog_link: "inference-time-intervention"
+  past: true
 
 - title: "Limits of Machine Unlearning"
   subtitle: "Pourquoi on ne peut jamais vraiment faire oublier des IA"
   date: "15/09/24"
   paper_link: "https://arxiv.org/abs/2406.17216"
   paper_title: "Machine Unlearning Fails to Remove Data Poisoning Attacks"
+  past: true
 
 - title: "Watermarking LLMs"
   subtitle: "Comment introduire une signature invisible dans les textes générés par IA"
@@ -23,27 +26,46 @@
   paper_link: "https://arxiv.org/pdf/2301.10226"
   paper_title: "A Watermark for Large Language Models"
   blog_link: "watermarking-llm"
+  past: true
   
 - title: "Fundamentals limits of alignment in LLMs"
   subtitle: "Un résultat fondamental sur l'imperfection des IA"
   date: "6/10/24"
   paper_link: "https://arxiv.org/abs/2304.11082"
   paper_title: "Fundamentals limits of alignment in LLMs"
+  past: true
 
 - title: "Privacy backdoors & MIA"
   subtitle: "Récupérer des données confidentielles qui ont servi à entrainer le modèle"
   date: "13/10/24"
   paper_link: "https://arxiv.org/abs/2404.01231"
   paper_title: "Privacy Backdoors: Enhancing Membership Inference through Poisoning Pre-trained Models"
+  past: true
 
 - title: "Représentants algorithmiques"
   subtitle: "L'opportunité de donner nos droits de vote à des algorithmes"
   date: "20/10/24"
   paper_link: "https://dl.acm.org/doi/10.1145/3359283"
   paper_title: "WeBuildAI: Participatory Framework for Algorithmic Governance"
+  past: true
 
 - title: "Introspection in LLMs"
   subtitle: "En un sens, on peut finetune les LLMs actuels pour qu'ils soient capables d'introspection"
   date: "11/11/24"
   paper_link: "https://arxiv.org/pdf/2410.13787"
   paper_title: "Looking Inward: Language Models Can Learn About Themselves by Introspection"
+  past: true
+
+- title: "Data Ownership Verification with Data Poisoning"
+  subtitle: "Empoisonner un modèle pour confirmer son intégrité, un solution viable ?"
+  paper_title: "DATA TAGGANTS: DATASET OWNERSHIP VERIFICATION VIA HARMLESS TARGETED DATA POISONING"
+  paper_link: "https://arxiv.org/pdf/2410.09101"
+  date: "24/11/24"
+  past: false
+  
+- title: "Un framework pour penser la confiance en les IA"
+  subtitle: "Comment formaliser l'idée de confiance en une IA pour pouvoir l'implémenter ?"
+  paper_title: "Formalizing Trust in Artificial Intelligence: Prerequisites, Causes and Goals of Human Trust in AI"
+  paper_link: "https://dl.acm.org/doi/pdf/10.1145/3442188.3445923"
+  date: "01/12/24"
+  past: false

@@ -82,7 +82,7 @@ Distribution originale:
 
 Distribution modifiée:
 
-![](watermarking-llm 2024-09-19 22.11.07.excalidraw.svg)
+![](watermarking-llm-2024-09-19-22.11.07.excalidraw.svg)
 %%[[watermarking-llm 2024-09-19 22.11.07.excalidraw.md|🖋 Edit in Excalidraw]]%%
 
 ## Formalisation
