@@ -47,7 +47,8 @@ def generate_home():
     page="index.html"
     title="PIAF"
 
-    template = env.get_template("home.html", globals={"page": page, "title": title})
+    globals = dict(GLOBALS, page=page, title=title)
+    template = env.get_template("home.html", globals=globals)
 
     write_html("index.html", template)
 
