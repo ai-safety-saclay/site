@@ -43,11 +43,9 @@ def write_html(path: str, template):
     with open(f"build/{path}", "w") as f:
         f.write(template.render())
 
-def generate_home():
+def generate_home(title):
     page="index.html"
-    title="PIAF"
-
-    globals = dict(GLOBALS, page=page, title=title)
+    globals = dict(GLOBALS, title=title, page=page)
     template = env.get_template("home.html", globals=globals)
 
     write_html("index.html", template)
@@ -132,7 +130,7 @@ if __name__ == "__main__":
 
     dir_util.copy_tree("./bootstrap-icons/font/fonts", "./build/fonts")
 
-    generate_home()
+    generate_home("PIAF")
     generate_page("Asimov : les dangers du numérique", "asimov.html", video_ids=ASIMOV_VIDEO_IDS)
     
     lectures = read_yml("lectures.yml")
