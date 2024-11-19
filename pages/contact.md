@@ -12,7 +12,7 @@ Vous pouvez venir discuter avec nous, pour approfondir la sûreté de l'IA et pa
 
 Nous communiquons principalement sur Discord :
 
-{% set link="{{DISCORD_SERVER}}" %}
+{% set link=DISCORD_SERVER %}
 {% set link_icon_class="bi-discord" %}
 {% set btn_text="Rejoindre la discussion" %}
 {% include "button.html" %}

@@ -17,7 +17,7 @@
             {% set title="Notre mission" %}
             {% set link="/presentation.html" %}
             {% set content %}{% markdown %}
-            Nous organisons **Asimov**, un cycle de conférences dans les écoles du plateau de Saclay.
+            Nous voulons sensibiliser les étudiants aux enjeux de la sûreté de l'IA afin de démocratiser ce domaine dans les écoles d'ingénieurs.
             {% endmarkdown %}{% endset %}
             {% include "home_card.html" %}
 
@@ -43,7 +43,7 @@
         <h2 class="display-4 m-3"> Rejoindre la communauté</h2>
         <div class="row card-container">
             {% set title="Discord" %}
-            {% set link="{{DISCORD_SERVER}}" %}
+            {% set link=DISCORD_SERVER %}
             {% set content="Rejoignez la communauté, discutez avec les membres de l'association et tenez-vous au courant des activités du PIAF." %}
             {% set link_icon_class="bi-discord" %}
             {% set btn_text="Rejoindre la discussion "%}
@@ -51,7 +51,7 @@
 
 
             {% set title="Github" %}
-            {% set link="{{GITHUB_PAGE}}" %}
+            {% set link=GITHUB_PAGE %}
             {% set content="Contribuez à notre projet sur la sécurité de l'IA dans les écoles de Paris-Saclay." %}
             {% set link_icon_class="bi-github" %}
             {% set btn_text="Notre organisation"%}

@@ -21,7 +21,7 @@ Vous pouvez également vous abonner sur notre chaîne YouTube pour ne rater aucu
 
 {% endmarkdown %}
 
-{% set link="{{YOUTUBE_CHANNEL}}" %}
+{% set link=YOUTUBE_CHANNEL %}
 {% set link_icon_class="bi-youtube" %}
 {% set btn_text="Chaîne YouTube" %}
 {% include "button.html" %}
@@ -54,6 +54,7 @@ Vous pouvez également rejoindre l'association :
 {% endmarkdown %}
 
 {% set link="/contact.html#nous-rejoindre" %}
+{% set link_icon_class="" %}
 {% set btn_text="Nous rejoindre" %}
 {% include "button.html" %}
 
