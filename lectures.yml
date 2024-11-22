@@ -57,7 +57,7 @@
   past: true
 
 - title: "Data Ownership Verification with Data Poisoning"
-  subtitle: "Empoisonner un modèle pour confirmer son intégrité, un solution viable ?"
+  subtitle: "Empoisonner pour signer des données, plus puissant que le watermarking ?"
   paper_title: "DATA TAGGANTS: DATASET OWNERSHIP VERIFICATION VIA HARMLESS TARGETED DATA POISONING"
   paper_link: "https://arxiv.org/pdf/2410.09101"
   date: "24/11/24"
