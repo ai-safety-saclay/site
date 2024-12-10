@@ -1,5 +1,5 @@
 - title: "Introduction au RLHF"
-  subtitle: "comment chatGPT est éduqué"
+  subtitle: "Comment chatGPT est éduqué"
   date: "01/09/24"
   paper_link: "https://arxiv.org/abs/1706.03741"
   paper_title: "Deep reinforcement learning from human preferences"
@@ -61,11 +61,11 @@
   paper_title: "DATA TAGGANTS: DATASET OWNERSHIP VERIFICATION VIA HARMLESS TARGETED DATA POISONING"
   paper_link: "https://arxiv.org/pdf/2410.09101"
   date: "24/11/24"
-  past: false
+  past: true
   
 - title: "Un framework pour penser la confiance en les IA"
   subtitle: "Comment formaliser l'idée de confiance en une IA pour pouvoir l'implémenter ?"
   paper_title: "Formalizing Trust in Artificial Intelligence: Prerequisites, Causes and Goals of Human Trust in AI"
   paper_link: "https://dl.acm.org/doi/pdf/10.1145/3442188.3445923"
   date: "01/12/24"
-  past: false
+  past: true
