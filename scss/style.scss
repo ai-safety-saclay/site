@@ -37,6 +37,8 @@ $theme-colors: map-merge($theme-colors, (
 @import "../bootstrap/scss/tables";
 @import "../bootstrap/scss/alert";
 @import "../bootstrap/scss/dropdown";
+@import "../bootstrap/scss/transitions";
+@import "../bootstrap/scss/offcanvas";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../bootstrap/scss/utilities/api";
@@ -294,8 +296,6 @@ header {
     @extend .text-center;
 
     nav {
-        @extend .d-flex;
-        @extend .justify-content-start;
         @extend .navbar-expand-lg;
         @extend .bg-light;
         @extend .shadow-sm;
@@ -305,17 +305,22 @@ header {
             @extend .mx-5;
         }
 
+        .navbar-collapse {
+            flex-direction: column-reverse;
+        }
+
         .navbar-nav {
             @extend .d-flex;
-            @extend .flex-row;
         }
 
         .nav-item {
             @extend .px-2;
             @extend .mx-2;
         }
-    }
 
+        // FIXME: dropdown pushes navbar items to the bottom
+        // when navbar is in vertical mode
+    }
 
     // TODO: colored title and gradient header with cool background effect
     .piaf-banner {
@@ -338,6 +343,8 @@ main {
     section {
         @extend .py-5;
     }
+
+    // FIXME: remove excess (scrollable) space on the right
 
     .md-content {
         @extend .col-xxl-8;
