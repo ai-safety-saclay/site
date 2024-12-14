@@ -8,7 +8,7 @@ from markupsafe import Markup
 from mdx_math import MathExtension
 import setuptools
 dir_util = setuptools.distutils.dir_util
-
+file_util = setuptools.distutils.file_util
 
 MAIN_SITE_URL = "https://piaf-saclay.org"
 BLOG_URL = "https://blog.piaf-saclay.org"
@@ -135,6 +135,7 @@ if __name__ == "__main__":
 
     sass.compile(dirname=("scss", "build"))
 
+    file_util.copy_file("./bootstrap/dist/js/bootstrap.min.js", "./build")
     dir_util.copy_tree("./bootstrap-icons/font/fonts", "./build/fonts")
 
     generate_home("PIAF")
