@@ -1,0 +1,25 @@
+<div class="card my-2 p-3 text-center">
+    {% set embed_event_code=jeudia["embed_event_code"] %}
+    {% if embed_event_code %}
+        {% include "luma.html" %}
+    {% else %}
+        <p class="text-muted small">
+            {{jeudia["date"]}}
+        </p>
+        <h2 class="card-title fs-3">
+            {{jeudia["title"]}}
+        </h2>
+        <h3 class="card-subtitle mb-2 text-muted fs-5">
+            {{jeudia["location"]}}
+        </h3>
+    {% endif %}
+
+    <p class="card-text">
+        {% if jeudia["blog_link"] %}
+            <br>
+            Article récapitulatif et diaporama : <a href="/blog/{{jeudia['blog_link']}}.html" class="fs-6">
+                ici
+            </a>
+        {% endif %}
+    </p>
+</div>

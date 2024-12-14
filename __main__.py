@@ -43,6 +43,13 @@ def write_html(path: str, template):
     with open(f"build/{path}", "w") as f:
         f.write(template.render())
 
+def read_event_file(yml_file):
+    # TODO: méthode plus robuste
+    events = read_yml(yml_file)
+    past = reversed([l for l in events if l["past"]])
+    future = [l for l in events if not l["past"]]
+    return past, future
+
 def generate_home(title):
     page="index.html"
     globals = dict(GLOBALS, title=title, page=page)
@@ -137,6 +144,9 @@ if __name__ == "__main__":
     past_lectures = reversed([l for l in lectures if l["past"]])
     future_lectures = [l for l in lectures if not l["past"]]
     generate_page("Notre groupe de lecture", "groupe-de-lecture.html", past_lectures=past_lectures, future_lectures=future_lectures)
+
+    past_jeudia, future_jeudia = read_event_file("jeudia.yml")
+    generate_page("Le Jeud'IA", "jeudia.html", past_jeudia=past_jeudia, future_jeudia=future_jeudia)
 
     generate_page("Politique de confidentialité", "confidentialite.md")
     generate_page("Mentions légales", "mentions-legales.md")

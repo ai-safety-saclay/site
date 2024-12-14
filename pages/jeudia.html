@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+
+{% block main %}
+<section class="container centered-section">
+
+<div class="md-content">
+
+<!--expertise enseignants, chercheurs en entreprise ou non, ou des doctorants-->
+{% markdown %}
+Venez découvrir les défis de la sécurité de l'IA lors du Jeud'IA.
+
+Nous vous proposons plusieurs exposés de 30 minutes, à la fois par des étudiants et des chercheurs. Pas de prérequis : les exposés commencent par des explications très vulgarisées, avec une partie technique pour les plus curieux.
+
+La séance se terminera par des échanges informels autour des sujets évoqués.
+
+## Organisation
+
+Organisé par le PIAF et le [Centre pour la Sécurité de l'IA](https://securite-ia.fr), le Jeud'IA a lieu environ tous les mois, un jeudi soir dans une école sur le plateau de Saclay. Cet événement est inspiré du [Mercred'IA](https://lu.ma/CeSIA?tag=mercred%27ia).
+
+Les Jeud'IA passés et à venir sont ci-dessous. Pour plus d'informations, rejoignez notre serveur Discord.
+{% endmarkdown %}
+</div>
+
+{% set link=DISCORD_SERVER %}
+{% set link_icon_class="bi-discord" %}
+{% set btn_text="Rejoindre la discussion" %}
+{% include "button.html" %}
+
+</section>
+
+<section class="container centered-section">
+
+    <h2 class="display-4 text-center">Les Jeud'IA à venir</h2>
+    {% for jeudia in future_jeudia %}
+    {% include "conference-jeudia.html" %}
+    {% endfor %}
+</section>
+
+<section class="container centered-section">
+    <h2 class="display-4 text-center">Les Jeud'IA passés</h2>
+    {% for jeudia in past_jeudia %}
+    {% include "conference-jeudia.html" %}
+    {% endfor %}
+</section>
+
+{% endblock %}
