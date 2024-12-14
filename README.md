@@ -6,6 +6,7 @@ TODO:
 - section "À la une" :
   - récupérer le RSS depuis https://blog.piaf-saclay.org/index.xml
   - créer un carousel
+- Créer un carousel pour les événements passés et à venir (pages Asimov, Jeud'IA)
 - écrire la liste des exposés sur le blog
 - boutons :
   - faut-il utiliser les boutons officiels de YouTube et de Discord ?

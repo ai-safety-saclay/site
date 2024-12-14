@@ -32,6 +32,11 @@ Les Jeud'IA passés et à venir sont ci-dessous. Pour plus d'informations, rejoi
 <section class="container centered-section">
 
     <h2 class="display-4 text-center">Les Jeud'IA à venir</h2>
+    {% if not future_jeudia %}
+        <p class="mt-5">
+            Notre prochain Jeud'IA est encore en cours d'organisation. Patience...
+        </p>
+    {% endif %}
     {% for jeudia in future_jeudia %}
     {% include "conference-jeudia.html" %}
     {% endfor %}

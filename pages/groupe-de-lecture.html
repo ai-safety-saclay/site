@@ -20,6 +20,7 @@ Les séances du groupe de lecture sont ouvertes à tous et ont lieu en présenti
 ### Voir aussi
 
 Nous proposerons également un événement en semaine : [le Jeud'IA](/jeudia.html).
+
 {% endmarkdown %}
 </div>
 
@@ -28,17 +29,23 @@ Nous proposerons également un événement en semaine : [le Jeud'IA](/jeudia.htm
 {% set btn_text="Rejoindre la discussion" %}
 {% include "button.html" %}
 
+
 </section>
 
 <section class="container">
-    <h2 class="display-4 text-center">Les conférences à venir</h2>
+    <h2 class="display-4 text-center">Les exposés à venir</h2>
+    {% if not future_lectures %}
+        <p class="mt-5">
+            Nous n'avons pas encore prévu notre prochain exposé pour le moment. Patience...
+        </p>
+    {% endif %}
     {% for lecture in future_lectures %}
     {% include "lecture.html" %}
     {% endfor %}
 </section>
 
 <section class="container">
-    <h2 class="display-4 text-center">Nos conférences passées</h2>
+    <h2 class="display-4 text-center">Nos exposés passés</h2>
     {% for lecture in past_lectures %}
     {% include "lecture.html" %}
     {% endfor %}

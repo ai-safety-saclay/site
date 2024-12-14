@@ -1,6 +1,7 @@
 import os
 import sass
 from git import Repo
+from urllib.request import urlretrieve
 from jinja2 import Environment, FileSystemLoader
 import yaml
 from markdown import Markdown
@@ -107,9 +108,6 @@ def generate_blog():
                 template = env.get_template("blog_page.html", globals=arguments)
                 write_html(page, template)
 
-
-
-
 if __name__ == "__main__":
     # if "build" folder does not exist, create it, copy content of "static" folder to it
     # and generate html
@@ -135,15 +133,17 @@ if __name__ == "__main__":
 
     sass.compile(dirname=("scss", "build"))
 
+    urlretrieve("https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js", "./build/popper.min.js")
+
     file_util.copy_file("./bootstrap/dist/js/bootstrap.min.js", "./build")
     dir_util.copy_tree("./bootstrap-icons/font/fonts", "./build/fonts")
 
     generate_home("PIAF")
-    generate_page("Asimov : les dangers du numérique", "asimov.html", video_ids=ASIMOV_VIDEO_IDS)
+
+    past_asimov, future_asimov = read_event_file("asimov.yml")
+    generate_page("Asimov : les dangers du numérique", "asimov.html", past_asimov=past_asimov, future_asimov=future_asimov, video_ids=ASIMOV_VIDEO_IDS)
     
-    lectures = read_yml("lectures.yml")
-    past_lectures = reversed([l for l in lectures if l["past"]])
-    future_lectures = [l for l in lectures if not l["past"]]
+    past_lectures, future_lectures = read_event_file("lectures.yml")
     generate_page("Notre groupe de lecture", "groupe-de-lecture.html", past_lectures=past_lectures, future_lectures=future_lectures)
 
     past_jeudia, future_jeudia = read_event_file("jeudia.yml")

@@ -1,0 +1,19 @@
+- title: "(Dés)information à l'ère de l'intelligence artificielle"
+  date: "14/11/24"
+  registration_link: "https://lu.ma/5mbym8x1"
+  embed_event_code: "evt-veFSY3acemmCmrD"
+  speakers: ["Arthur Grimonpont"]
+  location: "Télécom Paris, Palaiseau"
+  past: true
+- title: "IA fiable : du code à la confiance publique"
+  date: "04/12/24"
+  registration_link: "https://lu.ma/lldc4hn1"
+  embed_event_code: "evt-XL90NeNfcuzRJOB"
+  speakers: ["Lê Nguyên Hoang"]
+  location: "École polytechnique, Palaiseau"
+  past: true
+- title: "Mystères éthiques de l'Intelligence Artificielle"
+  date: "06/01/25"
+  speakers: ["Alexei Grinbaum"]
+  location: "ENSTA, Palaiseau"
+  past: false

@@ -1,23 +1,26 @@
 <div class="card my-2 p-3 text-center" style="width: 100%;">
-    {% set embed_event_code=jeudia["embed_event_code"] %}
+    {% set embed_event_code=asimov["embed_event_code"] %}
     {% if embed_event_code %}
         {% include "luma.html" %}
     {% else %}
         <p class="text-muted small">
-            {{jeudia["date"]}}
+            {{asimov["date"]}}
         </p>
         <h2 class="card-title fs-3">
-            {{jeudia["title"]}}
+            {{asimov["title"]}}
         </h2>
+        <h3 class="card-subtitle fs-4">
+            {{", ".join(asimov["speakers"])}}
+        </h3>
         <h3 class="card-subtitle mb-2 text-muted fs-5">
-            {{jeudia["location"]}}
+            {{asimov["location"]}}
         </h3>
     {% endif %}
 
     <p class="card-text">
-        {% if jeudia["blog_link"] %}
+        {% if asimov["blog_link"] %}
             <br>
-            Article récapitulatif et diaporama : <a href="/blog/{{jeudia['blog_link']}}.html" class="fs-6">
+            Article récapitulatif : <a href="/blog/{{asimov['blog_link']}}.html" class="fs-6">
                 ici
             </a>
         {% endif %}

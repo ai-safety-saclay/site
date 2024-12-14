@@ -15,7 +15,7 @@
 {% markdown %}
 ## Suivre les prochaines conférences
 
-Si vous êtes sur le plateau de Saclay, vous pouvez suivre dès maintenant les futures conférences sur le site <https://teletalks.fr>
+Si vous êtes sur le plateau de Saclay, vous pouvez suivre dès maintenant les futures conférences [ci-dessous](#a-venir).
 
 Vous pouvez également vous abonner sur notre chaîne YouTube pour ne rater aucune des rediffusions. Notre chaîne est entièrement consacrée au cycle de conférences Asimov.
 
@@ -40,6 +40,26 @@ Nous pensons qu'au contraire, de nombreux étudiants **veulent** avoir une visio
 <br>
 
 Avec Effisciences et l'Institut Polytechnique de Paris, nous vous proposons un cycle de conférences tout au long de l'année 2024-2025.
+
+<section class="container centered-section">
+
+    <h2 class="display-4 text-center" id="a-venir">Les conférences à venir</h2>
+    {% if not future_asimov %}
+        <p class="mt-5">
+            Notre prochaine conférence est encore en cours d'organisation. Patience...
+        </p>
+    {% endif %}
+    {% for asimov in future_asimov %}
+    {% include "conference-asimov.html" %}
+    {% endfor %}
+</section>
+
+<section class="container centered-section">
+    <h2 class="display-4 text-center" id="passee">Les conférences passées</h2>
+    {% for asimov in past_asimov %}
+    {% include "conference-asimov.html" %}
+    {% endfor %}
+</section>
 
 ## Participer à l'organisation
 
