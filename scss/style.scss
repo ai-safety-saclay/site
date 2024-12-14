@@ -318,6 +318,10 @@ header {
             @extend .mx-2;
         }
 
+        .dropdown-item {
+            @extend .text-secondary;
+        }
+
         // FIXME: dropdown pushes navbar items to the bottom
         // when navbar is in vertical mode
     }

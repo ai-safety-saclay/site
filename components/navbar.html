@@ -15,9 +15,9 @@
                         Exposés
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/groupe-de-lecture.html">Groupe de lecture</a></li>
+                        <li><a class="nav-link dropdown-item" href="/groupe-de-lecture.html">Groupe de lecture</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/jeudia.html">Jeud'IA</a></li>
+                        <li><a class="nav-link dropdown-item" href="/jeudia.html">Jeud'IA</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="/hackathons.html">Hackathons</a></li>
@@ -27,3 +27,12 @@
             </ul>
         </div>
     </nav>
+
+    <script>
+        const links = document.querySelectorAll(".nav-link");
+        links.forEach((link) => {
+            if (link.href === window.location.href) {
+                link.classList.add("active");
+            }
+        })        
+    </script>
