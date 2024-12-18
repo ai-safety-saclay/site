@@ -67,27 +67,55 @@
         </div>
     </section>
 
-    <section class="events">
+    <section class="events centered-section">
         <h2 class="centered-heading">À la une</h2>
-        <div class="row justify-content-center">
-            {% set title %}
-                Conférence Asimov n° 2 : 
-                <br>
-                IA fiable, du code à la confiance publique
-            {% endset %}
-            {% set description %}
-            La deuxième conférence du cycle Asimov avec Lê Nguyên Hoang a eu lieu le 4&nbsp;décembre&nbsp;2024 à Polytechnique.
-            {% endset %}
-            {% set link="https://lu.ma/lldc4hn1" %}
-            {% set image="https://teletalks.fr/static/affiches/asimov_2.png" %}
-            {% include "home_card_news.html" %}
 
-            {% set title="Conférence Asimov n° 1 : (dés)information à l'ère de l'intelligence artificielle" %}
-            {% set description="La première conférence du cycle Asimov avec Arthur Grimonpont a eu lieu le 14&nbsp;octobre&nbsp;2024 à Télécom Paris." %}
-            {% set link="https://lu.ma/5mbym8x1" %}
-            {% set image="https://teletalks.fr/static/affiches/asimov%201.png" %}
-            {% include "home_card_news.html" %}
+
+        <div id="carouselEvents" class="carousel slide">
+            <div class="carousel-inner align-items-center">
+              <div class="carousel-item active">
+                {% set title="Conférence Asimov n° 3 : Éthique de l'intelligence artificielle" %}
+                {% set description="La prochaine conférence du cycle Asimov avec Alexei Grinbaum aura lieu le 6&nbsp;janvier&nbsp;2025 à l'ENSTA." %}
+                {% set link="https://lu.ma/ek1r6hx4" %}
+                {% set image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/js/f80fd9fa-3f53-40c5-b953-a37cd22f3a06" %}
+                {% include "home_card_news.html" %}
+              </div>
+              <div class="carousel-item">
+                {% set title %}
+                    Conférence Asimov n° 2 : 
+                    <br>
+                    IA fiable, du code à la confiance publique
+                {% endset %}
+                {% set description %}
+                La deuxième conférence du cycle Asimov avec Lê Nguyên Hoang a eu lieu le 4&nbsp;décembre&nbsp;2024 à Polytechnique.
+                {% endset %}
+                {% set link="https://lu.ma/lldc4hn1" %}
+                {% set image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/b8/13753ab4-e490-4022-b560-559bed34faa5" %}
+                {% include "home_card_news.html" %}
+              </div>
+              <div class="carousel-item">
+                {% set title="Conférence Asimov n° 1 : (dés)information à l'ère de l'intelligence artificielle" %}
+                {% set description="La première conférence du cycle Asimov avec Arthur Grimonpont a eu lieu le 14&nbsp;octobre&nbsp;2024 à Télécom Paris." %}
+                {% set link="https://lu.ma/5mbym8x1" %}
+                {% set image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/nm/de1cfd50-b8af-4efe-8108-c02b4bd04b29" %}
+                {% include "home_card_news.html" %}
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselEvents" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselEvents" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Suivant</span>
+            </button>
         </div>
+
+        <script>
+            const myCarouselElement = document.querySelector('#carouselEvents')
+
+            const carousel = new bootstrap.Carousel(myCarouselElement, {})
+        </script>
     </section>
 
 {% endblock %}

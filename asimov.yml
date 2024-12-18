@@ -12,8 +12,10 @@
   speakers: ["Lê Nguyên Hoang"]
   location: "École polytechnique, Palaiseau"
   past: true
-- title: "Mystères éthiques de l'Intelligence Artificielle"
+- title: "Éthique de l'Intelligence Artificielle"
   date: "06/01/25"
+  registration_link: "https://lu.ma/ek1r6hx4"
+  embed_event_code: "evt-Ahz5mYTnDccvxU5"
   speakers: ["Alexei Grinbaum"]
   location: "ENSTA, Palaiseau"
   past: false
