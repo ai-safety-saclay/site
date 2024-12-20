@@ -70,12 +70,10 @@ def generate_page(title, template_path, **globals):
 
 
 ASIMOV_VIDEO_IDS = [
-    "d9tjp4-xJG4?start=2461", # Alexei Grinbaum
     "dp5Yga_WKng?start=337", # Asma Mhalla
     "c-MQPOoM6-E?start=2493", # Fabrice Epelboin
     "FhFxlZzptys?start=1318", # David Chavalarias
     "CoX5OZIbGl4?start=187", # Maxime Fournes
-    "ofs-9_yzcvY?start=449", # Alain Damasio
     "LZWr5OZyBWE?start=849", # Raja Chatila
     "sPyu_dTSma0?start=509", # Caroline Jeanmaire
 ]
