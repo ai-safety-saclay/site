@@ -5,9 +5,9 @@
 
 ## Éditeur du site
 
-Ce site est édité par **Pour une Intelligence Artificielle Fiable - PIAF**.
+Ce site est édité par **Pour une Intelligence Artificielle Fiable - PIAF**, association de loi 1901 domiciliée à l'adresse suivante :
 
-Au 29 novembre 2024, PIAF n'a pas encore de statut légal, mais sera une association de loi 1901.
+19 place Marguerite Perey, 91120 Palaiseau, France
 
 [Numéro Siret]: #
 
