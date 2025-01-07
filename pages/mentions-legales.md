@@ -9,8 +9,6 @@ Ce site est édité par **Pour une Intelligence Artificielle Fiable - PIAF**, as
 
 19 place Marguerite Perey, 91120 Palaiseau, France
 
-[Numéro Siret]: #
-
 ## Hébergeur du site
 
 Ce site est hébergé par Github Pages. GitHub B.V. est domicilié à l'adresse suivante :
