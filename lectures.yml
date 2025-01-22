@@ -69,3 +69,10 @@
   paper_link: "https://dl.acm.org/doi/pdf/10.1145/3442188.3445923"
   date: "01/12/24"
   past: true
+
+- title: "Scalable oversight: blue team vs red team"
+  subtitle: "Des methodes innovantes pour diminuer les risques d'IA de plus en plus intelligentes"
+  paper_title: "AI Control: Improving Safety Despite Intentional Subversion"
+  paper_link: "https://arxiv.org/abs/2312.06942"
+  date: "26/01/2025"
+  past: false
