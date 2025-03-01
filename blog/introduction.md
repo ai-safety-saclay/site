@@ -1,3 +1,7 @@
+---
+title: Rendre l'IA fiable
+---
+
 L'[:IA](#IA) n'est pas une technologie comme les autres. Elle pose des [:risques comparables](#Risks) aux technologies nuléaires ou de modification génétique.
 Mais ses capacités d'apprentissage plus rapide que l'humain la rend particulièrement [:difficile à controler](#Control).
 
