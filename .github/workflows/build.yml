@@ -24,7 +24,7 @@ jobs:
         run: python3 __main__.py
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
 
