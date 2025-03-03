@@ -51,11 +51,11 @@ TODO:
 Dans le débat public, on a l'impression qu'il existe 2 types de risque liés à l'IA: Des risques sociétaux et environnementaux à court terme, et des risques de guerre à long terme, qui peuvent ressembler à des scénarios de Science-fiction.
 
 En réalité, les risques sont bien plus divers et certains risques actuels sont déjà très préoccupants.
-On peut classer ces risques en 3 grandes familles.
+On peut classer ces risques en 3 grandes familles: la [: mauvaise utilisation](#Misuse), les [: risques systémiques](#Systemic) et les risques de [: dysfonctionnement](#Malfunction)
 
 La plupart des risques évoqués ici sont tirés de [ce document](https://www.securite-ia.fr/panorama#Classification-des-risques-li-s-l-IA) du centre français pour la sécurité de l'IA (CeSIA).
 
-## Les risques de mauvaise utilisation
+## :x Misuse
 
 Les IA peuvent être utilisés par des individus ou des organisations malveillantes, souvent dans des buts illégaux.
 
@@ -65,7 +65,7 @@ Certains risques sont à plus haute échelle: l'IA sert de plus en plus à gén�
 
 À l'avenir, l'IA pourra également être utilisée pour fabriquer des drones tueurs, pour faciliter les attaques cybercriminelles et pour designer des armes biologiques.
 
-## Les risques systémiques
+## :x Systemic
 
 Même lorsque aucun acteur n'a de but spécialement malveillant, l'IA peut tout de même avoir des impacts très négatifs. L'IA est utilisée là où elle n'a pas été anticipée.
 
@@ -78,7 +78,7 @@ Mais ce ne sont pas les seuls. Un type de modèle actuel déjà très répandu, 
 
 Et bien sûr, toutes les conséquences sur l'environnement entrent dans cette catégorie. (TODO: impact écologique du datacenter de musk)
 
-## Les risques de dysfonctionnement
+## :x Malfunction
 
 Et si l'IA est utilisée par des acteurs bien intentionnés, qui ont réfléchi à l'impact sur la société au préalable ?
 
@@ -100,9 +100,12 @@ Ce programme informatique est utilisé par de nombreux utilisateurs (potentielle
 
 C'est l'état actuel du problème avec les IA.
 
-Selon le niveau auquel on se place, on observe des difficultés différentes.
+Selon le niveau auquel on se place, on observe des difficultés différentes:
+- lors de la [: creation](#Creation) du modèle
+- lors de son [: deploiement](#Deploy)
+- au niveau de la [:legislation](#Legislation)
 
-## Création du modèle
+## :x Creation
 
 Il faut savoir qu'à l'heure actuelle, l'entrainement d'une IA type chatGPT dure plusieurs mois, fait tourner des millions de cartes graphiques en continu et s'entraine sur une bonne proportion d'internet.
 
@@ -113,10 +116,10 @@ Il y a différents enjeux dans la recherche actuelle pour mieux controler les IA
 - prouver mathématiquement certaines propriétés des IA
 - avoir des moyens fiables de spécifier des objectifs à l'IA, lui faire apprendre ces règles et surtout lui faire respecter (*alignement*)
 
-Ce dernier point, le problème de l'alignement, est central dans le domaine. Nous y reviendront.
+Ce dernier point, le problème de l'alignement, est central dans le domaine. Nous y reviendrons.
 
 
-## Déploiement du modèle
+## :x Deploy
 
 Lorsque le modèle est déployé, il peut échapper aux contrôle de ceux qui l'ont créé pour plusieurs raisons:
 - il peut être utilisé dans des scénarios qu'on avait pas imaginé
@@ -126,14 +129,14 @@ Il est également possible que l'IA se comporte très différemment en phase de 
 
 Il est également probable que l'IA intergisse avec d'autres IA créées par d'autres acteurs. Et controler les interactions entre différents types d'IA est encore plus compliqué.
 
-## Legislation
+## :x Legislation
 
 Une legilsation met des années à se mettre en place, et est très souvent réactive plutôt que préventive.
 
 En comparaison, les modèles d'IA peuvent changer du tout au tout en quelques années.
 
 
-## Système d'information
+## :x Information
 
 TODO
 
