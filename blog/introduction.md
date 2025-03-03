@@ -22,6 +22,9 @@ L'Intelligence Artificielle désigne n'importe quel système de traitement de l'
 - les algorithmes de trading
 ...
 
+On ne programme pas directement l'IA. On lui fait extrapoler des données, s'entrainer à des jeux contre elle même ou s'améliorer pour maximiser un score. Dans tous les cas, l'IA *apprend*, on parle de *Machine Learning*.
+C'est ça la grande différence avec l'informatique "classique".
+
 Les systèmes d'IA peuvent être plus ou moins "intelligents".
 L'intelligence est difficile à définir, mais nul besoin d'avoir une définition parfaite pour réfléchir à l'IA.
 
@@ -41,33 +44,98 @@ TODO:
 - AGI
 - LLM
 - GPT
+- apprentissage supervisé, non supervisé, par renforcement
 
 # :x Risks
 
-TODO:
+Dans le débat public, on a l'impression qu'il existe 2 types de risque liés à l'IA: Des risques sociétaux et environnementaux à court terme, et des risques de guerre à long terme, qui peuvent ressembler à des scénarios de Science-fiction.
 
-- risques de mauvaise utilisation
-  - bioarmes
-  - manipulation
-- risques systémiques
-  - recommandation
-  - risques économiques
-- risques de dysfonctionnement
-  - ne pas trop détailler, on en parle dans la suite
+En réalité, les risques sont bien plus divers et certains risques actuels sont déjà très préoccupants.
+On peut classer ces risques en 3 grandes familles.
+
+La plupart des risques évoqués ici sont tirés de [ce document](https://www.securite-ia.fr/panorama#Classification-des-risques-li-s-l-IA) du centre français pour la sécurité de l'IA (CeSIA).
+
+## Les risques de mauvaise utilisation
+
+Les IA peuvent être utilisés par des individus ou des organisations malveillantes, souvent dans des buts illégaux.
+
+Un exemple actuel est celui des cyber-arnaques. Depuis que chatGPT est apparu, elles sont de plus en plus nombreuses et surtout de plus en plus réalistes.
+
+Certains risques sont à plus haute échelle: l'IA sert de plus en plus à générer des deepfakes et autres contenus trompeurs pour la manipulation de masse et ainsi influer sur les elections.
+
+À l'avenir, l'IA pourra également être utilisée pour fabriquer des drones tueurs, pour faciliter les attaques cybercriminelles et pour designer des armes biologiques.
+
+## Les risques systémiques
+
+Même lorsque aucun acteur n'a de but spécialement malveillant, l'IA peut tout de même avoir des impacts très négatifs. L'IA est utilisée là où elle n'a pas été anticipée.
+
+Les exemples les plus évidents sont les systèmes de recommandation des réseaux sociaux et l'utilisation de chatGPT chez les élèves.
+
+Mais ce ne sont pas les seuls. Un type de modèle actuel déjà très répandu, le LLM (type chatGPT), modifie la manière dont on recherche l'information et raisonne.
+- L'utilisation par les jeunes enfants impact le développement de leur cerveau.
+- Beaucoup de contenu sur internet est écrit partiellement ou entièrement par ces IA, donc de plus en plus le style et l'idéologie du contenu s'uniformise
+- Les biais (racisme, sexisme) sont reproduits et même amplifiés par les IA
+
+Et bien sûr, toutes les conséquences sur l'environnement entrent dans cette catégorie. (TODO: impact écologique du datacenter de musk)
+
+## Les risques de dysfonctionnement
+
+Et si l'IA est utilisée par des acteurs bien intentionnés, qui ont réfléchi à l'impact sur la société au préalable ?
+
+Malheuresement, cela ne suffit pas. Car l'IA peut ne pas se comporter comme on l'avait imaginé.
+
+Même après des années de recherche, il y a encore des accidents de voitures autonomes qu'on arrive pas à expliquer. Et pourtant, les IA des voitures autonomes sont probablement les plus fiables qui existent à l'heure actuelle.
+
+Plus les IA sont complexes et apprennent longtemp, sur des grosses quantités de données, plus ils est difficile de prévoir leur comportement. Les incidents où les IA se comportent de manière inattendue se multiplient. (TODO: faire un article sur l'exemple de Bing Chat ou autre)
 
 
-https://www.securite-ia.fr/panorama#Classification-des-risques-li-s-l-IA
+Ce type de risque peut paraitre mineur par rapport aux deux autres, mais c'est peut être le risque principal. Les IA ne se *programment pas*, elles apprennent. Cela rend les risques de dysfonctionnement bien plus importants, et toute tentative de contrôle plus difficile.
+C'est tout l'enjeu de rendre les IA fiables, que l'on explore dans la suite.
+
 
 # :x Control
 
-TODO:
-- reward hacking
-- peut être dupliqué facilement
-- exploite les failles de pleins de systèmes:
-  - éducation
-  - économie
-  - système d'information
-- évolue constemment, et réguler après-coup est inutile
+Imaginez: on vous donne la mission de surveiller un programme informatique pour l'empécher de faire certaines actions dangereuses. Vous acceptez.
+Ce programme informatique est utilisé par de nombreux utilisateurs (potentiellement malveillants), il est capable d'apprendre cetains sujets plus vite que vous, il communique avec tout internet, il peut être dupliqué facilement, et il change de forme tous les 5 ans.
+
+C'est l'état actuel du problème avec les IA.
+
+Selon le niveau auquel on se place, on observe des difficultés différentes.
+
+## Création du modèle
+
+Il faut savoir qu'à l'heure actuelle, l'entrainement d'une IA type chatGPT dure plusieurs mois, fait tourner des millions de cartes graphiques en continu et s'entraine sur une bonne proportion d'internet.
+
+La taille et la complexité de ces IA font qu'elles sont en grande partie inexplicables. On parle de *boite noire*.
+
+Il y a différents enjeux dans la recherche actuelle pour mieux controler les IA:
+- mieux comprendre les IA pour identifier ce qu'elle est susceptible de faire ou pas dans différents scénarios (*explicabilité*)
+- prouver mathématiquement certaines propriétés des IA
+- avoir des moyens fiables de spécifier des objectifs à l'IA, lui faire apprendre ces règles et surtout lui faire respecter (*alignement*)
+
+Ce dernier point, le problème de l'alignement, est central dans le domaine. Nous y reviendront.
+
+
+## Déploiement du modèle
+
+Lorsque le modèle est déployé, il peut échapper aux contrôle de ceux qui l'ont créé pour plusieurs raisons:
+- il peut être utilisé dans des scénarios qu'on avait pas imaginé
+- des attaquants peuvent modifier le comportement du modèle par de nombreuses techniques (TODO: resource)
+
+Il est également possible que l'IA se comporte très différemment en phase de test et en phase de déploiement.
+
+Il est également probable que l'IA intergisse avec d'autres IA créées par d'autres acteurs. Et controler les interactions entre différents types d'IA est encore plus compliqué.
+
+## Legislation
+
+Une legilsation met des années à se mettre en place, et est très souvent réactive plutôt que préventive.
+
+En comparaison, les modèles d'IA peuvent changer du tout au tout en quelques années.
+
+
+## Système d'information
+
+TODO
 
 # :x Trust
 
