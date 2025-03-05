@@ -11,9 +11,12 @@ $font-size-base: 1.2rem;
 
 // 4. Include any default map overrides here
 $font-size-base: 17px;
-$theme-colors: map-merge($theme-colors, (
-  "primary": $primary
-));
+$theme-colors: map-merge(
+    $theme-colors,
+    (
+        "primary": $primary,
+    )
+);
 
 // 5. Include remainder of required parts
 @import "../bootstrap/scss/maps";
@@ -50,51 +53,51 @@ $theme-colors: map-merge($theme-colors, (
 }
 
 @mixin admon-color($color) {
-  color: darken($color, 15%);
-  background-color: lighten($color, 25%);
-  border-color: $color;
+    color: darken($color, 15%);
+    background-color: lighten($color, 25%);
+    border-color: $color;
 }
 
 .admonition {
-  padding: 0 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  text-align: left;
-  &-title {
-    font-weight: bold;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
     text-align: left;
-  }
-  &.note,
-  &.info,
-  &.tips {
-    $base-blue: #3498db;
-    @include admon-color($base-blue);
-  }
-  &.warning,
-  &.warn,
-  &.important {
-    $base-carrot: #e67e22;
-    @include admon-color($base-carrot);
-  }
-  &.danger,
-  &.critical {
-    $base-alizarin: #e74c3c;
-    @include admon-color($base-alizarin);
-  }
+    &-title {
+        font-weight: bold;
+        text-align: left;
+    }
+    &.note,
+    &.info,
+    &.tips {
+        $base-blue: #3498db;
+        @include admon-color($base-blue);
+    }
+    &.warning,
+    &.warn,
+    &.important {
+        $base-carrot: #e67e22;
+        @include admon-color($base-carrot);
+    }
+    &.danger,
+    &.critical {
+        $base-alizarin: #e74c3c;
+        @include admon-color($base-alizarin);
+    }
 }
 
 blockquote {
-  border-left: 4px solid #e1e4e8;
-  color: #6a737d;
-  font-size: 16px;
-  font-style: italic;
-  margin: 1.5em 0;
-  padding: 0.5em 1em;
+    border-left: 4px solid #e1e4e8;
+    color: #6a737d;
+    font-size: 16px;
+    font-style: italic;
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
 }
 
 blockquote p {
-  margin: 0;
+    margin: 0;
 }
 
 .custom-word-container {
@@ -354,7 +357,8 @@ main {
         @extend .col-xxl-8;
         @extend .my-4;
 
-        text-align: justify !important;
+        // FIXME: justify does not work with nutshell (embedable explainations)
+        // text-align: justify !important;
 
         // TODO: colored heading
         // FIXME: h1 h2 h3 ... doesn't work
