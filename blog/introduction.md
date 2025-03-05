@@ -105,6 +105,8 @@ Selon le niveau auquel on se place, on observe des difficultés différentes:
 - lors de son [: deploiement](#Deploy)
 - au niveau de la [:legislation](#Legislation)
 
+Mais aussi le controle de notre [:système informationnel](#Information)
+
 ## :x Creation
 
 Il faut savoir qu'à l'heure actuelle, l'entrainement d'une IA type chatGPT dure plusieurs mois, fait tourner des millions de cartes graphiques en continu et s'entraine sur une bonne proportion d'internet.
@@ -135,28 +137,116 @@ Une legilsation met des années à se mettre en place, et est très souvent réa
 
 En comparaison, les modèles d'IA peuvent changer du tout au tout en quelques années.
 
+La régulation la plus ambitieuse pour l'Intelligence Artificielle aujourd'hui est l'[EU AI Act](), le réglement européen pour l'IA.
+Si elle va dans la bonne direction, il y a beaucoup de challenges pour la faire appliquer:
+- Cette legislation donne des définitions et des directives générales, mais il faut encore écrire toutes les normes techniques qui y correspondent
+- La legislation oblige les entreprises à faire ce que la recherche et l'industrie ne savent pas encore faire (évaluer les capacités des modèles, prouver qu'un texte a été généré par telle ou telle IA ...),
+- les géants dans le domaine de l'IA font du lobbying pour affaiblir cette régulation
+
+TODO: détailler chacun des points
 
 ## :x Information
 
-TODO
+Aujourd'hui, les IA qui entretient les relations les plus complexes avec notre société sont les algorithmes de recommandation. Même avec des IA peu sophistiquées, on observe souvent des conséquences imprévisibles.
+
+TODO:
+- failles de l'algo qui sont expolités (début de l'algo de youtube)
+- si corrélé avec le watchtime ou les likes, "emotion hacking" avec contenus haineux et violents
+- certaines tendances naturelles proviennent du fonctionnement de notre cerveau, il faut les limiter
+- même si ces IA ne sont pas biaisées, elles peuvent quand même perpetuer ou renforcer des biais
 
 # :x Trust
 
-TODO:
-- IA fiable = IA de confiance
-- définition de la confiance à base de contrats
-- confiance intrinseque / extrinseque
-- montrer les difficultés fondamentales:
-  - asymétrie d'information
-  - explicabilité
+Il faut comprendre l'expression "IA fiable" dans un sens général. Pas seulement "IA qui donne des informations fiables" ou "IA dont le fonctionnement est sécurisé" mais plutôt comme "IA de confiance".
 
+Il y a eu plusieurs tentatives pour définir ce qu'est la confiance (économie, philosophie, sociologie).
+Certains des aspects de la confiance sont fondamentaux et réapparaissent dans tous les domaines.
+
+On parle de confiance lorsque on se met en [:*danger*](#TrustDanger) par rapport à une autre entité.
+
+La confiance est une relation qui se construit [:*dans le temps*.](#TrustTime)
+
+La confance nécessite le [:*partage d'informations*](TrustInformation).
+
+La confiance est une relation qui peut être [:*unilatérale ou bilatérale*](#Trust2way)
+
+
+On peut regrouper ces critères dans une unique définition.
+Prenons une IA $A$ qui effectue une tâche pour un groupe d'humains $H$.
+
+$H$ peut avoir confiance en $A$ lorsque on peut écrire un contrat qui correspond exactement à ce que veut $H$, et que $H$ pense que $A$ va probablement respecter le contrat.
+
+Il y a de nombreuses difficultés dans cette définition, sur lequel il est bon d'insiter.
+
+Selon la tâche en question, le groupe d'humain peut être arbitrairement grand. Cela peut être un unique individu, une famille, une association, une entreprise ... Mais cela peut également être les utilisateurs d'un réseau social ou l'ensemble des citoyens d'un pays.
+Plus les individus souhaitent des choses différentes, plus il faut considérer l'aspect démocratique du contrat: il faut arriver au meilleur compromis pour l'ensemble des individus.
+
+Lorsque il y a des individus dans $H$ qui ne peuvent pas participer à l'élaboration du contrat (manque de temps, contrat trop complexe), des considérations éthiques entrent en jeu. Doit on protéger d'avantage les enfants ou les personnes agées ? L'IA doit elle tout le temps empécher quelqu'un de se suicider ? Faut il considérer le bien des animaux ?
+
+Si la tâche est complexe, il peut être impossible d'écrire exactement ce que veut $H$. Dans ce cas, il faut considérer que le contrat est "dans la tête de H" en quelque sorte, mais $A$ ne peut alors même pas y avoir accès, et doit deviner en interagissant avec $H$ ce qu'il veut vraiment.
+
+$H$ ne peut pas être sûr à 100% que $A$ va tout le temps suivre son contrat. Mais certains éléments peuvent tout de même augmenter sa confiance.
+- Si $A$ respecte le contrat pendant toutes les périodes de test. On parle de [: *confiance extrinsèque](#ExtrinsicTrust)
+- Si les ingénieurs qui ont créé $A$ ont mis en place des mécanismes pour respecter des éléments du contrat. On parle de [: *confiance intrinsèque*](#IntrinsicTrust)
+
+Ces deux derniers points (spécifier les objectifs et faire en sorte qu'ils soient respectés) sont les deux problèmes principaux du domaine de recherche que l'on appelle *alignement*.
+En simplifiant, spécifier les objectifs est d'avantage la tâche de l'éthique et faire en sorte qu'ils soient respectés est celle de la *sécurité de l'IA*.
+
+
+## :x TrustDanger
+
+TODO:
+- donner un exemple
+- pour l'IA, c'est clairement le cas
+
+## :x TrustTime
+
+TODO:
+- en économie (théorie des jeux), il faut l'hypothèse de la répétition avec punition pour faire apparaitre la confiance. Pareil dans l'évolution
+- l'IA se développe tellement vite qu'on a pas la possibilité d'avoir plusieurs essais. La première trahison serait destructrice: on aura quelques warning shots
+
+## :x TrustInformation
+
+TODO:
+- impossible d'arriver à la symétrie d'information pour une IA (boite noire, quantité de connaissance)
+
+## :x Trust2way
+
+TODO:
+- souvent, un agent moins intelligent ne peut pas avoir confiance en un agent plus intelligent
+
+
+## :x ExtrinsicTrust
+
+TODO
+- definition
+- en pratique: les benchmarks boite noire
+- ne fonctionne pas vraiment avec des modèles très intelligents
+  - raison: ils peuvent planifier et ont une mémoire
+  - hypothèse importante: est-ce qu'on peut différencier env de test ou non
+- question de la manipulation hyper importante
+
+## :x IntrinsicTrust
+
+TODO
+- definition
+- liens avec l'explicabilité
+- benchmark boite blanche
+- on est limité par l'intelligence de H. Dans le futur on va surement devoir demander à des IA de nous expliquer comment d'autres IA fonctionnent.
 
 # :x Alignment
 
 TODO:
+- definition alignement
+  - one to one, one to many, many to one, many to many
+  - peut casser à plein d'endroits
+  - radicalement différent selon les capacités du modèle:
+    - mémoire
+    - plannification
+    - pouvoir de mensonge et de manipulation
+
 - prérequis:
   - bonne cybersécurité
-- definition alignement
 
 # :x Capabilities
 
@@ -164,6 +254,8 @@ TODO:
 - ce qui est le plus inquietant, ce n'est pas l'état actuel mais la tendance
 - Top labs et leurs déclarations
 - déclarations des experts
+
+Peut être le mettre avant, pour justifier pourquoi je parle souvent de "plus intelligent que l'humain" ?
 
 # :x Collapse
 
