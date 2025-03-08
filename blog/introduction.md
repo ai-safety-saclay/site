@@ -40,11 +40,39 @@ Dans cette définition de l'intelligence, il n'y a absolument pas besoin de corp
 
 ## :x Voc
 
-TODO:
-- AGI
-- LLM
-- GPT
-- apprentissage supervisé, non supervisé, par renforcement
+Il y a de nombreuses abréviations dans le domaine. Les plus utilisées sont:
+
+- [ML](#ML)
+- [LLM](#LLM)
+- [AGI](#AGI)
+- [GPT](#GPT)
+- [RL](#RL)
+
+### :x ML
+
+**Machine Learning**: domaine de l'informatique qui s'intéresse à comment faire apprendre des choses à des machines.
+
+### :x LLM
+
+**Large Language Model**: type d'IA qui apprend en lisant une grosse quantité de texte. Le premier LLM a été [GPT2](https://en.wikipedia.org/wiki/GPT-2), l'ancêtre de chatGPT. C'est pour cette raison que l'entreprise qui l'a créé, openAI, a une position dominante sur le marché.
+Ce sont les modèles les plus intelligents à l'heure actuelle, pour une raison simple: si un modèle sait manipuler du texte, on peut potentiellement l'entrainer sur toutes les données d'internet. Ce n'est pas le cas pour la robotique par exemple.
+
+### :x GPT
+
+**Generative Pre-trained Transformer**. Type spécifique de modèle de langue (LLM), le plus répandu aujourd'hui. L'idée derière ce type de modèle est de séparer l'entrainement en 2 étapes. D'abord entrainer le modèle à générer du texte un mot après l'autre. Dans un second temps, l'entrainer à résoudre des tâches spécifiques (maths, questionnaires ...)
+
+### :x AGI
+
+**Artificial General Intelligence**: Intelligence Artificielle Générale, ou IA de niveau humain. Catégorie d'IA qui aurait autant d'expertise que les experts humains les plus brillants, et autant d'autonomie.
+Aujourd'hui, il n'y a pas d'AGI et savoir quand la première IA de ce type apparaitra est un grand sujet de débat.
+On peut tout de même dire que beaucoup d'experts pensent que cela peut arriver dans les 10 prochaines années, et que cet évènement serait un point de non-retour pour l'humanité.
+
+
+### :x RL
+
+**Reinforcement Learning**: Apprentissage par Renforcement. On parle de d'apprentissage par Renforcement lorsque on entraine une IA en lui donnant un score (positif ou négatif) à chaque action effectuée et en lui demandant de maximiser ce score.
+Cela peut avoir lieu dans un environnement simulé (pour jouer aux echecs par exemples), en faisant des experiences dans le monde ou en interagissant directement avec des humains.
+
 
 # :x Risks
 
