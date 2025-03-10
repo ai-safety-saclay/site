@@ -27,7 +27,7 @@
   paper_title: "A Watermark for Large Language Models"
   blog_link: "watermarking-llm"
   past: true
-  
+
 - title: "Fundamentals limits of alignment in LLMs"
   subtitle: "Un résultat fondamental sur l'imperfection des IA"
   date: "6/10/24"
@@ -62,7 +62,7 @@
   paper_link: "https://arxiv.org/pdf/2410.09101"
   date: "24/11/24"
   past: true
-  
+
 - title: "Un framework pour penser la confiance en les IA"
   subtitle: "Comment formaliser l'idée de confiance en une IA pour pouvoir l'implémenter ?"
   paper_title: "Formalizing Trust in Artificial Intelligence: Prerequisites, Causes and Goals of Human Trust in AI"
@@ -75,4 +75,11 @@
   paper_title: "AI Control: Improving Safety Despite Intentional Subversion"
   paper_link: "https://arxiv.org/abs/2312.06942"
   date: "26/01/2025"
+  past: true
+
+- title: "Broad misalignment from narrow finetuning"
+  subtitle: "Ou pourquoi faire dire '666' à des LLMs les rend dangereux"
+  paper_link: "https://arxiv.org/abs/2502.17424"
+  paper_title: "Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs"
+  date: "9/03/2025"
   past: true
