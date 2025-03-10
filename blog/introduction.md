@@ -48,6 +48,9 @@ Il y a de nombreuses abréviations dans le domaine. Les plus utilisées sont:
 - [GPT](#GPT)
 - [RL](#RL)
 
+TODO: blach box, white box
+
+
 ### :x ML
 
 **Machine Learning**: domaine de l'informatique qui s'intéresse à comment faire apprendre des choses à des machines.
@@ -194,9 +197,10 @@ On parle de confiance lorsque on se met en [:*danger*](#TrustDanger) par rapport
 
 La confiance est une relation qui se construit [:*dans le temps*.](#TrustTime)
 
+La confiance est une relation qui peut être [:*unilatérale ou bilatérale*](#Trust2way)
+
 La confance nécessite le [:*partage d'informations*](TrustInformation).
 
-La confiance est une relation qui peut être [:*unilatérale ou bilatérale*](#Trust2way)
 
 
 On peut regrouper ces critères dans une unique définition.
@@ -223,44 +227,93 @@ En simplifiant, spécifier les objectifs est d'avantage la tâche de l'éthique 
 
 ## :x TrustDanger
 
-TODO:
-- donner un exemple
-- pour l'IA, c'est clairement le cas
+Prenons des exemples de la vie courante.
+
+"J'ai confiance en mon mari", et je suis en danger de me retrouver seule si il me trompe.
+
+"J'ai confiance en mon banquier", et je suis en danger de perdre tout mon argent si il me vole.
+
+"J'ai confiance en la compagnie Airbus", et je suis en danger de mort si leurs avions sont defectueux.
+
+Plus l'IA est capable de prendre des décisions complexes et de manière autonome, plus l'utilisateur est en danger en cas de disfonctionnement.
+
+En économie et en théorie des jeux, on modélise ce danger par une perte (argent ou score).
 
 ## :x TrustTime
 
-TODO:
-- en économie (théorie des jeux), il faut l'hypothèse de la répétition avec punition pour faire apparaitre la confiance. Pareil dans l'évolution
-- l'IA se développe tellement vite qu'on a pas la possibilité d'avoir plusieurs essais. La première trahison serait destructrice: on aura quelques warning shots
+Prenons un exemple classique de la théorie des jeux: le jeu de l'ultimatum.
 
-## :x TrustInformation
+Alice (humaine) et Bob (robot) sont dans la cuisine, et ils doivent se partager un gateau. C'est Bob qui effectue la découpe. Une fois la découpe effectuée, Alice peut accepter sa part ou bien se mettre en colère et mettre tout le gateau à la poubelle. On suppose que Bob aime beaucoup les gateaux.
 
-TODO:
-- impossible d'arriver à la symétrie d'information pour une IA (boite noire, quantité de connaissance)
+La première fois qu'Alice et Bob entrent dans la cuisine, ils ne se connaissent pas. Alice ne peut dont pas avoir confiance en Bob. Si Bob choisit de donner une part minuscule à Alice, elle ne peut rien y faire et doit accépter sa part pour avoir quelque chose à manger.
+
+Maintenant, supposons que la même scène se déroule tous les jours. Dans ce cas, si Bob lui donne une toute petite part de gateau, Alice peut se mettre en colère et tout jeter à la poubelle.
+Le jour suivant, Bob aura tendance à donner une plus grosse part à Alice, pour qu'elle ne se mette pas en colère et qu'il ai sa part du gateau.
+
+Ce qu'on observe ici, c'est que même des agents égoistes qui ne se connaissent pas peuvent se faire confiance si on respecte deux conditions: l'interaction dure longtemps et les joueurs sont punis lorsque ils pénalisent le groupe.
+
+Malheuresement, ces conditions ne sont pas forcément réunies avec l'IA. En premier lieu, ce qui peut sembler être une "punition" pour un être humain n'en est pas une pour l'IA.
+Un humain est affecté par plein de choses différentes: son argent, son capital social, son bien être physique ... Il est donc facile de trouver une punition (prison, amende). Mais une IA peut n'avoir qu'un seul et unique objectif. Dans ce cas, il est plus difficile de le punir.
+
+Mais surtout, l'IA sera présente dans des situations où il n'y aura pas de 2eme essai. Si on fait confiance à l'IA pour protéger l'arme nucléaire sans l'utiliser, on peut difficilement la punir après coup, et de toute façon il sera trop tard. Il y a un analogue chez les humains: si je te trompe ou je te vole et que tu ne me revois jamais, je ne serais jamais puni.
+
+On pourrait continuer avec d'autres complications spécifiques à l'IA. Une IA pourrait créer des copies d'elle même qui seraient plus difficiles à punir. La situation dans le monde pourrait brusquement changer, et on perdrait toute confiance en le modèle. l'IA pourrait être hackée et changer brutalement d'objectif. Le développement de l'IA est tellement rapide qu'on a pas le temps de lui faire confiance sur tous les domaines.
+
+
+En résumé: dans de nombreuses situations il est impossible de construire la relation de confiance avec l'IA dans le temps, il faut donc pourvoir lui faire confiance dès la conception.
 
 ## :x Trust2way
 
-TODO:
-- souvent, un agent moins intelligent ne peut pas avoir confiance en un agent plus intelligent
+En général, on parle de relation de confiance lorsque les deux agents se font confiance. C'est une confiance **mutuelle**.
+
+Mais ce n'est pas obligatoire. Je peux avoir une confiance totale en mon chien, sans que lui ai confiance en moi. Pire, il pourrait avoir confiance en moi alors qu'il n'est pour moi qu'un moyen, et que je suis près à l'abandonner à la première occasion.
+
+C'est l'aspect le plus philosophique de la confiance entre humain et IA. D'abord, il faut défnir ce que signifie "Une IA a confiance en un humain". Il faut aussi se demander s'il est acceptable que l'humain ai confiance en l'IA mais l'IA n'ai pas confiance en l'humain (comme un esclave).
+
+Pourtant, cet aspect sont très importants. Avec l'exemple du chien, on voit que si un des deux acteurs est beaucoup plus intelligent et a accès à beaucoup plus d'information que l'autre, la confiance peut difficilement être mutuelle. Le plus intelligent des deux peut manipuler l'autre, et ne jamais réveler à l'autre son véritable objectif. Un enfant très jeune ne peut pas avoir une confiance légitime envers son partent. Dans le scénario d'une IA bien plus intelligent qu'un être humain, c'est une difficulté fondamentale
+Autre considération intéressante: si l'IA n'a pas confiance en l'humain, elle pourrait avoir tendance à cacher des informations par exemple.
+
+## :x TrustInformation
+
+
+Dans l'idéal, une relation de confiance est mutuelle, s'est construite dans le temps, mais surtout les deux agents ont accès aux mêmes informations.
+
+Si un des deux agents a une information supplémentaire (en reprenant l'exemple précédent, si Bob sait quelle est la meilleure partie du gateau par exemple), il peut facilement arnaquer l'autre.
+
+Avec les IA, il est probablement impossible d'atteindre une symétrie d'information. L'IA est une boite noire qu'on ne comprend pas bien, mais c'est surtout une quantité de connaissances astronomique pour les modèles les plus récents.
+
 
 
 ## :x ExtrinsicTrust
 
-TODO
-- definition
-- en pratique: les benchmarks boite noire
-- ne fonctionne pas vraiment avec des modèles très intelligents
-  - raison: ils peuvent planifier et ont une mémoire
-  - hypothèse importante: est-ce qu'on peut différencier env de test ou non
-- question de la manipulation hyper importante
+Avoir une confiance extrinsèque consiste à supposer que le comportement du modèle sur certaines situations se généralise à d'autres.
+
+En pratique, on utlise des séries de tests (*benchmarks*) pour s'assurer que le modèle se comporte bien pour de nombeuses situations. On parle d'approche *black box*.
+
+
+Ce genre de confiance fait des hypothèses très fortes, qui ne sont pas toujours vérifiées chez les IA présentes et futures:
+- l'IA ne sait pas faire la différence entre environnement de test et réalité
+- les tests sont suffisamment nombreux et représentatifs de la réalité
+- les tests sont indépendants, autrement dit l'IA ne planifie pas ses réponses d'un test à l'autre
+- l'IA n'est pas capable de manipulation
+
+Ce dernier point est crucial, et malheuresement des [: experiences récentes](https://www.youtube.com/watch?v=cw9wcNKDOtQ) montrent que les LLMs peuvent spontanément mentir de manière cohérente.
+
+Pour certaines tâches (par exemple, identifier des cancers sur des images), c'est une approche satisfaisante. Mais lorsque les modèles sont plus complexes et peuvent prendre des décisions, tester le modèle depuis l'exterieur ne suffit plus.
+
 
 ## :x IntrinsicTrust
 
-TODO
-- definition
-- liens avec l'explicabilité
-- benchmark boite blanche
-- on est limité par l'intelligence de H. Dans le futur on va surement devoir demander à des IA de nous expliquer comment d'autres IA fonctionnent.
+La confiance intrinsèque est très différente de la confiance extrinsèque. Elle consiste à observer "dans la tête" du modèle, à comprendre son comportement pour s'assurer qu'il se comportera de manière prévue. On parle d'approche *white box*, parce qu'on peut regarder "à l'interieur" du modèle.
+C'est l'approche qu'on utiliser pour les normes de sécurité dans l'aviation. Chaque partie de l'avion est soumise à des tests, et des experts estiment le risque de défaillance de chacun des systèmes.
+
+Le domaine qui permet ce genre de confiance est l'explicabilité (ou *XAI*). Il y a beaucoup de débats vis à vis de ce qu'on entend par "comprendre" une IA.
+C'est un domaine passionnant et en plein développement, et on commence à bien comprendre certains modèles.
+
+Le Graal de la confiance intrinsèque serait une preuve mathématique que l'IA remplit bien son objectif. Cet objectif est souvent hors de portée, au vu de la complexité des systèmes et de l'aspect moral de la confiance.
+
+Dans le futur, les modèles d'IA pourrait être tellement complexes qu'il serait impossible pour un groupe d'humains de bien comprendre son fonctionnement. Il sera alors necessaire d'utiliser des algorithmes et d'autres IA pour étudier les IA les plus grosses. On aurait alors une chaine de confiance: l'IA `X` me dit que `Y` va bien se comporter, je fais confiance à `X`, donc je fais confiance à `Y`.
+On parle de *scalable oversight*.
 
 # :x Alignment
 
