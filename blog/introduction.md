@@ -317,17 +317,30 @@ On parle de *scalable oversight*.
 
 # :x Alignment
 
-TODO:
-- definition alignement
-  - one to one, one to many, many to one, many to many
-  - peut casser à plein d'endroits
-  - radicalement différent selon les capacités du modèle:
-    - mémoire
-    - plannification
-    - pouvoir de mensonge et de manipulation
+C'est ce qu'on appelle le problème de l'alignement.
+Ce problème peut être énnoncé ainsi: étant donné une intelligence artificielle, comment lui imposer un ensemble de valeurs morales, qui soit à la fois en accord avec la majorité des humains et qui perdure dans le temps.
 
-- prérequis:
-  - bonne cybersécurité
+Depuis une dizaine d'années, les chercheurs ont décomposé cette tâche en sous-problèmes, et ont identifié des difficultés qui sont aujourd'hui insurmontables. En résumé, l'alignement est difficile car:
+- notre morale est pleine de paradoxes, et les IA n'aiment pas les paradoxes.
+- une IA est comme un enfant: on peut lui montrer ce qui est bien ou mal, mais pas s'assurer qu'elle va toujours bien se comporter
+- chaque donnée que l'IA apprend est susceptible de faire changer ses objectifs, comme un humain peut changer d'objectifs en grandissant et selon les livres que vous avez lu. Et la quantité de données que les IA - même actuelles - apprennent est astronomique.
+- un modèle capable de manipulation peut faire semblant d'être aligné, mais avoir un objectif caché.
+- une IA altruiste pourrait être désavantagée par rapport à une IA malveillante, qui finirait par la remplacer
+- agréger des préférences humaines réfléchies est couteux
+
+TODO: détailler chacun des points
+
+La plupart des experts en IA sont très inquiets vis à vis de ce problème. Une partie pense même que ce problème est impossible, et que l'IA finira forcémment par vouloir des choses atroces.
+
+Ces déclarations peuvent paraitre très surprenantes, mais il faut se rendre compte que la vitesse à laquelle les modèles actuels (et surtout futurs) apprennent est faramineuse. Une IA très avancée pourrait relire tout internet et se reconfigurer en un temps très restreint, et changer sa morale au passage. N'importe quelle faille dans le système pourrait dégénérer.
+
+S'ajoute à cette liste des problèmes techniques que seuls les experts des modèles actuels peuvent comprendre.
+
+
+Au delà du problème de l'alignement, il faut également que la morale des intelligences artificielles soit *robuste*, c'est à dire qu'elle ne soit pas vulnérable à des attaques extérieures.
+Et on se rend compte de plus en plus que les IA peuvent être traffiquées et manpulées de plein, vraiment plein de manières différentes.
+
+TODO: exemples de manipulation / jailbreak / empoisonnements / attaques adversariales
 
 # :x Capabilities
 
@@ -336,7 +349,7 @@ TODO:
 - Top labs et leurs déclarations
 - déclarations des experts
 
-Peut être le mettre avant, pour justifier pourquoi je parle souvent de "plus intelligent que l'humain" ?
+FIXME: Peut être mettre cette partie avant, pour justifier pourquoi je parle souvent de "plus intelligent que l'humain" ?
 
 # :x Collapse
 
