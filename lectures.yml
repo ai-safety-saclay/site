@@ -83,3 +83,10 @@
   paper_title: "Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs"
   date: "9/03/2025"
   past: true
+
+- title: "Controle démocratique des valeurs des IA"
+  subtitle: "Les LLMs ont un système de valeurs morales, et on peut les modifier démocratiquement"
+  paper_link: "https://arxiv.org/abs/2502.08640"
+  paper_title: "Utility Engineering: Analyzing and Controlling Emergent Value Systems in AIs"
+  date: "16/03/2025"
+  past: false
