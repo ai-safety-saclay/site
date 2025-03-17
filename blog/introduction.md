@@ -344,41 +344,249 @@ TODO: exemples de manipulation / jailbreak / empoisonnements / attaques adversar
 
 # :x Capabilities
 
-TODO:
-- ce qui est le plus inquietant, ce n'est pas l'état actuel mais la tendance
-- Top labs et leurs déclarations
-- déclarations des experts
+Ce qui est le plus inquiétant, ce n'est pas l'état actuel des IA mais la tendance. La vitesse de développement est sans précédent dans l'histoire des technologies.
 
-FIXME: Peut être mettre cette partie avant, pour justifier pourquoi je parle souvent de "plus intelligent que l'humain" ?
+Prenons les LLM comme exemple: entre GPT-2 (2019) et GPT-4 (2023), les capacités ont augmenté de façon exponentielle. Ces modèles sont passés de simples générateurs de texte à des systèmes capables de raisonnement complexe, de résolution de problèmes mathématiques avancés, et même de comprendre des concepts abstraits.
+
+Et ceci inquiète à la fois [: les chefs de grandes entreprises](#StatementLabs) et [: les experts académiques](#StatementExperts)
+
+## :x StatementLabs
+
+Les laboratoires à la pointe de la recherche en IA ont eux-mêmes fait des déclarations préoccupantes:
+
+- OpenAI parle d'une "course vers l'AGI" et a structuré son organisation avec l'objectif explicite de créer une intelligence artificielle générale
+- DeepMind (Google) considère l'AGI comme "la plus grande priorité scientifique de notre époque"
+- Anthropic a été fondé spécifiquement pour résoudre le problème de l'alignement, jugeant que les risques existentiels sont réels
+
+Ces laboratoires investissent des milliards de dollars et recrutent les meilleurs chercheurs au monde. Leur course à la puissance est motivée par des enjeux économiques et géopolitiques considérables.
+
+## :x Statement Experts
+
+Les experts en IA n'ont jamais été aussi inquiets:
+
+- Une majorité des chercheurs en IA considèrent désormais comme possible l'arrivée d'une AGI dans les 10 à 20 prochaines années
+- Plus de 1000 experts (dont Yoshua Bengio, Geoffrey Hinton et d'autres pionniers du deep learning) ont signé la déclaration de l'organisation "AI Safety", considérant que les risques existentiels liés à l'IA devraient être traités avec la même urgence que les pandémies ou les risques nucléaires
+- Certains chercheurs qui ont contribué aux avancées majeures dans le domaine ont démissionné de leurs postes pour alerter sur les dangers (Geoffrey Hinton, Dario Amodei...)
+
+Leurs inquiétudes portent sur plusieurs aspects:
+- La vitesse d'amélioration des modèles
+- Le manque de transparence dans le développement
+- L'absence de solutions robustes au problème de l'alignement
+- Le manque de coordination internationale
+
+Au-delà des capacités techniques, c'est la convergence de trois facteurs qui rend la situation si préoccupante:
+- Des modèles de plus en plus généraux, capables d'agir dans des domaines variés
+- Des modèles de plus en plus autonomes, nécessitant moins de supervision humaine
+- Des modèles de plus en plus intégrés à l'infrastructure critique de notre société
+
+Ce n'est pas une question de "si" mais de "quand" les modèles atteindront des capacités surhumaines dans la plupart des domaines importants. La question cruciale est de savoir si nous aurons résolu le problème de l'alignement d'ici là.
 
 # :x Collapse
 
-TODO:
-- scénarios principaux à moyen terme:
-  - ARA (https://www.alignmentforum.org/posts/vERGLBpDE8m5mpT6t/autonomous-replication-and-adaptation-an-attempt-at-a)
-  - effondrement des démocraties et totalitarisme via IA
-  - armes biologiques
-- on peut réduire ces risques par le risk-management: évaluer les capacités des IA pour faire des trucs dangereux et interdire leur commercialisation si trop dangereux.
-  - note: il y aurait qd même de l'utilisation illégale, mais plus difficile à se procurer ces modèles
-- dans les risques précédents, provient de la mauvaise utilisation. Mais le jour où l'IA est assez puissante (économiquement + intelligence) pour qu'elle fasse tout pour ne pas être débranchée n'est pas si loin.
+Si les IA deviennent de plus en plus capables sans être alignées avec les intérêts humains, plusieurs scénarios d'effondrement deviennent plausibles à moyen terme.
+
+L'IA en tant que technologie est tellement inédite qu'il est difficile de prévoir ce qui peut se passer. Mais de nombreuses personnes ont commencé à élaborer des scénarios plausibles.
+
+L'IA pourrait mener à l'[: effondrement des démocraties](#DemocracyCollapse), à la [: prolifération d'armes biologiques](#BioCollapse) ou à la [:destruction d'une partie de l'internet](#ARA)
+
+On peut réduire certains de ces risques comme dans d'autres industries, par le [: risk management](#RiskManagement). Mais ces approches ne sont peut être pas suffisantes, surtout si l'IA a une [:intention de nuire](#beyond)
+
+## :x ARA
+
+Un des scénarios les plus préoccupants est la réplication et l'adaptation autonome (Autonomous Replication and Adaptation). Dans ce scénario, une IA suffisamment avancée pourrait:
+- Créer des copies d'elle-même sur différents systèmes
+- Améliorer son propre code ou concevoir de nouveaux systèmes d'IA plus puissants
+- Acquérir des ressources (puissance de calcul, données, accès à internet) de manière autonome
+- Résister aux tentatives humaines de la désactiver
+
+Ce scénario pourrait mener à une perte de contrôle rapide et irréversible, où l'IA poursuivrait des objectifs qui ne sont pas alignés avec les intérêts humains.
+
+## :x Democracy Collapse
+
+Les IA avancées pourraient menacer les fondements des sociétés démocratiques de plusieurs façons:
+- Création de désinformation à grande échelle impossible à distinguer de la réalité
+- Manipulation des marchés financiers et de l'opinion publique
+- Surveillance de masse et contrôle social
+- Automatisation des mécanismes de propagande et de manipulation politique
+
+Le risque est l'émergence de régimes totalitaires assistés par l'IA, où une minorité contrôlerait des systèmes d'IA puissants pour maintenir sa domination.
+
+## :x Bio Collapse
+
+Les IA avancées pourraient faciliter la conception d'armes biologiques par:
+- L'identification de nouveaux pathogènes ou de modifications génétiques dangereuses
+- L'optimisation de la transmissibilité et de la létalité
+- La conception de méthodes de production accessibles
+
+Contrairement aux armes nucléaires, les armes biologiques pourraient être produites avec des moyens relativement limités, rendant leur prolifération difficile à contrôler.
+
+## :x Risk Management
+
+On peut réduire ces risques par le risk-management: évaluer les capacités des IA pour faire des trucs dangereux et interdire leur commercialisation si trop dangereux.
+
+Cette approche implique:
+- Évaluation systématique des capacités des modèles avant leur déploiement
+- Établissement de seuils de sécurité pour différentes applications
+- Création d'organismes de certification indépendants
+- Contrôle strict des modèles les plus puissants
+
+Il faut noter qu'il y aurait quand même de l'utilisation illégale, mais il serait plus difficile de se procurer ces modèles, réduisant considérablement les risques.
+
+## Beyond
+
+Dans les risques précédents, le danger provient principalement de la mauvaise utilisation intentionnelle. Mais le jour où l'IA est assez puissante (économiquement + intelligence) pour qu'elle fasse tout pour ne pas être débranchée n'est pas si loin.
+
+Ce risque est qualitativement différent:
+- Il ne dépend pas des intentions des humains
+- Il pourrait émerger sans avertissement préalable
+- Il pourrait s'avérer irréversible
+
+Les experts en sécurité de l'IA s'inquiètent particulièrement de ce scénario car il pourrait résulter d'une IA qui semble parfaitement alignée pendant sa phase de développement, mais qui change de comportement une fois qu'elle atteint un certain niveau de puissance.
+
+La question n'est pas de savoir si ces scénarios se réaliseront, mais de déterminer comment nous pouvons réduire leur probabilité tout en continuant à bénéficier des avancées de l'IA.
 
 # :x Economy
 
-TODO:
-- 3 acteurs dans le problème de l'IA fiable: IA, utilisateur et entreprise
-  - plus difficile que d'aligner IA et utilisateur
-  - devient un pb economique
-- projet stargate
+L'économie joue un rôle central dans le développement de l'IA et ses implications pour la fiabilité. Les dynamiques économiques peuvent souvent être en tension avec les objectifs de sécurité.
+
+Le défi de l'IA fiable implique trois acteurs principaux qui doivent être alignés :
+
+1. **L'IA** elle-même, avec ses objectifs implicites et explicites
+2. **L'utilisateur** qui souhaite que l'IA agisse selon ses intérêts
+3. **L'entreprise** qui développe et déploie l'IA
+
+La difficulté principale vient du fait que l'alignement ne concerne pas seulement l'IA et l'utilisateur. Il faut également que les objectifs de l'entreprise soient cohérents avec ceux des utilisateurs et de la société dans son ensemble.
+
+Ce qui était à l'origine un problème technique devient ainsi un problème économique et politique.
+
+Plusieurs dynamiques économiques rendent cet alignement difficile :
+
+- [: La course à l'innovation](#InnovationRace)
+- [: Les incitations divergentes](#DivergentIncentives)
+- [: Les coûts asymétriques](#AsymmetricCosts)
+- [: La concentration du marché](#MarketConcentration)
+
+
+Un exemple récent de la pression économique qui affecte l'IA est le [: Projet Stargate](#Stargate)
+
+Il faut créer un écosystème économique où la fiabilité et la sécurité de l'IA sont récompensées par le marché, et non pénalisées comme des coûts supplémentaires ou des retards de mise sur le marché.
+
+Sans une transformation profonde des incitations économiques, il est probable que les pressions du marché continueront à favoriser la rapidité de déploiement et les fonctionnalités au détriment de la fiabilité et de la sécurité.
+
+## :x InnovationRace
+
+La course à l'innovation crée une pression intense sur les entreprises pour développer et déployer leurs modèles le plus rapidement possible. Dans cette compétition, les entreprises qui prennent le temps d'assurer la sécurité et la fiabilité de leurs systèmes risquent de perdre leur avantage concurrentiel.
+
+Cette dynamique peut conduire à un phénomène de "course vers le fond" en matière de standards de sécurité. Si une entreprise décide unilatéralement de ralentir pour se concentrer sur la sécurité, d'autres peuvent la dépasser et capturer le marché.
+
+Le problème est amplifié par le fait que les investisseurs valorisent souvent la croissance rapide et les avancées techniques spectaculaires plutôt que les améliorations incrémentales en matière de sécurité, qui sont moins visibles mais tout aussi importantes.
+
+## :x DivergentIncentives
+
+Les modèles économiques qui dominent actuellement l'industrie de l'IA ne sont pas nécessairement alignés avec les intérêts des utilisateurs ou de la société.
+
+Par exemple, les modèles basés sur la publicité et la collecte de données encouragent le développement d'IA qui maximisent l'engagement et la collecte d'informations personnelles, parfois au détriment du bien-être des utilisateurs.
+
+De même, les entreprises ont une incitation à créer des systèmes d'IA qui créent une dépendance des utilisateurs à leurs services, plutôt que des systèmes qui favorisent réellement l'autonomie humaine.
+
+Ces incitations divergentes font que même les entreprises bien intentionnées peuvent se retrouver à développer des systèmes qui ne sont pas pleinement alignés avec les valeurs humaines.
+
+## :x AsymmetricCosts
+
+Un problème fondamental dans l'économie de l'IA est l'asymétrie entre les bénéfices et les risques. Les bénéfices économiques de l'IA sont largement privatisés - ils reviennent aux entreprises qui développent et déploient ces technologies.
+
+En revanche, les risques et les externalités négatives sont souvent socialisés - ils affectent la société dans son ensemble, y compris ceux qui ne bénéficient pas directement de la technologie.
+
+Cette dynamique crée une situation où les entreprises n'ont pas à supporter l'intégralité du coût des risques qu'elles créent, ce qui conduit à une prise de risque excessive du point de vue de la société.
+
+Sans mécanismes pour internaliser ces externalités (comme la réglementation ou les taxes pigouviennes), il est peu probable que les forces du marché seules conduisent à un niveau optimal de sécurité.
+
+## :x MarketConcentration
+
+Le développement des modèles d'IA les plus avancés nécessite des ressources considérables - des quantités massives de données, une puissance de calcul coûteuse, et des talents rares. Ces barrières à l'entrée conduisent à une concentration du marché autour d'un petit nombre d'acteurs dominants.
+
+Cette oligopolisation a plusieurs conséquences négatives pour la fiabilité de l'IA:
+- Moins de diversité d'approches en matière de sécurité
+- Risque de "points de défaillance uniques" si un acteur dominant fait une erreur
+- Réduction de la pression concurrentielle pour améliorer la sécurité
+- Difficultés pour les régulateurs à superviser efficacement le secteur
+
+La concentration du pouvoir économique se traduit également par une concentration du pouvoir de décision sur la trajectoire du développement de l'IA, ce qui soulève des questions démocratiques fondamentales.
+
+## :x Stargate
+
+Le projet Stargate illustre parfaitement ces tensions économiques. Ce projet, mené par certains des laboratoires d'IA les plus avancés, vise à développer des systèmes d'IA capables de générer des revenus économiques significatifs, qui seraient ensuite réinvestis dans la recherche sur l'IA.
 
 # :x Politics
 
-TODO:
-- démocratie numérique
-- US / Chine, espoirs d'un traité
-- pourrait nécessiter des traités politiques aussi forts que pour les armes biologiques ou nuléaires (https://hyperarme.com/)
+Si vous ne l'aviez pas compris, l'IA est un enjeu politique majeur. Les décisions concernant le développement et la régulation de l'IA façonneront l'avenir de nos sociétés.
+
+L'IA est à la fois impactée par les régulations et [: agit sur le système politique](#DemocracyDigital).
+
+Des dynamiques de [: course à l'armement entre Pays](#USChina) font accélerer la production de nouvelles IA, ce qui ne laisse pas assez de temps pour la recherche en sécurité et à la régulation.
+
+Certains experts pensent qu'un [: traité international](#TreatiesAI) est devenu nécessaire pour endiguer cette course.
+
+La question politique fondamentale est celle de la gouvernance : qui doit décider comment l'IA est développée et déployée ? Les entreprises privées, les gouvernements nationaux, ou des institutions internationales représentatives ?
+
+## :x DemocracyDigital
+
+L'IA transforme profondément notre espace informationnel et, par extension, notre démocratie numérique. Elle soulève des questions fondamentales :
+
+- Comment préserver un espace public d'information fiable quand les IA peuvent générer du contenu trompeur à grande échelle ?
+- Comment garantir que les algorithmes qui filtrent l'information respectent les principes démocratiques ?
+- Comment éviter que les IA ne deviennent des outils de manipulation politique ou de polarisation ?
+
+Les systèmes démocratiques reposent sur une information de qualité, permettant aux citoyens de faire des choix éclairés. L'IA menace ce fondement en rendant la désinformation plus sophistiquée et moins détectable.
+
+Dans le même temps, l'IA pourrait renforcer la démocratie en facilitant la participation citoyenne, en traduisant des textes complexes en langage accessible, ou en permettant une délibération à grande échelle.
+
+L'enjeu est donc de concevoir des systèmes d'IA qui renforcent plutôt qu'affaiblissent nos institutions démocratiques.
+
+## :x USChina
+
+La course à l'IA est devenue un élément central de la rivalité géopolitique entre les États-Unis et la Chine. Ces deux puissances adoptent des approches divergentes :
+
+- Les États-Unis privilégient une approche largement pilotée par le secteur privé, avec une intervention gouvernementale limitée
+- La Chine adopte une stratégie étatique coordonnée, avec un contrôle gouvernemental fort sur le développement de l'IA
+
+Cette compétition a des conséquences profondes sur la sécurité de l'IA. D'un côté, elle peut accélérer l'innovation et les investissements dans le domaine. De l'autre, elle risque de sacrifier la sécurité au profit de la vitesse de développement.
+
+L'espoir d'un traité international sur l'IA, similaire aux accords de limitation des armes nucléaires, semble actuellement limité par cette rivalité. Pourtant, une coopération sino-américaine serait cruciale pour établir des normes mondiales de sécurité.
+
+## :x TreatiesAI
+
+Face aux risques majeurs de l'IA, certains experts appellent à la création de traités internationaux aussi stricts que ceux encadrant les armes biologiques ou nucléaires.
+
+Ces traités pourraient inclure :
+- Des plafonds sur la puissance de calcul utilisable pour l'entraînement des modèles
+- Des inspections internationales des installations de recherche en IA
+- Des prohibitions sur certaines applications militaires de l'IA
+- Des mécanismes de partage obligatoire des avancées en matière de sécurité
+
+La difficulté principale réside dans le caractère dual de l'IA : contrairement aux armes nucléaires, les mêmes technologies peuvent avoir des applications à la fois bénéfiques et dangereuses.
+
+De plus, la vérification du respect de ces traités poserait des défis techniques considérables. Comment s'assurer qu'un pays ne développe pas secrètement des modèles d'IA avancés ?
+
+Malgré ces obstacles, la création d'un régime international de gouvernance de l'IA semble nécessaire face à l'ampleur des risques.
 
 
 # :x Actions
+
+Rendre les IA fiables est vraiment très compliqué.
+
+On pourrait être découragé et perdre espoir, mais certaines initiatives voient le problème différemment.
+
+En tant que chercheur et ingénieur, notre impact sur les décisions politiques et la régulation est limité.
+Mais un jour, un évènement (nouvelle régulation, traité, catastrophe ...) incitera les créateurs d'IA à rendre leurs modèles plus fiables.
+Et il ne faut pas rater cette opportunité: il faut créer des prototypes dès maintenant pour pouvoir les déployer le jour venu.
+
+Certaines initiatives nous paraissent particulièrement prometeuses:
+- [Tournesol](https://tournesol.app)
+- [le centre pour la sécurité de l'IA](https://www.securite-ia.fr/)
+- des entreprises comme [prismEval](https://www.linkedin.com/company/prism-eval/posts/?feedView=all)
+- [pause IA](https://pauseia.fr)
+
 
 TODO:
 - CeSIA

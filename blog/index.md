@@ -2,6 +2,8 @@
 title: Le blog du P.I.A.F
 ---
 
+Avant toute chose, allez lire notre [article d'introduction](./introduction.html)
+
 # Nos exposés
 
 
@@ -13,5 +15,5 @@ title: Le blog du P.I.A.F
 [[watermarking-llm.html | Comment ajouter une watermark à un LLM]]
 
 
-> [!WARNING]  
+> [!WARNING]
 > Ce blog est en pleine construction
