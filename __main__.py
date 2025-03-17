@@ -16,6 +16,7 @@ BLOG_URL = "https://blog.piaf-saclay.org"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@GROUPE-PIAF"
 GITHUB_PAGE = "https://github.com/ai-safety-saclay"
 DISCORD_SERVER = "https://discord.gg/pWRjGuP4nE"
+LINKEDIN_PAGE = "https://www.linkedin.com/company/piaf-saclay"
 
 KEYWORDS = "IA, intelligence artificielle, fiable, association, école, étudiant, ingénieur, Saclay, conférence, Asimov, hackathon, recherche, numérique, dangers, sécurité, fiabilité, robustesse, sûreté, confiance, alignement, contrôle"
 DESCRIPTION = "Le PIAF est une association qui réunit des étudiants du plateau de Saclay autour de l'intelligence artificielle fiable. Groupe de lecture, conférences, hackathons, et bien d'autres projets."
@@ -23,9 +24,10 @@ DESCRIPTION = "Le PIAF est une association qui réunit des étudiants du plateau
 GLOBALS = {
     "MAIN_SITE_URL": MAIN_SITE_URL,
     "BLOG_URL": BLOG_URL,
-    "YOUTUBE_CHANNEL" : YOUTUBE_CHANNEL,
-    "GITHUB_PAGE" : GITHUB_PAGE,
-    "DISCORD_SERVER" : DISCORD_SERVER,
+    "YOUTUBE_CHANNEL": YOUTUBE_CHANNEL,
+    "GITHUB_PAGE": GITHUB_PAGE,
+    "DISCORD_SERVER": DISCORD_SERVER,
+    "LINKEDIN_PAGE": LINKEDIN_PAGE,
     "KEYWORDS": KEYWORDS,
     "DESCRIPTION": DESCRIPTION,
 }

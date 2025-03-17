@@ -1,4 +1,37 @@
-TODO:
+# piaf-saclay.org
+
+## Description
+
+Le site de l'association PIAF, écrit en Bootstrap + SCSS généré statiquement via Markdown et Jinja
+
+## Développement local
+
+### Environnement virtuel
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### Dépendances Python
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+### Déploiement
+
+```bash
+python3 __main__.py
+cd ./build
+python3 -m http.server 8080
+```
+
+Le site est disponible sur http://localhost:8080.
+
+
+## TODO
+
 - relire `presentation_piaf.md` et comparer avec l'objet de l'asso défini dans les statuts
 - achever les `mentions_legales.md` et `confidentialite.md`
 - relire la page `groupe_de_lecture.md`
