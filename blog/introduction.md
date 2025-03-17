@@ -432,7 +432,7 @@ Cette approche implique:
 
 Il faut noter qu'il y aurait quand même de l'utilisation illégale, mais il serait plus difficile de se procurer ces modèles, réduisant considérablement les risques.
 
-## Beyond
+## :x Beyond
 
 Dans les risques précédents, le danger provient principalement de la mauvaise utilisation intentionnelle. Mais le jour où l'IA est assez puissante (économiquement + intelligence) pour qu'elle fasse tout pour ne pas être débranchée n'est pas si loin.
 
