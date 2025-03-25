@@ -19,3 +19,10 @@
   speakers: ["Alexei Grinbaum"]
   location: "ENSTA, Palaiseau"
   past: true
+- title: "Challenges de l'IA Open Source"
+  date: "26/03/25"
+  registration_link: "https://lu.ma/w6vvezkl"
+  embed_event_code: "evt-E8eg6chyOnpSrCH"
+  speakers: ["Stefano Zacchiroli", "Andrzej Neugebauer"]
+  location: "Télécom Paris, Palaiseau"
+  past: false

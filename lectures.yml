@@ -89,4 +89,11 @@
   paper_link: "https://arxiv.org/abs/2502.08640"
   paper_title: "Utility Engineering: Analyzing and Controlling Emergent Value Systems in AIs"
   date: "16/03/2025"
-  past: false
+  past: true
+
+- title: "Alignement Multi-Objectif"
+  subtitle: "Comment étendre le RLHF et la DPO pour satisfaire plusieurs préférences"
+  paper_link: "https://arxiv.org/abs/2310.03708"
+  paper_title: "Beyond One-Preference-Fits-All Alignment: Multi-Objective Direct Preference Optimization"
+  date: "23/03/2025"
+  past: true
