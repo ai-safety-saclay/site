@@ -4,7 +4,13 @@
   embed_event_code: "evt-4mvjvXl0zhkmPag"
   location: "Télécom Paris, Palaiseau"
   past: true
-- title: "Ce Jeud'IA est en cours de planification..."
-  date: "01/25"
+- title: "LLMs et Interpétabilité"
+  date: "16/01/25"
+  registration_link: "https://lu.ma/rkkiifsz"
+  embed_event_code: "evt-JgybQ5pFB8tUkO3"
   location: "CentraleSupélec, Gif-sur-Yvette"
+  past: true
+- title: "Alignement et Mechanistic Interpretability"
+  date: "10/04/25"
+  location: "École polytechnique, Palaiseau"
   past: false
