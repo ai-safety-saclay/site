@@ -10,7 +10,9 @@
   embed_event_code: "evt-JgybQ5pFB8tUkO3"
   location: "CentraleSupélec, Gif-sur-Yvette"
   past: true
-- title: "Alignement et Mechanistic Interpretability"
+- title: "Sécurité des LLMs par l'interprétabilité"
   date: "10/04/25"
+  registration_link: "https://lu.ma/nyrvirnb"
+  embed_event_code: "evt-GKwEOAgnl1UzSnw"
   location: "École polytechnique, Palaiseau"
   past: false
