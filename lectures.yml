@@ -89,4 +89,11 @@
   paper_link: "https://arxiv.org/abs/2502.08640"
   paper_title: "Utility Engineering: Analyzing and Controlling Emergent Value Systems in AIs"
   date: "16/03/2025"
+  past: true
+
+- title: "Quand les LLMs deviennent RADIOACTIFS ☢️"
+  subtitle: "Concevoir des watermarks qui se transmettent de modèle en modèle"
+  paper_link: "https://arxiv.org/abs/2402.14904"
+  paper_title: "Watermarking Makes Language Models Radioactive"
+  date: "11/05/2025"
   past: false
