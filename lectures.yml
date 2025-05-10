@@ -91,6 +91,13 @@
   date: "16/03/2025"
   past: true
 
+- title: "Alignement Multi-Objectif"
+  subtitle: "Comment étendre le RLHF et la DPO pour satisfaire plusieurs préférences"
+  paper_link: "https://arxiv.org/abs/2310.03708"
+  paper_title: "Beyond One-Preference-Fits-All Alignment: Multi-Objective Direct Preference Optimization"
+  date: "23/03/2025"
+  past: true
+
 - title: "Quand les LLMs deviennent RADIOACTIFS ☢️"
   subtitle: "Concevoir des watermarks qui se transmettent de modèle en modèle"
   paper_link: "https://arxiv.org/abs/2402.14904"
