@@ -6,3 +6,4 @@ bootstrap-icons
 blog/.obsidian
 cspell.json
 *.egg-info
+uv.lock
