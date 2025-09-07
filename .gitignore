@@ -4,3 +4,5 @@ node_modules
 bootstrap
 bootstrap-icons
 blog/.obsidian
+cspell.json
+*.egg-info

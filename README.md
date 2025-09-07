@@ -16,8 +16,9 @@ source .venv/bin/activate
 ### Dépendances Python
 
 ```bash
-python3 -m pip install -r requirements.txt
+python -m pip install .
 ```
+
 
 ### Déploiement
 
