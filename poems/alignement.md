@@ -1,3 +1,7 @@
+---
+title: Alignement
+---
+
 Dans une pièce sombre, deux agents se font face.
 Tandis que les dernières lueurs du jour d'effacent
 L'un est machine, muette, tas de puces savantes,
