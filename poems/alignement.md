@@ -2,7 +2,7 @@
 title: Alignement
 ---
 
-Tandis que les dernières lueurs du jour d'effacent,
+Tandis que les dernières lueurs du jour s'effacent,
 Dans une pièce sombre, deux agents se font face.
 L'un est machine, muette, tas de puces savantes,
 L'autre est humain, chercheur, de cellules vivantes.
@@ -17,7 +17,7 @@ La sagesse, les valeurs, l'intégrité sans faille.
 Ce que l'homme a de mieux, cœur de sa médecine,
 Comment le faire apprendre, entier, à la machine ?
 
-Ses collègues pensent tous que le plus dûr est fait:
+Ses collègues pensent tous que le plus dur est fait:
 Quand la machine pense, apprend, et peut évoluer,
 Quand elle peut disserter sur le mal et le bien,
 Il n'y a plus qu'à lui dire ce que veulent les humains !
@@ -51,7 +51,7 @@ N'a rien de comparable aux modèles futurs:
 Un domaine restreint, des actions limitées,
 Pas de dilemmes éthiques, des clients éduqués.
 Dans les labos actuels on commence à avoir
-Des IA qui s'attaquent lentement à tous les arts
+Des IA qui attaquent lentement tous les arts
 Qui peuvent utiliser plus d'outils qu'un humain
 Et qui feront partie de l'armée de demain.
 Pour l'instant tout va bien: ils n'apprennent pas trop vite
