@@ -345,6 +345,33 @@ header {
     }
 }
 
+// Force Poems h1 link to be black
+header h1 a {
+    color: black !important;
+    text-decoration: none;
+    
+    &:hover {
+        color: black !important;
+        text-decoration: none;
+    }
+}
+
+// Poem title styling - create contrast with "Poems" label
+.poem-title {
+    font-family: "Cardo", "Georgia", "Times New Roman", serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: $primary;
+    margin: 2rem 0 2rem 0; // Increased top margin for more space
+    text-align: center;
+    
+    @media (max-width: 768px) {
+        font-size: 2rem;
+        margin: 1.5rem 0 2rem 0;
+    }
+}
+
 main {
     // TODO: separate sections with borders or background
     section {
@@ -378,6 +405,52 @@ main {
         h5 {
             @extend .display-9;
             @extend .my-4;
+        }
+    }
+
+    // Poem-specific styling
+    .poem-content {
+        @extend .mx-auto;
+        @extend .my-5;
+
+        // Constrain width to approximately 80 characters at 1.4rem font size
+        // At 1.4rem (~22.4px), 80 chars ≈ 45-50rem including spacing
+        max-width: 40rem;
+        width: 90%;
+
+        // Use Cardo font for poetry
+        font-family: "Cardo", "Georgia", "Times New Roman", serif;
+        font-size: 1.4rem;
+        line-height: 1.8;
+        text-align: left;
+
+        @media (max-width: 768px) {
+            width: 95%;
+            max-width: 42rem;
+        }
+
+        // Style paragraphs within poems - big spacing only between paragraphs
+        p {
+            margin-bottom: 2rem;
+            text-align: left;
+            line-height: 1.6; // Tighter line spacing within verses
+        }
+
+        // Remove extra spacing from individual line breaks within paragraphs
+        br {
+            line-height: 1.2;
+        }
+
+        // Style headings within poems
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: left;
+            font-family: "Cardo", "Georgia", "Times New Roman", serif;
+            margin: 2.5rem 0 1.5rem 0;
+            font-weight: 400;
         }
     }
 }

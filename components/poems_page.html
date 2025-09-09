@@ -1,8 +1,10 @@
 {% extends "base.html" %} {% block page_title %}
-<h1 class="page_title">Blog</h1>
-<h2 class="color-gray">{{title}}</h2>
+<h1>
+    <a href="/poems/index.html">Poèmes</a>
+</h1>
+<h2 class="poem-title">{{title}}</h2>
 {% endblock %} {% block main %}
 <section class="content centered-section">
-    <div class="md-content">{{content|safe}}</div>
+    <div class="poem-content">{{content|safe}}</div>
 </section>
 {% endblock %}
