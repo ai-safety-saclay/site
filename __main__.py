@@ -163,7 +163,7 @@ if __name__ == "__main__":
 
     dir_util.copy_tree("./static", "./build")
     dir_util.copy_tree("blog/documents", "build/blog")
-    dir_util.mkpath("poems")
+    dir_util.mkpath("build/poems")
 
     sass.compile(dirname=("scss", "build"))
 
