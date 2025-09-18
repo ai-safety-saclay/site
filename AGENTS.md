@@ -1,7 +1,3 @@
-# WARP.md
-
-This file provides guidance to WARP (warp.dev) when working with code in this repository.
-
 ## Project Overview
 
 This is a static website generator for the PIAF association (piaf-saclay.org), built in Python using Jinja2 templating, Markdown processing, and SCSS compilation. The site features Bootstrap styling and generates HTML pages from templates and markdown content.
