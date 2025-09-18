@@ -6,5 +6,15 @@
 {% endblock %} {% block main %}
 <section class="content centered-section">
     <div class="poem-content">{{content|safe}}</div>
+    {% if links %}
+    <div class="poem-content">
+        <h3>Pour en savoir plus</h3>
+        <ul>
+            {% for link in links %}
+            <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
 </section>
 {% endblock %}

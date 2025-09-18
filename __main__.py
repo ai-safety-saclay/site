@@ -134,8 +134,11 @@ def generate_poems():
                 title = md.Meta["title"]
                 article_id = filename.split(".")[0]
                 page = f"poems/{article_id}.html"
+                links = md.Meta.get("links", [])
 
-                arguments = dict(GLOBALS, title=title, page=page, content=content)
+                arguments = dict(
+                    GLOBALS, title=title, page=page, content=content, links=links
+                )
 
                 template = env.get_template("poems_page.html", globals=arguments)
                 write_html(page, template)

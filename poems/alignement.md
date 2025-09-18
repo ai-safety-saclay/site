@@ -1,5 +1,10 @@
 ---
 title: Alignement
+links:
+  - url: https://fr.wikipedia.org/wiki/Alignement_des_intelligences_artificielles
+    text: "L'alignement sur wikipédia"
+  - url: https://pauseia.substack.com/p/les-modeles-dia-sont-des-cerveaux
+    text: "Pourquoi les IA sont des «cerveaux imprévisibles»"
 ---
 
 Tandis que les dernières lueurs du jour s'effacent,
