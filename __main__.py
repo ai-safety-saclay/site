@@ -81,7 +81,6 @@ ASIMOV_VIDEO_IDS = [
     "FhFxlZzptys?start=1318",  # David Chavalarias
     "CoX5OZIbGl4?start=187",  # Maxime Fournes
     "LZWr5OZyBWE?start=849",  # Raja Chatila
-    "sPyu_dTSma0?start=509",  # Caroline Jeanmaire
 ]
 
 md_configs = {

@@ -103,4 +103,4 @@
   paper_link: "https://arxiv.org/abs/2402.14904"
   paper_title: "Watermarking Makes Language Models Radioactive"
   date: "11/05/2025"
-  past: false
+  past: true

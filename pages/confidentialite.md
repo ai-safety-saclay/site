@@ -25,9 +25,7 @@ Si vous avez des questions sur cette politique de confidentialité, vous pouvez 
 
 <br>
 
-[Mise à jour le ...]: #
-
-
+Mise à jour le 23/09/2025.
 
 {% endmarkdown %}
 {% endblock %}
