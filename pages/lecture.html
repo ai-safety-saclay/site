@@ -9,9 +9,11 @@
         {{lecture["subtitle"]}}
     </h3>
     <p class="card-text">
+        {% if lecture["paper_link"] %}
         Papier : <a href="{{lecture['paper_link']}}">
             {{lecture["paper_title"]}}
         </a>
+        {% endif %}
         {% if lecture["blog_link"] %}
             <br>
             Article récapitulatif : <a href="/blog/{{lecture['blog_link']}}.html" class="fs-6">
