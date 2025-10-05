@@ -105,9 +105,11 @@
   date: "11/05/2025"
   past: true
 
-- title: "TBD"
-  subtitle: "TBD"
+- title: "Les modèles de raisonnement ne disent pas toujours ce qu'ils pensent"
+  subtitle: "Peut-on contrôler des LLMs qui ne pas honnêtes sur leurs intentions ?"
   date: "08/10/2025"
+  paper_link: "https://arxiv.org/abs/2505.05410"
+  paper_title: "Reasoning Models Don't Always Say What They Think"
   past: false
 
 - title: "TBD (Confidentialité des LLMs)"
