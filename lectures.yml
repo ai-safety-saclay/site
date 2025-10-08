@@ -110,9 +110,11 @@
   date: "08/10/2025"
   paper_link: "https://arxiv.org/abs/2505.05410"
   paper_title: "Reasoning Models Don't Always Say What They Think"
+  presented_by: "Thomas Winninger (https://sckathach.github.io)"
   past: false
 
-- title: "TBD (Confidentialité des LLMs)"
-  subtitle: "TBD"
+- title: "Scaling Trustworthiness in the Era of Large Language Models"
+  subtitle: "Towards LLM-scale methods for Privacy Auditing, Memorization Localization, and Uncertainty Quantification"
   date: "23/10/2025"
+  presented_by: "Jérémie Dentan (https://dentanjeremie.github.io)"
   past: false

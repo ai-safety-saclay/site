@@ -14,6 +14,11 @@
             {{lecture["paper_title"]}}
         </a>
         {% endif %}
+
+        {% if lecture["presented_by"] %}
+        <p>Présenté par : {{lecture["presented_by"]}}</p>
+        {% endif %}
+        
         {% if lecture["blog_link"] %}
             <br>
             Article récapitulatif : <a href="/blog/{{lecture['blog_link']}}.html" class="fs-6">
