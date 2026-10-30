@@ -371,6 +371,27 @@ blockquote p {
 .events {
     .card {
         width: 24rem;
+        max-width: calc(100% - 2rem); // marges mx-3
+    }
+
+    // Largeur fixe : sinon le carousel double de largeur pendant le changement de carte
+    .carousel {
+        width: 26rem;
+        max-width: 100%;
+    }
+
+    // Pastille sombre : les flèches restent visibles sur toutes les images, dans les deux thèmes
+    .carousel-control-prev,
+    .carousel-control-next {
+        opacity: 0.9;
+    }
+
+    .carousel .carousel-control-prev-icon,
+    .carousel .carousel-control-next-icon {
+        border-radius: 50%;
+        background-color: rgba($black, 0.6);
+        background-size: 60%;
+        filter: none;
     }
 }
 
