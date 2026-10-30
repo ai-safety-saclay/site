@@ -115,4 +115,4 @@
   subtitle: "Towards LLM-scale methods for Privacy Auditing, Memorization Localization, and Uncertainty Quantification"
   date: "23/10/2025"
   presented_by: "Jérémie Dentan (https://dentanjeremie.github.io)"
-  past: false
+  past: true
