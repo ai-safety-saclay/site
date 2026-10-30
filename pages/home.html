@@ -1,126 +1,130 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block page_title %}
+<div class="piaf-hero" tabindex="0">
+    {% include "logo.html" %}
+    <div class="piaf-hero-letters">
+        <i style="--i: 0"
+            >P<b>our <span class="text-body-tertiary">une</span></b></i
+        >
+        <i style="--i: 1">I<b>ntelligence</b></i>
+        <i style="--i: 2">A<b>rtificielle</b></i>
+        <i style="--i: 3">F<b>iable</b></i>
+    </div>
+</div>
+{% endblock %} {% block main %}
 
-{% block page_title %}
-    <div class="piaf-hero" tabindex="0">
-        {% include "logo.html" %}
-        <div class="piaf-hero-letters">
-            <i style="--i: 0">P<b>our <span class="text-body-tertiary">une</span></b></i>
-            <i style="--i: 1">I<b>ntelligence</b></i>
-            <i style="--i: 2">A<b>rtificielle</b></i>
-            <i style="--i: 3">F<b>iable</b></i>
+<section class="centered-section pb-0">
+    <div class="whoarewe">
+        <div class="col">
+            <h3 class="smallcaps-heading">Qui sommes nous ?</h3>
+            <h2 class="about-phrase">
+                Nous sommes une association<br />
+                étudiante de
+                <a href="https://fr.wikipedia.org/wiki/Paris-Saclay"
+                    >Paris-Saclay</a
+                ><br />
+                travaillant sur la <strong>sûreté de l’IA</strong>.
+            </h2>
         </div>
     </div>
-{% endblock %}
+</section>
 
-{% block main %}
+<section class="centered-section pt-5">
+    <h2 class="display-4 m-3">Rejoindre la communauté</h2>
+    <div class="row row-cols-1 row-cols-xl-3 gy-4 card-container">
+        {% set title="Discord" %} {% set link=DISCORD_SERVER %} {% set
+        content="Rejoignez la communauté, discutez avec les membres de
+        l'association et tenez-vous au courant des activités du PIAF." %} {% set
+        link_icon_class="bi-discord" %} {% set btn_text="Rejoindre la discussion
+        "%} {% include "home_card.html" %} {% set title="WhatsApp" %} {% set
+        link=WHATSAPP_GROUP %} {% set content="Nous sommes également présent
+        dans le groupe WhatsApp «Sécurité de l'IA Paris»." %} {% set
+        link_icon_class="bi-whatsapp" %} {% set btn_class="btn-whatsapp" %} {%
+        set btn_text="Informations sur Paris" %} {% include "home_card.html" %}
+        {% set title="Nous contacter" %} {% set btn_class="" %} {% set
+        link="/contact.html" %} {% set content="Nous sommes ravis de collaborez
+        avec vous et de répondre à vos questions." %} {% set
+        link_icon_class="bi-envelope-at" %} {% set btn_text="Contact"%} {%
+        include "home_card.html" %}
+    </div>
+</section>
 
+<section class="events centered-section">
+    <h2 class="centered-heading">Nos réalisations</h2>
 
-    <section class="centered-section pb-0">
-        <div class="whoarewe">
-            <div class="col">
-                <h3 class="smallcaps-heading">Qui sommes nous ?</h3>
-                <h2 class="about-phrase">
-                    Nous sommes une association<br>
-                    d’étudiants de <a href="https://fr.wikipedia.org/wiki/Paris-Saclay">Paris-Saclay</a><br>
-                    travaillant sur la <strong>sûreté de l’IA</strong>.
-                </h2>
+    <div id="carouselEvents" class="carousel slide">
+        <div class="carousel-inner align-items-center">
+            <div class="carousel-item active">
+                {% set title="Jeud'IA n° 3 : Sécurité des LLMs par
+                l'interprétabilité" %} {% set description="Le Jeud'IA n° 3 a eu
+                lieu le 10&nbsp;avril&nbsp;2025 à l'X." %} {% set
+                link="https://lu.ma/nyrvirnb" %} {% set
+                image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/gt/224e0d6c-da66-4890-a785-d0d1b240b659.png"
+                %} {% include "home_card_news.html" %}
+            </div>
+            <div class="carousel-item">
+                {% set title="Conférence Asimov n° 4 : Challenges de l'IA Open
+                Source" %} {% set description="La quatrième conférence du cycle
+                Asimov avec Stefano Zacchiroli et Andrzej Neugebauer a eu lieu
+                le 26&nbsp;mars&nbsp;2025 à Télécom Paris." %} {% set
+                link="https://lu.ma/w6vvezkl" %} {% set
+                image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/5n/b88e3a75-9afe-4ba6-a6d1-ae3003ead185.png"
+                %} {% include "home_card_news.html" %}
+            </div>
+            <div class="carousel-item">
+                {% set title="Conférence Asimov n° 3 : Éthique de l'intelligence
+                artificielle" %} {% set description="La troisième conférence du
+                cycle Asimov avec Alexei Grinbaum a eu lieu le
+                6&nbsp;janvier&nbsp;2025 à l'ENSTA." %} {% set
+                link="https://lu.ma/ek1r6hx4" %} {% set
+                image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/js/f80fd9fa-3f53-40c5-b953-a37cd22f3a06"
+                %} {% include "home_card_news.html" %}
+            </div>
+            <div class="carousel-item">
+                {% set title %} Conférence Asimov n° 2 :
+                <br />
+                IA fiable, du code à la confiance publique {% endset %} {% set
+                description %} La deuxième conférence du cycle Asimov avec Lê
+                Nguyên Hoang a eu lieu le 4&nbsp;décembre&nbsp;2024 à
+                Polytechnique. {% endset %} {% set link="https://lu.ma/lldc4hn1"
+                %} {% set
+                image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/b8/13753ab4-e490-4022-b560-559bed34faa5"
+                %} {% include "home_card_news.html" %}
+            </div>
+            <div class="carousel-item">
+                {% set title="Conférence Asimov n° 1 : (dés)information à l'ère
+                de l'intelligence artificielle" %} {% set description="La
+                première conférence du cycle Asimov avec Arthur Grimonpont a eu
+                lieu le 14&nbsp;octobre&nbsp;2024 à Télécom Paris." %} {% set
+                link="https://lu.ma/5mbym8x1" %} {% set
+                image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/nm/de1cfd50-b8af-4efe-8108-c02b4bd04b29"
+                %} {% include "home_card_news.html" %}
             </div>
         </div>
-    </section>
+        <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselEvents"
+            data-bs-slide="prev"
+        >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+        </button>
+        <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselEvents"
+            data-bs-slide="next"
+        >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
+    </div>
 
-    <section class="centered-section pt-5">
-        <h2 class="display-4 m-3"> Rejoindre la communauté</h2>
-        <div class="row row-cols-1 row-cols-xl-3 gy-4 card-container">
-            {% set title="Discord" %}
-            {% set link=DISCORD_SERVER %}
-            {% set content="Rejoignez la communauté, discutez avec les membres de l'association et tenez-vous au courant des activités du PIAF." %}
-            {% set link_icon_class="bi-discord" %}
-            {% set btn_text="Rejoindre la discussion "%}
-            {% include "home_card.html" %}
+    <script>
+        const myCarouselElement = document.querySelector("#carouselEvents");
 
-
-            {% set title="WhatsApp" %}
-            {% set link=WHATSAPP_GROUP %}
-            {% set content="Nous sommes également présent dans le groupe WhatsApp «Sécurité de l'IA Paris»." %}
-            {% set link_icon_class="bi-whatsapp" %}
-            {% set btn_class="btn-whatsapp" %}
-            {% set btn_text="Informations sur Paris" %}
-            {% include "home_card.html" %}
-
-
-            {% set title="Nous contacter" %}
-            {% set btn_class="" %}
-            {% set link="/contact.html" %}
-            {% set content="Nous sommes ravis de collaborez avec vous et de répondre à vos questions." %}
-            {% set link_icon_class="bi-envelope-at" %}
-            {% set btn_text="Contact"%}
-            {% include "home_card.html" %}
-        </div>
-    </section>
-
-    <section class="events centered-section">
-        <h2 class="centered-heading">Nos réalisations</h2>
-
-
-        <div id="carouselEvents" class="carousel slide">
-            <div class="carousel-inner align-items-center">
-              <div class="carousel-item active">
-                {% set title="Jeud'IA n° 3 : Sécurité des LLMs par l'interprétabilité" %}
-                {% set description="Le Jeud'IA n° 3 a eu lieu le 10&nbsp;avril&nbsp;2025 à l'X." %}
-                {% set link="https://lu.ma/nyrvirnb" %}
-                {% set image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/gt/224e0d6c-da66-4890-a785-d0d1b240b659.png" %}
-                {% include "home_card_news.html" %}
-              </div>
-              <div class="carousel-item">
-                {% set title="Conférence Asimov n° 4 : Challenges de l'IA Open Source" %}
-                {% set description="La quatrième conférence du cycle Asimov avec Stefano Zacchiroli et Andrzej Neugebauer a eu lieu le 26&nbsp;mars&nbsp;2025 à Télécom Paris." %}
-                {% set link="https://lu.ma/w6vvezkl" %}
-                {% set image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/5n/b88e3a75-9afe-4ba6-a6d1-ae3003ead185.png" %}
-                {% include "home_card_news.html" %}
-              </div>
-              <div class="carousel-item">
-                {% set title="Conférence Asimov n° 3 : Éthique de l'intelligence artificielle" %}
-                {% set description="La troisième conférence du cycle Asimov avec Alexei Grinbaum a eu lieu le 6&nbsp;janvier&nbsp;2025 à l'ENSTA." %}
-                {% set link="https://lu.ma/ek1r6hx4" %}
-                {% set image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/js/f80fd9fa-3f53-40c5-b953-a37cd22f3a06" %}
-                {% include "home_card_news.html" %}
-              </div>
-              <div class="carousel-item">
-                {% set title %}
-                    Conférence Asimov n° 2 : 
-                    <br>
-                    IA fiable, du code à la confiance publique
-                {% endset %}
-                {% set description %}
-                La deuxième conférence du cycle Asimov avec Lê Nguyên Hoang a eu lieu le 4&nbsp;décembre&nbsp;2024 à Polytechnique.
-                {% endset %}
-                {% set link="https://lu.ma/lldc4hn1" %}
-                {% set image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/b8/13753ab4-e490-4022-b560-559bed34faa5" %}
-                {% include "home_card_news.html" %}
-              </div>
-              <div class="carousel-item">
-                {% set title="Conférence Asimov n° 1 : (dés)information à l'ère de l'intelligence artificielle" %}
-                {% set description="La première conférence du cycle Asimov avec Arthur Grimonpont a eu lieu le 14&nbsp;octobre&nbsp;2024 à Télécom Paris." %}
-                {% set link="https://lu.ma/5mbym8x1" %}
-                {% set image="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/nm/de1cfd50-b8af-4efe-8108-c02b4bd04b29" %}
-                {% include "home_card_news.html" %}
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselEvents" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Précédent</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselEvents" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Suivant</span>
-            </button>
-        </div>
-
-        <script>
-            const myCarouselElement = document.querySelector('#carouselEvents')
-
-            const carousel = new bootstrap.Carousel(myCarouselElement, {})
-        </script>
-    </section>
+        const carousel = new bootstrap.Carousel(myCarouselElement, {});
+    </script>
+</section>
 
 {% endblock %}
