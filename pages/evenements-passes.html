@@ -92,7 +92,7 @@
                     <p>Le PIAF propose un groupe de lecture hebdomadaire sur la sûreté de l’IA.</p>
 
                     <h2>Principe</h2>
-                    <p>Lors d’une séance, un membre du groupe présente un exposé sur un article de recherche de son choix. Cette réunion permet à chacun d’apprendre plus sur la sûreté de l’IA et de se renseigner sur les avancées dans le domaine. L’exposé est accessible aux non-experts et est accompagné d’un temps de questions.</p>
+                    <p>Lors d’une séance, un chercheur, un doctorant ou un étudiant présente un exposé sur un article de recherche de son choix. Cette réunion permet à chacun d’apprendre plus sur la sûreté de l’IA et de se renseigner sur les avancées dans le domaine. L’exposé est accessible aux non-experts et est accompagné d’un temps de questions.</p>
                     <p>Ce groupe de lecture a depuis été remplacé par les <a href="/piailleries.html">Piailleries</a>.</p>
 
                 </div>
@@ -108,10 +108,15 @@
                         {{lecture["subtitle"]}}
                     </h3>
                     <p class="card-text">
+                        {% if lecture["paper_link"] %}
                         Papier : <a href="{{lecture['paper_link']}}">
                             {{lecture["paper_title"]}}
                         </a>
+                        {% endif %}
                     </p>
+                    {% if lecture["presented_by"] %}
+                    <p class="card-text">Présenté par : {{lecture["presented_by"]}}</p>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>

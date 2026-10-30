@@ -102,3 +102,17 @@
   paper_title: "Watermarking Makes Language Models Radioactive"
   date: "11/05/2025"
   past: true
+
+- title: "Les modèles de raisonnement ne disent pas toujours ce qu'ils pensent"
+  subtitle: "Peut-on contrôler des LLMs qui ne pas honnêtes sur leurs intentions ?"
+  date: "08/10/2025"
+  paper_link: "https://arxiv.org/abs/2505.05410"
+  paper_title: "Reasoning Models Don't Always Say What They Think"
+  presented_by: "Thomas Winninger (https://sckathach.github.io)"
+  past: true
+
+- title: "Scaling Trustworthiness in the Era of Large Language Models"
+  subtitle: "Towards LLM-scale methods for Privacy Auditing, Memorization Localization, and Uncertainty Quantification"
+  date: "23/10/2025"
+  presented_by: "Jérémie Dentan (https://dentanjeremie.github.io)"
+  past: false
