@@ -1,7 +1,3 @@
-{% extends "md_page.html" %}
-{% block md_content %}
-{% markdown %}
-
 ## Activités
 
 Notre groupe a deux activités principales :
@@ -9,13 +5,13 @@ Notre groupe a deux activités principales :
 
 ### Sensibiliser et changer le discours autour de la sûreté de l'IA
 
-- Participer à la création de [conférences](/asimov.html)
-- Motiver les étudiants à [intégrer la sûreté de l'IA dans leur carrière](/nous_aider.html#se-lancer)
+- Participer à la création de [conférences](/evenements-passes.html#conferences)
+- Motiver les étudiants à [intégrer la sûreté de l'IA dans leur carrière](/nous-aider.html)
 - Avoir autant que possible un impact médiatique
 
 ### Démocratiser le domaine de recherche de la sûreté de l'IA
 
-- Proposer des [groupes de lecture](/groupe-de-lecture.html), des [hackathons](/hackathons.html)
+- Proposer des [Piailleries](/piailleries.html)
 - Lancer des projets sur la sécurité de l'IA au sein des écoles
 - Aider autant que possible dans la création et le développement de startups d'audit des systèmes d'IA
 
@@ -36,6 +32,3 @@ Nous sommes véritablement passionnés par le sujet de la fiabilité de l'IA, ma
 {% set link="/nous-aider.html" %}
 {% set btn_text="Nous aider" %}
 {% include "button.html" %}
-
-{% endmarkdown %}
-{% endblock %}

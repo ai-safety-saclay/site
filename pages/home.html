@@ -1,47 +1,36 @@
 {% extends "base.html" %}
 
-{% block header_image %}
-    <div class="piaf-banner"><img class="piaf-logo-large" src="piaf_gray_with_text.svg" width="500em"></div>
-{% endblock %}
-
 {% block page_title %}
-    {% include "letters.html" %}
+    <div class="piaf-hero" tabindex="0">
+        {% include "logo.html" %}
+        <div class="piaf-hero-letters">
+            <i style="--i: 0">P<b>our <span class="text-body-tertiary">une</span></b></i>
+            <i style="--i: 1">I<b>ntelligence</b></i>
+            <i style="--i: 2">A<b>rtificielle</b></i>
+            <i style="--i: 3">F<b>iable</b></i>
+        </div>
+    </div>
 {% endblock %}
 
 {% block main %}
 
 
-    <section class="centered-section">
-        {% include "about-phrase.html" %}
-        <div class="row card-container">
-            {% set title="Notre mission" %}
-            {% set link="/presentation.html" %}
-            {% set content %}{% markdown %}
-            Nous voulons sensibiliser les étudiants aux enjeux de la sûreté de l'IA afin de démocratiser ce domaine dans les écoles d'ingénieurs.
-            {% endmarkdown %}{% endset %}
-            {% include "home_card.html" %}
-
-
-            {% set title="Notre cycle de conférences" %}
-            {% set link="/asimov.html" %}
-            {% set content %}{% markdown %}
-            Nous organisons **Asimov**, un cycle de conférences dans les écoles du plateau de Saclay.
-            {% endmarkdown %}{% endset %}
-            {% include "home_card.html" %}
-
-
-            {% set title="Notre groupe de lecture" %}
-            {% set link="/groupe-de-lecture.html" %}
-            {% set content %}{% markdown %}
-            Assistez et participez à nos exposés \ sur la sûreté de l'IA.
-            {% endmarkdown %}{% endset %}
-            {% include "home_card.html" %}
+    <section class="centered-section pb-0">
+        <div class="whoarewe">
+            <div class="col">
+                <h3 class="smallcaps-heading">Qui sommes nous ?</h3>
+                <h2 class="about-phrase">
+                    Nous sommes une association<br>
+                    d’étudiants de <a href="https://fr.wikipedia.org/wiki/Paris-Saclay">Paris-Saclay</a><br>
+                    travaillant sur la <strong>sûreté de l’IA</strong>.
+                </h2>
+            </div>
         </div>
     </section>
 
-    <section class="centered-section">
+    <section class="centered-section pt-5">
         <h2 class="display-4 m-3"> Rejoindre la communauté</h2>
-        <div class="row card-container">
+        <div class="row row-cols-1 row-cols-xl-3 gy-4 card-container">
             {% set title="Discord" %}
             {% set link=DISCORD_SERVER %}
             {% set content="Rejoignez la communauté, discutez avec les membres de l'association et tenez-vous au courant des activités du PIAF." %}
@@ -50,15 +39,17 @@
             {% include "home_card.html" %}
 
 
-            {% set title="Github" %}
-            {% set link=GITHUB_PAGE %}
-            {% set content="Contribuez à notre projet sur la sécurité de l'IA dans les écoles de Paris-Saclay." %}
-            {% set link_icon_class="bi-github" %}
-            {% set btn_text="Notre organisation"%}
+            {% set title="WhatsApp" %}
+            {% set link=WHATSAPP_GROUP %}
+            {% set content="Nous sommes également présent dans le groupe WhatsApp «Sécurité de l'IA Paris»." %}
+            {% set link_icon_class="bi-whatsapp" %}
+            {% set btn_class="btn-whatsapp" %}
+            {% set btn_text="Informations sur Paris" %}
             {% include "home_card.html" %}
 
 
             {% set title="Nous contacter" %}
+            {% set btn_class="" %}
             {% set link="/contact.html" %}
             {% set content="Nous sommes ravis de collaborez avec vous et de répondre à vos questions." %}
             {% set link_icon_class="bi-envelope-at" %}
@@ -68,7 +59,7 @@
     </section>
 
     <section class="events centered-section">
-        <h2 class="centered-heading">À la une</h2>
+        <h2 class="centered-heading">Nos réalisations</h2>
 
 
         <div id="carouselEvents" class="carousel slide">

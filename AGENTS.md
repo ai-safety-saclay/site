@@ -34,7 +34,6 @@ python3 -m http.server 8080
 
 ### Content Development
 ```bash
-# Add new blog post - create .md file in blog/ directory
 # Add new page - create template in pages/ directory
 # Modify styles - edit scss/style.scss (auto-compiled during build)
 ```
@@ -52,7 +51,6 @@ python3 -m http.server 8080
 ├── __main__.py           # Main build script and site generator
 ├── pages/               # Jinja2 HTML templates for main pages
 ├── components/          # Reusable Jinja2 template components
-├── blog/                # Markdown blog posts with YAML metadata
 ├── scss/                # SCSS stylesheets (compiled to build/style.css)
 ├── static/              # Static assets (images, etc.)
 ├── build/               # Generated site output (created during build)
@@ -62,42 +60,37 @@ python3 -m http.server 8080
 ### Template System
 - **Base template**: `components/base.html` provides common HTML structure
 - **Page templates**: In `pages/` directory, extend base template with specific content
-- **Components**: Reusable elements in `components/` (navbar, footer, cards, etc.)
+- **Components**: Reusable elements in `components/` (buttons, cards, logo); navbar and footer live in `base.html`
+- **Markdown pages**: `.md` files in `pages/` contain only their text; `components/md_page.html` wraps them
 - **Template inheritance**: Uses Jinja2's `extends` and `include` for modularity
 
 ### Content Management
-- **Blog posts**: Markdown files in `blog/` with YAML frontmatter for metadata
 - **Event data**: YAML files (`asimov.yml`, `lectures.yml`, `jeudia.yml`) for event listings
 - **Page content**: Mix of Jinja2 templates and Markdown files in `pages/`
 
 ### Build Process
 1. **Cleanup**: Removes existing `build/` directory
 2. **Dependencies**: Clones Bootstrap and Bootstrap Icons if not present
-3. **Asset copying**: Copies static files and blog documents to build directory
+3. **Asset copying**: Copies static files to build directory
 4. **SCSS compilation**: Compiles `scss/style.scss` to `build/style.css`
 5. **External assets**: Downloads Popper.js and copies Bootstrap JavaScript
 6. **Page generation**: Processes all templates and generates HTML files
-7. **Content processing**: Converts blog posts and markdown pages to HTML
+7. **Content processing**: Converts markdown pages to HTML
 
 ### Configuration Constants
 - Global site constants defined in `__main__.py`: URLs, keywords, description
-- Markdown extensions: Math support, code fencing, tables, wikilinks, admonitions
 - Bootstrap integration: v5.3.3 with custom SCSS compilation
 
 ## File Modification Patterns
 
 ### Adding New Pages
-1. Create template in `pages/` directory (`.html` or `.md`)
+1. Create the page in `pages/`: `.md` for text pages (no `extends`, no `{% markdown %}`), `.html` for layout pages
 2. Add `generate_page()` call in `__main__.py` if needed
-3. Update navigation in `components/navbar.html` if required
+3. Update navigation in `components/base.html` if required
 
 ### Modifying Styles
 - Edit `scss/style.scss` - automatically compiled during build
 - Bootstrap variables can be overridden in SCSS
-
-### Adding Blog Posts
-- Create `.md` file in `blog/` directory with YAML frontmatter
-- Include `title` in frontmatter - automatically processed during build
 
 ### Updating Events
 - Modify corresponding YAML file (`asimov.yml`, `lectures.yml`, `jeudia.yml`)

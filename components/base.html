@@ -2,6 +2,10 @@
 
 <head>
     <title>{{title}}</title>
+    <script>
+        document.documentElement.dataset.bsTheme = localStorage.getItem("theme")
+            || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" property="og:title" content="PIAF">
@@ -11,33 +15,109 @@
         content="{{DESCRIPTION}}">
     <meta property="og:title" content="{{title}}">
     <meta property="og:url" content="{{MAIN_SITE_URL}}/{{page}}">
-    <meta property="og:image" content="{{MAIN_SITE_URL}}/piaf_gray.png">
+    <meta property="og:image" content="{{MAIN_SITE_URL}}/piaf.png">
     <meta property="og:description"
         content="{{description}}">
     <meta property="og:type" content="website">
     <link rel="canonical" href="{{MAIN_SITE_URL}}">
 
 
-    <!-- Google Fonts for poems -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="/style.css">
-    <link rel="icon" type="image/svg" href="{{MAIN_SITE_URL}}/piaf.svg">
+    <link rel="icon" type="image/svg+xml" href="/piaf_dark.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="/piaf_light.svg" media="(prefers-color-scheme: dark)">
 
     <script type="text/javascript" src="/popper.min.js"></script>
     <script type="text/javascript" src="/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 
 <body>
     <header class="site-header">
-        {% include("navbar.html") %}
+        <nav class="navbar">
+            <a class="navbar-brand" href="/">
+                {% include "logo.html" %}
+                <b class="piaf-icon-title">PIAF</b>
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/presentation.html">Présentation</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Événements
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a
+                                    class="nav-link dropdown-item"
+                                    href="/piailleries.html"
+                                    >Piailleries</a
+                                >
+                            </li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li>
+                                <a
+                                    class="nav-link dropdown-item"
+                                    href="/evenements-passes.html"
+                                    >Événements passés</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html"
+                            >Nous rejoindre, nous contacter</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="nav-link theme-toggle"
+                            type="button"
+                            aria-label="Changer de thème"
+                        >
+                            <i class="bi bi-moon-stars logo-for-light"></i>
+                            <i class="bi bi-sun logo-for-dark"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-        {% block header_image %}
-        {% endblock %}
+        <script>
+            const links = document.querySelectorAll(".nav-link");
+            links.forEach((link) => {
+                if (link.href === window.location.href) {
+                    link.classList.add("active");
+                }
+            });
+
+            document.querySelector(".theme-toggle").addEventListener("click", () => {
+                const theme = document.documentElement.dataset.bsTheme === "dark" ? "light" : "dark";
+                document.documentElement.dataset.bsTheme = theme;
+                localStorage.setItem("theme", theme);
+            });
+        </script>
 
         {% block page_title %}
         <h1 class="page-title">{{title}}</h1>
@@ -47,9 +127,41 @@
     <main class="site-main" role="main">
         {% block main %}
         {% endblock %}
+    </main>
 
     <footer>
-        {% include("footer.html") %}
+        <div class="footer-nav">
+            <ul list-inline="">
+                <li class="list-inline-item"><a class="nav-link" href="/mentions-legales.html">Mentions légales</a></li>
+                <li class="list-inline-item"><a class="nav-link" href="/confidentialite.html">Confidentialité</a></li>
+                <li class="list-inline-item"><a class="nav-link" href="/nous-aider.html">Nous aider</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <a class="icon-link" href="{{GITHUB_PAGE}}">
+                <i class="bi bi-github h4"></i>
+            </a>
+            <a class="icon-link" href="{{YOUTUBE_CHANNEL}}">
+                <i class="bi bi-youtube h4"></i>
+            </a>
+            <a class="icon-link" href="{{DISCORD_SERVER}}">
+                <i class="bi bi-discord h4"></i>
+            </a>
+            <a class="icon-link" href="{{LINKEDIN_PAGE}}">
+                <i class="bi bi-linkedin h4"></i>
+            </a>
+        </div>
+        <div class="footer-org">
+            <div class="footer-piaf">
+                <a class="navbar-brand" href="/">
+                    {% include "logo.html" %}
+                    <b class="piaf-icon-title">PIAF</b>
+                </a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 <strong>Pour une Intelligence Artificielle Fiable - PIAF</strong></p>
+            </div>
+        </div>
 
     </footer>
 </body>

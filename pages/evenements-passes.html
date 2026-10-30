@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% macro event_card(event) %}
+<div class="card my-2 p-3 text-center" style="width: 100%;">
+    {% if event["embed_event_code"] %}
+        <iframe
+          src="https://lu.ma/embed/event/{{event["embed_event_code"]}}/simple"
+          frameborder="0"
+          loading="lazy"
+          style="border: 1px solid #bfcbda88; border-radius: 4px; min-height: 27em;"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
+    {% else %}
+        <p class="text-muted small">
+            {{event["date"]}}
+        </p>
+        <h2 class="card-title fs-3">
+            {{event["title"]}}
+        </h2>
+        {% if event["speakers"] %}
+        <h3 class="card-subtitle fs-4">
+            {{", ".join(event["speakers"])}}
+        </h3>
+        {% endif %}
+        <h3 class="card-subtitle mb-2 text-muted fs-5">
+            {{event["location"]}}
+        </h3>
+    {% endif %}
+</div>
+{% endmacro %}
+
+<section class="container centered-section">
+
+    <div class="event-groups">
+        <p class="mb-4">
+            Le P.I.A.F a été actif en 2024-2025 et a organisé plusieurs événements.<br>
+            Les événements ci-dessous sont visibles dans un but d'archivage, ils ne représentent pas nos activités actuelles.
+        </p>
+
+        <details class="event-group" id="conferences">
+            <summary>Conférences Asimov <span class="event-group-count">{{past_asimov|length}}</span></summary>
+            <div class="event-group-body">
+                <div class="md-content">
+                    <img src="logo_asimov.png" class="d-block mx-auto" height="240em" />
+                    <img src="Logo-IP-Paris-carré-HD.png" class="d-block mx-auto" height="100em" />
+
+                    <blockquote class="lead text-center">
+                        Les conférences sur l’impact du numérique sur notre civilisation.
+                    </blockquote>
+
+                    <h2>Le projet</h2>
+                    <p>Le cycle Asimov est dirigé par une vision, inspirée par l’auteur de science-fiction Isaac Asimov. C’est une vision du monde dans laquelle les machines automatiques sont à la source d’une transformation irréversible de l’humanité. Une vision où les technologies numériques progressent jusqu’à atteindre les compétences humaines, et changent en profondeur le fonctionnement de l’humanité. Une vision où l’intelligence croissante des robots, différente de celle des humains, rend leur contrôle extrêmement difficile.</p>
+                    <p>Et dans cette vision, les ingénieurs et les scientifiques ont un rôle particulier à jouer. Ils doivent saisir les immenses opportunités qu’offrent ces technologies, tout en ayant une vision claire des risques. Dans le domaine de l’énergie, du transport, pour l’aéronautique et pour le médical, les ingénieurs sont formés pour connaître les enjeux et les risques de leurs innovations sur la société. Dans le numérique, ce n’est pas le cas.</p>
+                    <p>Nous pensons qu’au contraire, de nombreux étudiants <strong>veulent</strong> avoir une vision des risques causés par le domaine dans lequel ils travaillent. Le discours sur ce sujet est occupé par les entreprises, avec souvent un discours très techno-solutionniste. Aux vu des enjeux, il faut un discours plus impartial, et plus critique.</p>
+
+                    <br />
+
+                    <p>Cette série de conférence a été notre plus grand projet de 2024-2025, il est maintenant clôturé.</p>
+                </div>
+                {% for event in past_asimov %}
+                {{ event_card(event) }}
+                {% endfor %}
+            </div>
+        </details>
+
+        <details class="event-group" id="jeudia">
+            <summary>Jeud'IA <span class="event-group-count">{{past_jeudia|length}}</span></summary>
+            <div class="event-group-body">
+                <div class="md-content">
+                    <!--expertise enseignants, chercheurs en entreprise ou non, ou des doctorants-->
+                    <p>Venez découvrir les défis de la sécurité de l’IA lors du Jeud’IA.</p>
+                    <p>Nous vous proposons plusieurs exposés de 30 minutes, à la fois par des étudiants et des chercheurs. Pas de prérequis : les exposés commencent par des explications très vulgarisées, avec une partie technique pour les plus curieux.</p>
+                    <p>La séance se terminera par des échanges informels autour des sujets évoqués.</p>
+
+                    <h2>Organisation</h2>
+                    <p>Organisé par le PIAF et le <a href="https://securite-ia.fr">Centre pour la Sécurité de l’IA</a>, le Jeud’IA a lieu environ tous les mois, un jeudi soir dans une école sur le plateau de Saclay. Cet événement est inspiré du <a href="https://lu.ma/CeSIA?tag=mercred%27ia">Mercred’IA</a>.</p>
+                    <p>Les Jeud’IA passés sont ci-dessous.</p>
+                </div>
+                {% for event in past_jeudia %}
+                {{ event_card(event) }}
+                {% endfor %}
+            </div>
+        </details>
+
+        <details class="event-group" id="groupe-de-lecture">
+            <summary>Groupe de lecture <span class="event-group-count">{{past_lectures|length}}</span></summary>
+            <div class="event-group-body">
+                <div class="md-content">
+                    <p>Le PIAF propose un groupe de lecture hebdomadaire sur la sûreté de l’IA.</p>
+
+                    <h2>Principe</h2>
+                    <p>Lors d’une séance, un membre du groupe présente un exposé sur un article de recherche de son choix. Cette réunion permet à chacun d’apprendre plus sur la sûreté de l’IA et de se renseigner sur les avancées dans le domaine. L’exposé est accessible aux non-experts et est accompagné d’un temps de questions.</p>
+                    <p>Ce groupe de lecture a depuis été remplacé par les <a href="/piailleries.html">Piailleries</a>.</p>
+
+                </div>
+                {% for lecture in past_lectures %}
+                <div class="card my-2 p-3">
+                    <p class="text-muted small">
+                        {{lecture["date"]}}
+                    </p>
+                    <h2 class="card-title fs-3">
+                        {{lecture["title"]}}
+                    </h2>
+                    <h3 class="card-subtitle mb-2 text-muted fs-5">
+                        {{lecture["subtitle"]}}
+                    </h3>
+                    <p class="card-text">
+                        Papier : <a href="{{lecture['paper_link']}}">
+                            {{lecture["paper_title"]}}
+                        </a>
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </details>
+    </div>
+
+</section>
+
+{% endblock %}

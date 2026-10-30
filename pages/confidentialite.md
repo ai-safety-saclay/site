@@ -1,11 +1,6 @@
-{% extends "md_page.html" %}
-{% block md_content %}
-{% markdown %}
-
-
 ## À propos de ce site
 
-Cette politique de confidentialité s'applique au site principal du PIAF, [piaf-saclay.org]({{MAIN_SITE_URL}}), ainsi qu'au blog [blog.piaf-saclay.org]({{BLOG_URL}}).
+Cette politique de confidentialité s'applique au site principal du PIAF, [piaf-saclay.org]({{MAIN_SITE_URL}}).
 
 ### Données personnelles
 
@@ -26,8 +21,3 @@ Si vous avez des questions sur cette politique de confidentialité, vous pouvez 
 <br>
 
 [Mise à jour le ...]: #
-
-
-
-{% endmarkdown %}
-{% endblock %}

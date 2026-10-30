@@ -2,7 +2,9 @@
 @import "../bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
-$primary: #008181;
+$primary: #ee533d; // couleur de l'œil du logo
+$whatsapp-green: #1a8f4c; // assez foncé pour le texte blanc
+$min-contrast-ratio: 3; // garde le texte blanc sur les boutons
 $font-size-base: 1.2rem;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
@@ -48,48 +50,9 @@ $theme-colors: map-merge(
 
 @import "../bootstrap-icons/font/bootstrap-icons.scss";
 
-.square-for-card {
-    height: 22rem;
-}
-
-@mixin admon-color($color) {
-    color: darken($color, 15%);
-    background-color: lighten($color, 25%);
-    border-color: $color;
-}
-
-.admonition {
-    padding: 0 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    text-align: left;
-    &-title {
-        font-weight: bold;
-        text-align: left;
-    }
-    &.note,
-    &.info,
-    &.tips {
-        $base-blue: #3498db;
-        @include admon-color($base-blue);
-    }
-    &.warning,
-    &.warn,
-    &.important {
-        $base-carrot: #e67e22;
-        @include admon-color($base-carrot);
-    }
-    &.danger,
-    &.critical {
-        $base-alizarin: #e74c3c;
-        @include admon-color($base-alizarin);
-    }
-}
-
 blockquote {
-    border-left: 4px solid #e1e4e8;
-    color: #6a737d;
+    border-left: 4px solid var(--bs-border-color);
+    color: var(--bs-secondary-color);
     font-size: 16px;
     font-style: italic;
     margin: 1.5em 0;
@@ -100,30 +63,151 @@ blockquote p {
     margin: 0;
 }
 
-.custom-word-container {
-    cursor: pointer;
-    font-size: 2em;
-    font-weight: bold;
+// Logo + lettres P I A F qui se déplient en "Pour une Intelligence Artificielle Fiable".
+// Les lettres sont en position absolue : leur expansion ne change pas la taille
+// de .piaf-hero-letters, donc le logo ne bouge pas.
+.piaf-hero {
     display: flex;
-    padding: 15px 20vw;
+    align-items: center;
+    gap: 0.6ch;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+    outline: none;
+    text-align: left;
+    font: 700 clamp(1.6rem, 5.2vw, 2.4rem) / 1 monospace;
+
+    .piaf-icon {
+        width: clamp(6.4rem, 30vw, 13.8rem);
+        height: clamp(6.4rem, 30vw, 13.8rem);
+    }
+
+    i {
+        position: absolute;
+        display: flex;
+        align-items: baseline;
+        font-style: normal;
+        color: $primary;
+        transform: translate(calc(var(--i) * 1.5ch), 1.8em);
+        transition: 0.5s 0.3s;
+    }
+
+    b {
+        max-width: 0;
+        overflow: hidden;
+        font-size: 0.75em;
+        // Évite de couper les jambages (le "g" d'Intelligence)
+        padding-bottom: 0.25em;
+        margin-bottom: -0.25em;
+        white-space: pre;
+        font-weight: 400;
+        color: var(--bs-body-color);
+        transition: 0.3s;
+    }
+
+    &:hover i,
+    &:focus-visible i {
+        transform: translate(calc(var(--i) * 1.5ch), calc(var(--i) * 1.2em));
+        transition-delay: 0s;
+    }
+
+    &:hover b,
+    &:focus-visible b {
+        max-width: 11ch;
+        transition-delay: 0.5s;
+    }
 }
 
-.custom-letter {
-    color: $primary;
-    display: inline-block;
+// Sur petit écran, la largeur dépliée est réservée pour éviter un défilement horizontal.
+// Sur grand écran, seule la largeur repliée compte pour centrer logo + PIAF.
+.piaf-hero-letters {
+    position: relative;
+    width: 12.25ch;
+    height: 4.6em;
+
+    @include media-breakpoint-up(sm) {
+        width: 5.5ch;
+    }
 }
 
-.custom-word-container .custom-word-reveal {
-    opacity: 0;
-    max-width: 10px;
-    text-wrap: nowrap;
-    transition: all 1s ease;
+.logo-for-dark {
+    display: none;
 }
 
-.custom-word-container:hover .custom-word-reveal {
-    opacity: 1;
-    max-width: 200px;
-    margin-right: 1em;
+[data-bs-theme="dark"] {
+    .logo-for-light {
+        display: none;
+    }
+
+    .logo-for-dark {
+        display: inline-block;
+    }
+}
+
+.event-groups {
+    width: 100%;
+    max-width: 60rem;
+}
+
+.event-group {
+    margin-bottom: 1rem;
+    border: 1px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius-lg);
+    background-color: var(--bs-tertiary-bg);
+
+    summary {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 1.25rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        cursor: pointer;
+        list-style: none;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: "\F282"; // bi-chevron-down
+            margin-left: auto;
+            font-family: "bootstrap-icons";
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        &:hover {
+            color: var(--bs-link-color);
+        }
+    }
+
+    &[open] summary {
+        border-bottom: 1px solid var(--bs-border-color);
+
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.event-group-count {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--bs-secondary-color);
+}
+
+.event-group-body {
+    padding: 1rem 1.25rem;
+
+    .md-content {
+        width: 100%;
+    }
+}
+
+.theme-toggle {
+    width: 100%;
+    height: 100%;
 }
 
 // FIXME: extending Bootstrap classes or regular tags could have unintended side effects
@@ -169,7 +253,7 @@ blockquote p {
 .smallcaps-heading {
     @extend .fs-6;
     @extend .mb-3;
-    @extend .text-secondary;
+    @extend .text-body-secondary;
     @extend .text-center;
     @extend .text-uppercase;
 }
@@ -193,14 +277,14 @@ blockquote p {
     @extend .rounded-3;
 
     &:hover {
-        background-color: lightgray;
-        color: black;
+        background-color: var(--bs-secondary-bg);
+        color: var(--bs-body-color);
     }
 }
 
 .piaf-icon {
-    @extend .icon-link;
-    @extend .icon-link-hover;
+    width: 48px;
+    height: 48px;
 }
 
 .piaf-icon-title {
@@ -214,14 +298,23 @@ blockquote p {
     transition-duration: 0.2s;
 
     &:hover {
-        background-color: white;
-        color: $primary;
+        background-color: var(--bs-body-bg);
+        color: var(--bs-link-color);
+    }
+}
+
+.btn-whatsapp {
+    --bs-btn-bg: #{$whatsapp-green};
+    --bs-btn-border-color: #{$whatsapp-green};
+    --bs-btn-hover-border-color: #{$whatsapp-green};
+
+    &:hover {
+        color: $whatsapp-green;
     }
 }
 
 .whoarewe {
     @include make-container();
-    @extend .mb-5;
 
     .col {
         @extend .justify-content-center;
@@ -256,7 +349,7 @@ blockquote p {
 
         p {
             @extend .card-text;
-            @extend .text-secondary;
+            @extend .text-body-secondary;
         }
 
         a {
@@ -264,6 +357,13 @@ blockquote p {
             @extend .mx-auto;
 
             margin-top: auto;
+            // Tient sur une ligne dans une carte étroite
+            --bs-btn-font-size: 1.1rem;
+            white-space: nowrap;
+
+            &.btn-whatsapp {
+                @extend .btn-whatsapp;
+            }
         }
     }
 }
@@ -271,20 +371,6 @@ blockquote p {
 .events {
     .card {
         width: 24rem;
-    }
-}
-
-.video-container {
-    // FIXME: this doesn't work
-    //@include make-container();
-    @extend .container;
-    @extend .d-flex;
-    @extend .flex-wrap;
-    @extend .gap-3;
-    @extend .mb-5;
-
-    .video-card {
-        margin: 20em;
     }
 }
 
@@ -300,7 +386,7 @@ header {
 
     nav {
         @extend .navbar-expand-lg;
-        @extend .bg-light;
+        @extend .bg-body-tertiary;
         @extend .shadow-sm;
         @extend .mb-5;
 
@@ -322,53 +408,11 @@ header {
         }
 
         .dropdown-item {
-            @extend .text-secondary;
+            @extend .text-body-secondary;
         }
 
         // FIXME: dropdown pushes navbar items to the bottom
         // when navbar is in vertical mode
-    }
-
-    // TODO: colored title and gradient header with cool background effect
-    .piaf-banner {
-        //@extend .d-flex;
-        @extend .flex-column;
-        //@extend .justify-content-center;
-        @extend .align-items-center;
-
-        //background: linear-gradient(to bottom, rgba(21, 72, 192, 0.5), rgba(194,233,251,0.5));
-
-        .page-title {
-            @extend .display-4;
-            @extend .mb-3;
-        }
-    }
-}
-
-// Force Poems h1 link to be black
-header h1 a {
-    color: black !important;
-    text-decoration: none;
-    
-    &:hover {
-        color: black !important;
-        text-decoration: none;
-    }
-}
-
-// Poem title styling - create contrast with "Poems" label
-.poem-title {
-    font-family: "Cardo", "Georgia", "Times New Roman", serif;
-    font-size: 2.5rem;
-    font-weight: 400;
-    font-style: italic;
-    color: $primary;
-    margin: 2rem 0 2rem 0; // Increased top margin for more space
-    text-align: center;
-    
-    @media (max-width: 768px) {
-        font-size: 2rem;
-        margin: 1.5rem 0 2rem 0;
     }
 }
 
@@ -383,9 +427,6 @@ main {
     .md-content {
         @extend .col-xxl-8;
         @extend .my-4;
-
-        // FIXME: justify does not work with nutshell (embedable explainations)
-        // text-align: justify !important;
 
         // TODO: colored heading
         // FIXME: h1 h2 h3 ... doesn't work
@@ -407,55 +448,19 @@ main {
             @extend .my-4;
         }
     }
-
-    // Poem-specific styling
-    .poem-content {
-        @extend .mx-auto;
-        @extend .my-5;
-
-        // Constrain width to approximately 80 characters at 1.4rem font size
-        // At 1.4rem (~22.4px), 80 chars ≈ 45-50rem including spacing
-        max-width: 40rem;
-        width: 90%;
-
-        // Use Cardo font for poetry
-        font-family: "Cardo", "Georgia", "Times New Roman", serif;
-        font-size: 1.4rem;
-        line-height: 1.8;
-        text-align: left;
-
-        @media (max-width: 768px) {
-            width: 95%;
-            max-width: 42rem;
-        }
-
-        // Style paragraphs within poems - big spacing only between paragraphs
-        p {
-            margin-bottom: 2rem;
-            text-align: left;
-            line-height: 1.6; // Tighter line spacing within verses
-        }
-
-        // Remove extra spacing from individual line breaks within paragraphs
-        br {
-            line-height: 1.2;
-        }
-
-        // Style headings within poems
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            text-align: left;
-            font-family: "Cardo", "Georgia", "Times New Roman", serif;
-            margin: 2.5rem 0 1.5rem 0;
-            font-weight: 400;
-        }
-    }
 }
 
-// FIXME: push footer down to bottom of the screen
+// Pousse le footer en bas de l'écran sur les pages courtes
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 footer {
     @extend .mt-5;
     @extend .text-center;
@@ -477,7 +482,7 @@ footer {
 
         .icon-link {
             @extend .icon-link-hover;
-            @extend .text-black;
+            @extend .text-body;
             @extend .me-5;
         }
     }

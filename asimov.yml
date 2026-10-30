@@ -25,4 +25,4 @@
   embed_event_code: "evt-E8eg6chyOnpSrCH"
   speakers: ["Stefano Zacchiroli", "Andrzej Neugebauer"]
   location: "Télécom Paris, Palaiseau"
-  past: false
+  past: true

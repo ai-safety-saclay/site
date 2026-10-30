@@ -1,8 +1,3 @@
-{% extends "md_page.html" %}
-{% block md_content %}
-{% markdown %}
-
-
 ## Éditeur du site
 
 Ce site est édité par **Pour une Intelligence Artificielle Fiable - PIAF**, association de loi 1901 domiciliée à l'adresse suivante :
@@ -23,6 +18,3 @@ Rendez-vous sur la page dédiée.
 {% set link_icon_class="bi-envelope-at" %}
 {% set btn_text="Contact" %}
 {% include "button.html" %}
-
-{% endmarkdown %}
-{% endblock %}
