@@ -130,6 +130,66 @@ blockquote p {
     }
 }
 
+// Bannière de l'Appel, sous la navigation de toutes les pages
+// Repos, puis une impulsion brève et lisse vers la droite, puis repos :
+// ................:**(0)**:........
+// ease-in-out sur chaque segment : vitesse nulle au repos et au sommet, donc sans à-coup.
+@keyframes appel-arrow-bounce {
+    0%, 38%, 86%, 100% {
+        transform: translateX(0);
+        animation-timing-function: ease-in-out;
+    }
+    62% {
+        transform: translateX(0.45em);
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.appel-banner {
+    display: block;
+    // colle à la navbar (qui a mb-5 = 3rem) et garde l'espace avant le titre
+    margin: -3rem 0 3rem;
+    padding: 1.2rem 0.8rem;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    font-size: 1.32rem;
+    text-decoration: none;
+
+    .appel-banner-intro {
+        display: block;
+    }
+
+    // la flèche bondit vers « Signez »
+    .bi-arrow-right {
+        display: inline-block;
+        margin-right: 0.5em; // part de plus loin de « Signez »
+        animation: appel-arrow-bounce 1.6s infinite;
+
+        @media (prefers-reduced-motion: reduce) {
+            animation: none;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        background: #3a3a3a;
+        color: #fff;
+    }
+
+    // thème sombre : l'inverse, fond clair et texte noir
+    [data-bs-theme="dark"] & {
+        background: #e6e6e6;
+        color: #000;
+
+        &:hover,
+        &:focus {
+            background: #d0d0d0;
+            color: #000;
+        }
+    }
+}
+
 .logo-for-dark {
     display: none;
 }

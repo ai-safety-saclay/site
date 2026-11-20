@@ -15,6 +15,7 @@ GITHUB_PAGE = "https://github.com/ai-safety-saclay"
 DISCORD_SERVER = "https://discord.gg/pWRjGuP4nE"
 WHATSAPP_GROUP = "https://chat.whatsapp.com/Jt5NdWFuUexFPFtyosDxGD"
 LINKEDIN_PAGE = "https://www.linkedin.com/company/piaf-saclay"
+APPEL_URL = "https://encadrer-ia-frontiere.fr/"
 
 KEYWORDS = "IA, intelligence artificielle, fiable, association, école, étudiant, ingénieur, Saclay, conférence, Asimov, recherche, numérique, dangers, sécurité, fiabilité, robustesse, sûreté, confiance, alignement, contrôle"
 DESCRIPTION = "Le PIAF est une association qui réunit des étudiants du plateau de Saclay autour de l'intelligence artificielle fiable. Groupe de lecture, conférences, et bien d'autres projets."
@@ -26,6 +27,7 @@ GLOBALS = {
     "DISCORD_SERVER": DISCORD_SERVER,
     "WHATSAPP_GROUP": WHATSAPP_GROUP,
     "LINKEDIN_PAGE": LINKEDIN_PAGE,
+    "APPEL_URL": APPEL_URL,
     "KEYWORDS": KEYWORDS,
     "DESCRIPTION": DESCRIPTION,
 }
